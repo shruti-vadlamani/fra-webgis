@@ -101,12 +101,7 @@ const Home = () => {
     };
 
     const navigateToMap = () => {
-        // Navigate to the WebGIS route in the same app
-        window.location.href = '/webgis';
-    };
-
-    const navigateToGEE = () => {
-        // Navigate to the GEE-style interface
+        // Navigate to the GEE-style interface with FRA and forest data
         window.location.href = '/gee';
     };
 
@@ -215,18 +210,6 @@ const Home = () => {
                                     asset mapping, and scheme eligibility visualization.
                                 </p>
                                 <button className="action-btn">View Map</button>
-                            </div>
-                        </div>
-                        
-                        <div className="action-card" onClick={navigateToGEE}>
-                            <div className="card-content">
-                                <div className="action-icon globe"></div>
-                                <h3 className="action-title">Telangana Land-use Atlas</h3>
-                                <p className="action-description">
-                                    Google Earth Engine-style interface for Telangana land-use classification 
-                                    with ESA WorldCover data visualization and analysis tools.
-                                </p>
-                                <button className="action-btn">View GEE Atlas</button>
                             </div>
                         </div>
                     </div>

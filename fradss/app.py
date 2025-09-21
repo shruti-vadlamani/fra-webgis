@@ -20,9 +20,9 @@ except Exception:
 app = Flask(__name__)
 
 # Configuration
-FRA_GEOJSON_FILE = 'output/fra_claims.geojson'
+FRA_GEOJSON_FILE = 'output/telangana_fra_realistic.geojson'
 FRA_ANALYTICS_FILE = 'output/fra_analytics.json'
-VANACHITRA_FRA_FILE = 'output/vanachitra_fra_data.geojson'
+VANACHITRA_FRA_FILE = 'output/telangana_fra_realistic.geojson'
 POLY_ATTR_JSON = 'output/polygon_attributes.json'
 SCHEMES_FILE = os.path.join('static', 'schemes.json')
 STATIC_DIR = 'static'
@@ -468,23 +468,7 @@ def dss_details(polygon_id):
             if name not in recommendations:
                 recommendations.append(name)
 
-    # API response if JSON requested
-    if request.args.get('format') == 'json' or request.headers.get('Accept') == 'application/json':
-        return jsonify({
-            'polygon_id': polygon_id,
-            'attributes': attrs,
-            'metadata': {
-                'fra_type': claim.get('fra_type') or claim.get('feature_type') or claim.get('claim_type'),
-                'state': claim.get('state'),
-                'district': claim.get('district'),
-                'village': claim.get('village'),
-                'households': claim.get('total_households') or claim.get('beneficiary_households'),
-                'area_hectares': claim.get('area_claimed') or claim.get('area_hectares')
-            },
-            'recommendations': recommendations,
-            'applicable_schemes': applicable_schemes
-        })
-
+    # Always render the HTML template (no JSON responses)
     # Render dashboard
     return render_template('dss_details.html',
                            polygon_id=polygon_id,
@@ -880,7 +864,7 @@ def get_state_boundaries(state):
         # Map state names to available boundary files
         boundary_files = {
             'telangana': {
-                'districts': 'telangana/districts.json',
+                'districts': 'telangana_districts_33.geojson',
                 'blocks': 'telangana/blocks.json'
             }
         }
@@ -920,7 +904,7 @@ def get_state_districts(state):
         state_lower = state.lower()
         
         if state_lower == 'telangana':
-            districts_file = 'telangana/districts.json'
+            districts_file = 'telangana_districts_33.geojson'
             if os.path.exists(districts_file):
                 with open(districts_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)
@@ -928,7 +912,7 @@ def get_state_districts(state):
                 # Extract district names
                 districts = []
                 for feature in data['features']:
-                    district_name = feature['properties'].get('D_N', '')
+                    district_name = feature['properties'].get('DISTRICT_N', '')
                     if district_name:
                         districts.append(district_name.title())
                 

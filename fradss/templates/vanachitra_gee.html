@@ -962,6 +962,12 @@
                                 ${props.area_claimed ? `<p><strong>Area:</strong> ${props.area_claimed} ha</p>` : ''}
                                 ${props.household_head ? `<p><strong>Household Head:</strong> ${props.household_head}</p>` : ''}
                                 ${props.tribal_community ? `<p><strong>Tribal Community:</strong> ${props.tribal_community}</p>` : ''}
+                                <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #ddd;">
+                                    <a href="/dss/${props.claim_id}" target="_blank" 
+                                       style="background: #2c3e50; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-size: 13px; display: inline-block;">
+                                        Open DSS
+                                    </a>
+                                </div>
                                 <p style="font-size: 11px; color: #666; margin-top: 10px;">
                                     Forest-constrained FRA data
                                 </p>
