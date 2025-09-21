@@ -1,0 +1,135 @@
+[
+  {
+    "name": "PM-KISAN",
+    "implementing_agency": "Ministry of Agriculture & Farmers Welfare",
+    "objective": "Income support to farmers for purchase of inputs and livelihood security",
+    "type": "Central",
+    "sectors": ["Agriculture", "Tribal Welfare"],
+    "beneficiaries": "Small and marginal farmers",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "MGNREGA",
+    "implementing_agency": "Ministry of Rural Development",
+    "objective": "Wage employment and natural resource management including water and land",
+    "type": "Central",
+    "sectors": ["Agriculture", "Water", "Forest", "Tribal Welfare"],
+    "beneficiaries": "Rural households",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "PMKSY",
+    "implementing_agency": "Ministry of Jal Shakti / Ministry of Agriculture",
+    "objective": "Irrigation, watershed development, and water use efficiency",
+    "type": "Central",
+    "sectors": ["Water", "Agriculture"],
+    "beneficiaries": "Farmers and rural communities",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "Jal Jeevan Mission",
+    "implementing_agency": "Ministry of Jal Shakti",
+    "objective": "Functional household tap connections and drinking water security",
+    "type": "Central",
+    "sectors": ["Water", "Tribal Welfare"],
+    "beneficiaries": "Rural households",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "National Afforestation Programme",
+    "implementing_agency": "Ministry of Environment, Forest and Climate Change",
+    "objective": "Afforestation through Joint Forest Management Committees",
+    "type": "Central",
+    "sectors": ["Forest", "Tribal Welfare"],
+    "beneficiaries": "Village forest committees and communities",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "Green India Mission",
+    "implementing_agency": "Ministry of Environment, Forest and Climate Change",
+    "objective": "Enhance forest/tree cover and ecosystem services",
+    "type": "Central",
+    "sectors": ["Forest", "Water", "Tribal Welfare"],
+    "beneficiaries": "Forest-dependent communities",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "Van Dhan Vikas Yojana",
+    "implementing_agency": "TRIFED, Ministry of Tribal Affairs",
+    "objective": "Value addition and marketing of minor forest produce",
+    "type": "Central",
+    "sectors": ["Forest", "Tribal Welfare"],
+    "beneficiaries": "ST gatherers and SHGs",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "IWMP",
+    "implementing_agency": "Department of Land Resources / State Watershed Agencies",
+    "objective": "Integrated watershed management for soil and water conservation",
+    "type": "Central",
+    "sectors": ["Water", "Agriculture", "Forest"],
+    "beneficiaries": "Rural communities",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "FRA support programs",
+    "implementing_agency": "Ministry of Tribal Affairs / State Tribal Departments",
+    "objective": "Claim facilitation, post-rights livelihood and community support",
+    "type": "Central",
+    "sectors": ["Forest", "Tribal Welfare", "Agriculture"],
+    "beneficiaries": "FRA right holders and Gram Sabhas",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "DILRMP",
+    "implementing_agency": "Department of Land Resources",
+    "objective": "Digitization of land records and modern land governance",
+    "type": "Central",
+    "sectors": ["Agriculture", "Tribal Welfare"],
+    "beneficiaries": "Landholders and rural citizens",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "NRLM",
+    "implementing_agency": "Ministry of Rural Development",
+    "objective": "Self-help group promotion and livelihoods diversification",
+    "type": "Central",
+    "sectors": ["Agriculture", "Tribal Welfare", "Forest"],
+    "beneficiaries": "SHGs, vulnerable rural households",
+    "geography": ["All-India"]
+  },
+  {
+    "name": "CAMPA",
+    "implementing_agency": "State Forest Departments / MoEFCC",
+    "objective": "Compensatory afforestation and forest restoration",
+    "type": "Central",
+    "sectors": ["Forest", "Water"],
+    "beneficiaries": "Forest ecosystems and local communities",
+    "geography": ["All-India"]
+  },
+
+  { "name": "Rythu Bandhu", "implementing_agency": "Telangana Agriculture Department", "objective": "Investment support for agriculture and horticulture", "type": "State", "sectors": ["Agriculture"], "beneficiaries": "Farmers", "geography": ["Telangana"] },
+  { "name": "Haritha Haram", "implementing_agency": "Telangana Forest Department", "objective": "Large-scale plantation program for green cover", "type": "State", "sectors": ["Forest", "Water"], "beneficiaries": "Communities and urban/rural areas", "geography": ["Telangana"] },
+  { "name": "Mission Kakatiya", "implementing_agency": "Telangana Irrigation Department", "objective": "Restoration of tanks and water bodies", "type": "State", "sectors": ["Water", "Agriculture"], "beneficiaries": "Farmers and rural households", "geography": ["Telangana"] },
+  { "name": "Mission Bhagiratha", "implementing_agency": "Telangana Drinking Water Department", "objective": "Safe drinking water supply to households", "type": "State", "sectors": ["Water"], "beneficiaries": "Rural and urban households", "geography": ["Telangana"] },
+
+  { "name": "KALIA", "implementing_agency": "Odisha Agriculture Department", "objective": "Assistance for cultivation, livelihood, and vulnerable landless households", "type": "State", "sectors": ["Agriculture", "Tribal Welfare"], "beneficiaries": "Small/marginal farmers, landless", "geography": ["Odisha"] },
+  { "name": "BKKY", "implementing_agency": "Odisha Health & Family Welfare", "objective": "Health insurance for farmers", "type": "State", "sectors": ["Agriculture"], "beneficiaries": "Farmers", "geography": ["Odisha"] },
+  { "name": "Jal Nidhi", "implementing_agency": "Odisha Water Resources Department", "objective": "Community water structures and conservation", "type": "State", "sectors": ["Water", "Agriculture"], "beneficiaries": "Rural communities", "geography": ["Odisha"] },
+  { "name": "OFSDP", "implementing_agency": "Odisha Forest Department", "objective": "Sustainable forest management and livelihoods", "type": "State", "sectors": ["Forest", "Tribal Welfare"], "beneficiaries": "Forest-dependent communities", "geography": ["Odisha"] },
+  { "name": "Ama Jungle Yojana", "implementing_agency": "Odisha Forest Department", "objective": "Community forest protection and management", "type": "State", "sectors": ["Forest", "Tribal Welfare"], "beneficiaries": "Vana Suraksha Samitis/Gram Sabhas", "geography": ["Odisha"] },
+
+  { "name": "Bhavantar Bhugtan", "implementing_agency": "MP Agriculture Department", "objective": "Price deficiency payment to farmers", "type": "State", "sectors": ["Agriculture"], "beneficiaries": "Farmers", "geography": ["Madhya Pradesh"] },
+  { "name": "Kapildhara", "implementing_agency": "MP Rural Development", "objective": "Irrigation wells for small/marginal farmers", "type": "State", "sectors": ["Water", "Agriculture"], "beneficiaries": "Small/marginal farmers", "geography": ["Madhya Pradesh"] },
+  { "name": "Jal Swavlamban", "implementing_agency": "MP Water Resources", "objective": "Water conservation and harvesting structures", "type": "State", "sectors": ["Water", "Agriculture"], "beneficiaries": "Rural communities", "geography": ["Madhya Pradesh"] },
+  { "name": "Hariyali Prasar", "implementing_agency": "MP Forest Department", "objective": "Tree plantation and green cover enhancement", "type": "State", "sectors": ["Forest"], "beneficiaries": "Communities and institutions", "geography": ["Madhya Pradesh"] },
+  { "name": "Tribal Sub-plan", "implementing_agency": "MP Tribal Affairs", "objective": "Focused development for tribal areas", "type": "State", "sectors": ["Tribal Welfare", "Agriculture", "Forest", "Water"], "beneficiaries": "ST communities", "geography": ["Madhya Pradesh"] },
+
+  { "name": "Jhumia Rehabilitation", "implementing_agency": "Tripura Tribal Welfare / Forest", "objective": "Livelihood support and settlement for shifting cultivators", "type": "State", "sectors": ["Tribal Welfare", "Forest", "Agriculture"], "beneficiaries": "Jhumia families", "geography": ["Tripura"] },
+  { "name": "Forest & Plantation Project", "implementing_agency": "Tripura Forest Department", "objective": "Plantation, forest restoration and NTFP livelihood", "type": "State", "sectors": ["Forest", "Tribal Welfare"], "beneficiaries": "Forest-dependent communities", "geography": ["Tripura"] },
+  { "name": "Rubber Mission", "implementing_agency": "Tripura Industries/Forest", "objective": "Rubber plantation and processing value chain", "type": "State", "sectors": ["Agriculture", "Forest"], "beneficiaries": "Smallholders and SHGs", "geography": ["Tripura"] },
+  { "name": "State MGNREGS", "implementing_agency": "Tripura Rural Development", "objective": "State-implemented wage employment and NRM works", "type": "State", "sectors": ["Water", "Agriculture", "Forest"], "beneficiaries": "Rural households", "geography": ["Tripura"] },
+  { "name": "SAPCC", "implementing_agency": "Tripura Climate Change Cell", "objective": "State action on climate change including forestry and water", "type": "State", "sectors": ["Forest", "Water", "Agriculture"], "beneficiaries": "Communities and ecosystems", "geography": ["Tripura"] }
+]
+
+

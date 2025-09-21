@@ -1,0 +1,411 @@
+/* Upload Page Specific Styles */
+.upload-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(245, 245, 220, 0.8) 100%);
+    overflow-y: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.upload-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.upload-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: var(--white);
+    border: 2px solid var(--forest-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    color: var(--forest-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.back-btn:hover {
+    background: var(--forest-primary);
+    color: var(--white);
+    transform: translateX(-5px);
+}
+
+.upload-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--forest-primary);
+    margin-bottom: 0.5rem;
+}
+
+.upload-subtitle {
+    color: var(--light-text);
+    font-size: 1.1rem;
+}
+
+.upload-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.upload-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.upload-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px var(--shadow-light);
+    border: 2px solid rgba(125, 180, 108, 0.1);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    text-align: center;
+}
+
+.upload-card h3 {
+    color: var(--forest-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.upload-card p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.file-upload-area {
+    border: 3px dashed var(--forest-light);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(245, 245, 220, 0.3);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload-area:hover {
+    border-color: var(--forest-primary);
+    background: rgba(125, 180, 108, 0.1);
+    transform: translateY(-2px);
+}
+
+.file-upload-area.dragover {
+    border-color: var(--forest-accent);
+    background: rgba(125, 180, 108, 0.2);
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upload-icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.upload-link {
+    color: var(--forest-primary);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.upload-link:hover {
+    color: var(--forest-accent);
+}
+
+.file-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(125, 180, 108, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--forest-accent);
+    /* Remove display: none since React handles visibility */
+}
+
+.process-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.process-btn {
+    background: var(--gradient-forest);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto 0.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.process-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.process-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.process-btn.processing {
+    background: var(--forest-accent);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    animation: none;
+}
+
+.process-btn.processing .btn-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.process-note {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+/* Results Section */
+.results-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 50px var(--shadow-light);
+    border: 2px solid var(--forest-accent);
+    /* Remove display: none since React handles visibility */
+}
+
+.results-title {
+    color: var(--forest-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background: rgba(245, 245, 220, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--forest-light);
+}
+
+.result-card h4 {
+    color: var(--forest-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.json-display {
+    background: var(--dark-text);
+    color: #00ff00;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+.spatial-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.coord-display {
+    background: var(--forest-primary);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.map-preview {
+    flex: 1;
+}
+
+.mini-map {
+    height: 150px;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--forest-light);
+}
+
+.map-placeholder {
+    text-align: center;
+    color: var(--forest-primary);
+}
+
+.map-placeholder span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.secondary-btn, .primary-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.secondary-btn {
+    background: var(--white);
+    color: var(--forest-primary);
+    border: 2px solid var(--forest-light);
+}
+
+.primary-btn {
+    background: var(--gradient-forest);
+    color: var(--white);
+}
+
+.secondary-btn:hover, .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+.secondary-btn:hover {
+    border-color: var(--forest-primary);
+    background: rgba(26, 77, 58, 0.05);
+}
+
+/* Responsive Design for Upload Page */
+@media (max-width: 768px) {
+    .upload-container {
+        padding: 1rem;
+    }
+
+    .upload-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .back-btn {
+        position: relative;
+        margin-bottom: 1rem;
+        left: 0;
+        top: 0;
+    }
+    
+    .upload-title {
+        font-size: 2rem;
+    }
+
+    .upload-section {
+        padding: 1.5rem;
+    }
+
+    .file-upload-area {
+        padding: 1.5rem;
+        min-height: 100px;
+    }
+
+    .upload-icon-large {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondary-btn, .primary-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload-header {
+        padding-top: 1rem;
+    }
+
+    .upload-title {
+        font-size: 1.8rem;
+    }
+
+    .upload-subtitle {
+        font-size: 1rem;
+    }
+
+    .process-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}

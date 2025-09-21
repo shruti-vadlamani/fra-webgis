@@ -1,0 +1,44 @@
+{
+  "Tree cover": {
+    "color": "#006400",
+    "code": 10,
+    "description": "Dense forest areas, mainly in eastern districts",
+    "percentage": 25
+  },
+  "Shrubland": {
+    "color": "#FFBB22",
+    "code": 20,
+    "description": "Sparse vegetation and scrubland",
+    "percentage": 15
+  },
+  "Grassland": {
+    "color": "#FFFF4C",
+    "code": 30,
+    "description": "Natural grasslands and grazing areas",
+    "percentage": 10
+  },
+  "Cropland": {
+    "color": "#F096FF",
+    "code": 40,
+    "description": "Agricultural areas - rice, cotton, maize",
+    "percentage": 35
+  },
+  "Built-up": {
+    "color": "#FA0000",
+    "code": 50,
+    "description": "Urban areas including Hyderabad metro",
+    "percentage": 8
+  },
+  "Bare/sparse vegetation": {
+    "color": "#B4B4B4",
+    "code": 60,
+    "description": "Rocky outcrops and sparse vegetation",
+    "percentage": 5
+  },
+  "Permanent water bodies": {
+    "color": "#0064C8",
+    "code": 80,
+    "description": "Rivers, lakes, and reservoirs",
+    "percentage": 2
+  }
+}

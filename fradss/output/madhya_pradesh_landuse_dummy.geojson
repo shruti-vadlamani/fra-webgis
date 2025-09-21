@@ -1,0 +1,996 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "name": "Madhya Pradesh Land-use Classification",
+    "description": "Dummy ESA WorldCover-style land-use data for Madhya Pradesh",
+    "total_features": 17,
+    "generated_at": "2025-09-17T14:45:59.690248",
+    "bounds": {
+      "min_lat": 21.07,
+      "max_lat": 26.87,
+      "min_lon": 74.02,
+      "max_lon": 82.75
+    },
+    "projection": "EPSG:4326",
+    "data_source": "Generated for Vanachitra.AI prototype"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_001",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Bhopal, Madhya Pradesh",
+        "district": "Bhopal",
+        "state": "Madhya Pradesh",
+        "area_km2": 1615.04,
+        "area_hectares": 161504.11,
+        "confidence": 0.86,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.2217947735568,
+              23.386628618496772
+            ],
+            [
+              76.4166022856583,
+              23.229971332822124
+            ],
+            [
+              76.41814334970843,
+              23.022285358015353
+            ],
+            [
+              76.2217947735568,
+              22.95289409781848
+            ],
+            [
+              75.97304542177228,
+              22.99446294518638
+            ],
+            [
+              75.99953003381657,
+              23.24454986364113
+            ],
+            [
+              76.2217947735568,
+              23.386628618496772
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_002",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Bhopal, Madhya Pradesh",
+        "district": "Bhopal",
+        "state": "Madhya Pradesh",
+        "area_km2": 814.97,
+        "area_hectares": 81497.17,
+        "confidence": 0.84,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.2217947735568,
+              23.286949731598792
+            ],
+            [
+              76.32159375297547,
+              23.218316564285438
+            ],
+            [
+              76.36348257300504,
+              23.12653746264726
+            ],
+            [
+              76.31444977511664,
+              23.041328246531222
+            ],
+            [
+              76.2217947735568,
+              22.97921772724328
+            ],
+            [
+              76.06855610141871,
+              22.985613099021684
+            ],
+            [
+              76.01207846987155,
+              23.12653746264726
+            ],
+            [
+              76.11711415681921,
+              23.222805911674175
+            ],
+            [
+              76.2217947735568,
+              23.286949731598792
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_003",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Bhopal, Madhya Pradesh",
+        "district": "Bhopal",
+        "state": "Madhya Pradesh",
+        "area_km2": 1655.8,
+        "area_hectares": 165579.61,
+        "confidence": 0.93,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.2217947735568,
+              23.37565474964479
+            ],
+            [
+              76.4023468301955,
+              23.22240233862002
+            ],
+            [
+              76.3757784536249,
+              23.044779178270044
+            ],
+            [
+              76.2217947735568,
+              22.882909275343085
+            ],
+            [
+              76.00831467027565,
+              23.013189301431623
+            ],
+            [
+              75.9522479123799,
+              23.269654505436066
+            ],
+            [
+              76.2217947735568,
+              23.37565474964479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_004",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Bhopal, Madhya Pradesh",
+        "district": "Bhopal",
+        "state": "Madhya Pradesh",
+        "area_km2": 811.55,
+        "area_hectares": 81154.87,
+        "confidence": 0.91,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.2217947735568,
+              23.309581488423085
+            ],
+            [
+              76.32491020432981,
+              23.221366504552368
+            ],
+            [
+              76.38125634270105,
+              23.12653746264726
+            ],
+            [
+              76.34607434656091,
+              23.01224503572332
+            ],
+            [
+              76.2217947735568,
+              22.95026009647392
+            ],
+            [
+              76.07067867730417,
+              22.987565104032768
+            ],
+            [
+              76.10087503717767,
+              23.12653746264726
+            ],
+            [
+              76.13457572109776,
+              23.20674756426403
+            ],
+            [
+              76.2217947735568,
+              23.309581488423085
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_005",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Indore, Madhya Pradesh",
+        "district": "Indore",
+        "state": "Madhya Pradesh",
+        "area_km2": 1058.87,
+        "area_hectares": 105886.85,
+        "confidence": 0.94,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.08162614087591,
+              26.39975174863799
+            ],
+            [
+              75.26767976435684,
+              26.243210317528188
+            ],
+            [
+              75.21974648849934,
+              26.075201033850313
+            ],
+            [
+              75.08162614087591,
+              26.001749095118083
+            ],
+            [
+              74.94113674466209,
+              26.073973229670614
+            ],
+            [
+              74.88742228119268,
+              26.247434331385588
+            ],
+            [
+              75.08162614087591,
+              26.39975174863799
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_006",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Indore, Madhya Pradesh",
+        "district": "Indore",
+        "state": "Madhya Pradesh",
+        "area_km2": 335.72,
+        "area_hectares": 33572.42,
+        "confidence": 0.92,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.08162614087591,
+              26.23570670308925
+            ],
+            [
+              75.19329773258151,
+              26.204660424597225
+            ],
+            [
+              75.19315002359906,
+              26.08898515415163
+            ],
+            [
+              75.08162614087591,
+              26.063314922011994
+            ],
+            [
+              74.99403152982286,
+              26.10138695118219
+            ],
+            [
+              74.96337907503685,
+              26.208068288267587
+            ],
+            [
+              75.08162614087591,
+              26.23570670308925
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_007",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Jabalpur, Madhya Pradesh",
+        "district": "Jabalpur",
+        "state": "Madhya Pradesh",
+        "area_km2": 1923.93,
+        "area_hectares": 192393.15,
+        "confidence": 0.85,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.26539072538213,
+              26.703935950002492
+            ],
+            [
+              74.41863642497681,
+              26.60826061457794
+            ],
+            [
+              74.50145680722284,
+              26.488056486746117
+            ],
+            [
+              74.48269704340579,
+              26.356131670245688
+            ],
+            [
+              74.38701917979985,
+              26.269441231483743
+            ],
+            [
+              74.26539072538213,
+              26.171724282204988
+            ],
+            [
+              74.10995225862615,
+              26.22776584165302
+            ],
+            [
+              74.00972141859502,
+              26.34496859491393
+            ],
+            [
+              74.0278969163903,
+              26.48847193471446
+            ],
+            [
+              74.11790785786759,
+              26.601157148567165
+            ],
+            [
+              74.26539072538213,
+              26.703935950002492
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_008",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Jabalpur, Madhya Pradesh",
+        "district": "Jabalpur",
+        "state": "Madhya Pradesh",
+        "area_km2": 1187.43,
+        "area_hectares": 118742.63,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.26539072538213,
+              26.593767026088017
+            ],
+            [
+              74.4727645155855,
+              26.52658783288951
+            ],
+            [
+              74.42478308136727,
+              26.3369504308886
+            ],
+            [
+              74.26539072538213,
+              26.198477889190062
+            ],
+            [
+              74.10745249249136,
+              26.3377022890649
+            ],
+            [
+              74.04394555411645,
+              26.533863477533806
+            ],
+            [
+              74.26539072538213,
+              26.593767026088017
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_009",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Jabalpur, Madhya Pradesh",
+        "district": "Jabalpur",
+        "state": "Madhya Pradesh",
+        "area_km2": 2338.58,
+        "area_hectares": 233857.75,
+        "confidence": 0.95,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.26539072538213,
+              26.751471772623677
+            ],
+            [
+              74.46378686041606,
+              26.561056491958773
+            ],
+            [
+              74.55279734243209,
+              26.360617016247605
+            ],
+            [
+              74.39623412163263,
+              26.176041422531984
+            ],
+            [
+              74.11065098368378,
+              26.131602524538792
+            ],
+            [
+              74.03878231771287,
+              26.373044538249804
+            ],
+            [
+              74.06176925155282,
+              26.564788357916928
+            ],
+            [
+              74.26539072538213,
+              26.751471772623677
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_010",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Balaghat, Madhya Pradesh",
+        "district": "Balaghat",
+        "state": "Madhya Pradesh",
+        "area_km2": 765.39,
+        "area_hectares": 76538.95,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.16987781538337,
+              24.829475670977306
+            ],
+            [
+              78.296285244147,
+              24.71773113751345
+            ],
+            [
+              78.31300016961414,
+              24.576300265694428
+            ],
+            [
+              78.16987781538337,
+              24.456901156003873
+            ],
+            [
+              78.01433736218469,
+              24.569784093181486
+            ],
+            [
+              78.06116556738426,
+              24.708445911907887
+            ],
+            [
+              78.16987781538337,
+              24.829475670977306
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_011",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Balaghat, Madhya Pradesh",
+        "district": "Balaghat",
+        "state": "Madhya Pradesh",
+        "area_km2": 435.45,
+        "area_hectares": 43544.56,
+        "confidence": 0.92,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.16987781538337,
+              24.757565255849503
+            ],
+            [
+              78.25866237466585,
+              24.7475672273812
+            ],
+            [
+              78.26857344574982,
+              24.667217788854344
+            ],
+            [
+              78.25458733840499,
+              24.606951340880055
+            ],
+            [
+              78.20983398606457,
+              24.551627429307338
+            ],
+            [
+              78.12009847869483,
+              24.527098211502466
+            ],
+            [
+              78.06486240160017,
+              24.596296192489522
+            ],
+            [
+              78.0266254120599,
+              24.67435832109822
+            ],
+            [
+              78.09727124484058,
+              24.730044202290422
+            ],
+            [
+              78.16987781538337,
+              24.757565255849503
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_012",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Balaghat, Madhya Pradesh",
+        "district": "Balaghat",
+        "state": "Madhya Pradesh",
+        "area_km2": 1154.04,
+        "area_hectares": 115404.2,
+        "confidence": 0.88,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.16987781538337,
+              24.87225772627547
+            ],
+            [
+              78.36640911992853,
+              24.754527371224345
+            ],
+            [
+              78.37191540375659,
+              24.54538556366923
+            ],
+            [
+              78.16987781538337,
+              24.51687890991426
+            ],
+            [
+              77.99548831127497,
+              24.559893395116482
+            ],
+            [
+              77.99550775578886,
+              24.74289865932786
+            ],
+            [
+              78.16987781538337,
+              24.87225772627547
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_013",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Balaghat, Madhya Pradesh",
+        "district": "Balaghat",
+        "state": "Madhya Pradesh",
+        "area_km2": 2130.06,
+        "area_hectares": 213005.73,
+        "confidence": 0.94,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.16987781538337,
+              24.88898696726381
+            ],
+            [
+              78.3402121842651,
+              24.8644794808184
+            ],
+            [
+              78.41534558845183,
+              24.723889544069674
+            ],
+            [
+              78.45273284979793,
+              24.56787198385671
+            ],
+            [
+              78.30724025138937,
+              24.479568740037706
+            ],
+            [
+              78.16987781538337,
+              24.48344846594168
+            ],
+            [
+              78.00394444301527,
+              24.443828166508034
+            ],
+            [
+              77.88574730689943,
+              24.56749532710519
+            ],
+            [
+              77.88273268142268,
+              24.736197171282473
+            ],
+            [
+              78.0180904366549,
+              24.84127827883729
+            ],
+            [
+              78.16987781538337,
+              24.88898696726381
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_014",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Jhabua, Madhya Pradesh",
+        "district": "Jhabua",
+        "state": "Madhya Pradesh",
+        "area_km2": 517.47,
+        "area_hectares": 51747.26,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.83567878720682,
+              23.2979123509528
+            ],
+            [
+              80.92338625367073,
+              23.29469240187954
+            ],
+            [
+              80.96544414472054,
+              23.21408586671315
+            ],
+            [
+              80.94100375615538,
+              23.117288169142626
+            ],
+            [
+              80.83567878720682,
+              23.078895852655446
+            ],
+            [
+              80.72196827400947,
+              23.109581531445393
+            ],
+            [
+              80.68932991226151,
+              23.21408586671315
+            ],
+            [
+              80.76188722822208,
+              23.28190314765962
+            ],
+            [
+              80.83567878720682,
+              23.2979123509528
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_015",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Jhabua, Madhya Pradesh",
+        "district": "Jhabua",
+        "state": "Madhya Pradesh",
+        "area_km2": 457.29,
+        "area_hectares": 45729.3,
+        "confidence": 0.96,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.83567878720682,
+              23.31557875441893
+            ],
+            [
+              80.9468984270012,
+              23.295599710280694
+            ],
+            [
+              80.96865152287856,
+              23.186192903062555
+            ],
+            [
+              80.9043561265075,
+              23.083021824124618
+            ],
+            [
+              80.78125437568642,
+              23.110222154723154
+            ],
+            [
+              80.73782941741499,
+              23.1935605394643
+            ],
+            [
+              80.74941543378647,
+              23.277309030439607
+            ],
+            [
+              80.83567878720682,
+              23.31557875441893
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_016",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Jhabua, Madhya Pradesh",
+        "district": "Jhabua",
+        "state": "Madhya Pradesh",
+        "area_km2": 758.18,
+        "area_hectares": 75817.64,
+        "confidence": 0.95,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.83567878720682,
+              23.34446757362069
+            ],
+            [
+              80.97283682154455,
+              23.28686289409899
+            ],
+            [
+              80.99209980909775,
+              23.13108776128794
+            ],
+            [
+              80.83567878720682,
+              23.04542272719752
+            ],
+            [
+              80.70394333924436,
+              23.14418610217991
+            ],
+            [
+              80.67040000244995,
+              23.301783964040286
+            ],
+            [
+              80.83567878720682,
+              23.34446757362069
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA_LU_017",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Jhabua, Madhya Pradesh",
+        "district": "Jhabua",
+        "state": "Madhya Pradesh",
+        "area_km2": 2084.3,
+        "area_hectares": 208430.43,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.83567878720682,
+              23.442819592371784
+            ],
+            [
+              81.0440736923544,
+              23.324661683815126
+            ],
+            [
+              81.15847524375214,
+              23.042807773734616
+            ],
+            [
+              80.83567878720682,
+              23.008986118289435
+            ],
+            [
+              80.53564873701882,
+              23.054887790679622
+            ],
+            [
+              80.6139633546583,
+              23.331729650282664
+            ],
+            [
+              80.83567878720682,
+              23.442819592371784
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

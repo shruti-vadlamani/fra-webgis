@@ -1,0 +1,3801 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "title": "Telangana Forest Rights Act Spatial Data (Coordinate-Based)",
+    "description": "FRA claims data placed at specific forest coordinates provided by user",
+    "created_date": "2025-09-19T13:45:23.690617",
+    "total_features": 72,
+    "state": "Telangana",
+    "spatial_reference": "EPSG:4326 (WGS84)",
+    "data_quality": "Synthetic but placed at user-specified forest locations",
+    "coordinate_locations": [
+      "Eastern_Forest: 17.95, 80.45",
+      "Northern_Forest: 19.16, 79.11",
+      "Southern_Forest: 16.15, 78.72"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CFR_TG_KHA_EAS",
+        "claim_type": "CFR",
+        "fra_type": "Community Forest Resource Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 478.14,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "gram_sabha": "Bhimaguda Gram Sabha",
+        "total_households": 72,
+        "forest_committee_formed": true,
+        "management_plan": "Under Preparation",
+        "submission_date": "2025-05-07",
+        "forest_type": "Dry Deciduous",
+        "forest_location": "Eastern_Forest",
+        "base_coordinates": "17.95, 80.45"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.52871755332447,
+              18.12929783569717
+            ],
+            [
+              80.61025946431948,
+              18.077105863418726
+            ],
+            [
+              80.64108766991421,
+              17.995563952423712
+            ],
+            [
+              80.62980237715429,
+              17.89447912859389
+            ],
+            [
+              80.52871755332447,
+              17.866724105712443
+            ],
+            [
+              80.44849711569199,
+              17.91534351479123
+            ],
+            [
+              80.38215533586857,
+              17.995563952423712
+            ],
+            [
+              80.4201448685461,
+              18.104136637202085
+            ],
+            [
+              80.52871755332447,
+              18.12929783569717
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_001",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.96,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Kiran Kumar",
+        "family_members": 5,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-01-18",
+        "survey_number": "SY_395",
+        "patta_issued": false,
+        "cultivation_type": "Paddy",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.62036635992595,
+              17.91528359407526
+            ],
+            [
+              80.63006554944212,
+              17.91635713621617
+            ],
+            [
+              80.62898389899166,
+              17.92612958231722
+            ],
+            [
+              80.6192847094755,
+              17.925056040176308
+            ],
+            [
+              80.62036635992595,
+              17.91528359407526
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_002",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.95,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Lakshman Singh",
+        "family_members": 6,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2024-09-19",
+        "survey_number": "SY_293",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.42068530011035,
+              17.975122191511293
+            ],
+            [
+              80.43255980750142,
+              17.97813720140524
+            ],
+            [
+              80.43064804760998,
+              17.98566659857452
+            ],
+            [
+              80.41877354021891,
+              17.982651588680575
+            ],
+            [
+              80.42068530011035,
+              17.975122191511293
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_003",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.13,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Ganga Bai",
+        "family_members": 4,
+        "livelihood": "Mixed",
+        "submission_date": "2023-11-07",
+        "survey_number": "SY_854",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.60388897856706,
+              18.01380700156626
+            ],
+            [
+              80.6084407061886,
+              18.01342018004069
+            ],
+            [
+              80.60868501528549,
+              18.01629496438181
+            ],
+            [
+              80.60413328766394,
+              18.01668178590738
+            ],
+            [
+              80.60388897856706,
+              18.01380700156626
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_004",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.15,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Pushpa Bai",
+        "family_members": 8,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2025-05-20",
+        "survey_number": "SY_453",
+        "patta_issued": true,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.49574321734818,
+              17.909744509034322
+            ],
+            [
+              80.49865091677484,
+              17.910556952920533
+            ],
+            [
+              80.49727323682856,
+              17.91548760629598
+            ],
+            [
+              80.4943655374019,
+              17.914675162409768
+            ],
+            [
+              80.49574321734818,
+              17.909744509034322
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_005",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.59,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Kiran Kumar",
+        "family_members": 7,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2024-11-27",
+        "survey_number": "SY_222",
+        "patta_issued": true,
+        "cultivation_type": "Cotton",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.4606059188185,
+              17.978159355385934
+            ],
+            [
+              80.46589473072419,
+              17.980079875834377
+            ],
+            [
+              80.462328371917,
+              17.989901068279757
+            ],
+            [
+              80.45703956001131,
+              17.987980547831313
+            ],
+            [
+              80.4606059188185,
+              17.978159355385934
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_006",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.57,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Kiran Kumar",
+        "family_members": 5,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2024-09-13",
+        "survey_number": "SY_837",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.56376573267399,
+              18.01965999868401
+            ],
+            [
+              80.5700882948928,
+              18.01804558099398
+            ],
+            [
+              80.57225092365671,
+              18.02651510842821
+            ],
+            [
+              80.5659283614379,
+              18.02812952611824
+            ],
+            [
+              80.56376573267399,
+              18.01965999868401
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_007",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.14,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Gopal Singh",
+        "family_members": 7,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-05-13",
+        "survey_number": "SY_358",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.47376299393059,
+              18.00969101962779
+            ],
+            [
+              80.47785892436664,
+              18.010853698336014
+            ],
+            [
+              80.47698667454995,
+              18.013926494411802
+            ],
+            [
+              80.4728907441139,
+              18.01276381570358
+            ],
+            [
+              80.47376299393059,
+              18.00969101962779
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_008",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.59,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Pushpa Bai",
+        "family_members": 4,
+        "livelihood": "Mixed",
+        "submission_date": "2024-11-15",
+        "survey_number": "SY_637",
+        "patta_issued": true,
+        "cultivation_type": "Paddy",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.50596983556169,
+              17.892163890154883
+            ],
+            [
+              80.51213071544309,
+              17.89044681136331
+            ],
+            [
+              80.51460957287769,
+              17.899340953538207
+            ],
+            [
+              80.50844869299628,
+              17.90105803232978
+            ],
+            [
+              80.50596983556169,
+              17.892163890154883
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_009",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.71,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Pushpa Bai",
+        "family_members": 7,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-05-19",
+        "survey_number": "SY_559",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.58854552102943,
+              17.9948103372781
+            ],
+            [
+              80.5970562048024,
+              17.997175746985974
+            ],
+            [
+              80.59488910202802,
+              18.004972927472206
+            ],
+            [
+              80.58637841825505,
+              18.002607517764332
+            ],
+            [
+              80.58854552102943,
+              17.9948103372781
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_010",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 1.02,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Gopal Singh",
+        "family_members": 4,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2023-12-26",
+        "survey_number": "SY_584",
+        "patta_issued": true,
+        "cultivation_type": "Paddy",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.46769362870369,
+              18.076619698711184
+            ],
+            [
+              80.47797435409616,
+              18.072478815634078
+            ],
+            [
+              80.48142953759246,
+              18.081057129014248
+            ],
+            [
+              80.47114881219998,
+              18.085198012091354
+            ],
+            [
+              80.46769362870369,
+              18.076619698711184
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_011",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 1.13,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Kiran Kumar",
+        "family_members": 7,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-04-15",
+        "survey_number": "SY_703",
+        "patta_issued": false,
+        "cultivation_type": "Maize",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.62704700855676,
+              17.967773354851257
+            ],
+            [
+              80.63453374212645,
+              17.967501737536974
+            ],
+            [
+              80.63508051382962,
+              17.982572698958794
+            ],
+            [
+              80.62759378025993,
+              17.982844316273077
+            ],
+            [
+              80.62704700855676,
+              17.967773354851257
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_012",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.52,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Gopal Singh",
+        "family_members": 8,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-11-09",
+        "survey_number": "SY_275",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.57548889992782,
+              18.048530735148837
+            ],
+            [
+              80.58086459188776,
+              18.04933325429494
+            ],
+            [
+              80.57945115815511,
+              18.058801170904154
+            ],
+            [
+              80.57407546619517,
+              18.05799865175805
+            ],
+            [
+              80.57548889992782,
+              18.048530735148837
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_013",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.44,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Sita Devi",
+        "family_members": 3,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-01-04",
+        "survey_number": "SY_817",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.50074544897333,
+              18.065233355975668
+            ],
+            [
+              80.50922737699807,
+              18.06292295318115
+            ],
+            [
+              80.5105318472659,
+              18.06771191160362
+            ],
+            [
+              80.50204991924116,
+              18.070022314398138
+            ],
+            [
+              80.50074544897333,
+              18.065233355975668
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_014",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.42,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Ramesh Kumar",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2023-12-07",
+        "survey_number": "SY_898",
+        "patta_issued": true,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.55793779265039,
+              18.020766346075273
+            ],
+            [
+              80.56441196246074,
+              18.018595792712144
+            ],
+            [
+              80.56638129178003,
+              18.02446976597731
+            ],
+            [
+              80.55990712196969,
+              18.02664031934044
+            ],
+            [
+              80.55793779265039,
+              18.020766346075273
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_015",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 1.12,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Sita Devi",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-04-08",
+        "survey_number": "SY_966",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.48511957071374,
+              18.067222992441188
+            ],
+            [
+              80.49503399337821,
+              18.068879896805605
+            ],
+            [
+              80.49319686337942,
+              18.079872736035675
+            ],
+            [
+              80.48328244071494,
+              18.07821583167126
+            ],
+            [
+              80.48511957071374,
+              18.067222992441188
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_016",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.7,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Sita Devi",
+        "family_members": 4,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-06-17",
+        "survey_number": "SY_188",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.49125765474369,
+              18.043597329572698
+            ],
+            [
+              80.49809109338048,
+              18.046371810685102
+            ],
+            [
+              80.49451474376451,
+              18.055180220133295
+            ],
+            [
+              80.48768130512772,
+              18.05240573902089
+            ],
+            [
+              80.49125765474369,
+              18.043597329572698
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_017",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.85,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Suresh Kumar",
+        "family_members": 7,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2025-01-05",
+        "survey_number": "SY_935",
+        "patta_issued": false,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.62458018317842,
+              17.92962226100633
+            ],
+            [
+              80.63106210696039,
+              17.930868216906035
+            ],
+            [
+              80.62863981399504,
+              17.943469881525687
+            ],
+            [
+              80.62215789021307,
+              17.94222392562598
+            ],
+            [
+              80.62458018317842,
+              17.92962226100633
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_018",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.51,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Anita Devi",
+        "family_members": 4,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-08-20",
+        "survey_number": "SY_760",
+        "patta_issued": false,
+        "cultivation_type": "Paddy",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.50712232998896,
+              18.01604408544535
+            ],
+            [
+              80.5154239680808,
+              18.018198803999613
+            ],
+            [
+              80.51394380137143,
+              18.023901548013427
+            ],
+            [
+              80.50564216327959,
+              18.021746829459165
+            ],
+            [
+              80.50712232998896,
+              18.01604408544535
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_019",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.47,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Anita Devi",
+        "family_members": 8,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-04-08",
+        "survey_number": "SY_161",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.56287622287614,
+              17.879660329646107
+            ],
+            [
+              80.5718331624389,
+              17.881560147730546
+            ],
+            [
+              80.57076443566432,
+              17.88659879917168
+            ],
+            [
+              80.56180749610155,
+              17.88469898108724
+            ],
+            [
+              80.56287622287614,
+              17.879660329646107
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_020",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 1.11,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Lakshman Singh",
+        "family_members": 4,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-04-08",
+        "survey_number": "SY_996",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.46462496938857,
+              17.95312874826551
+            ],
+            [
+              80.47222282701128,
+              17.95236267594174
+            ],
+            [
+              80.47368357120403,
+              17.96685024592097
+            ],
+            [
+              80.46608571358132,
+              17.96761631824474
+            ],
+            [
+              80.46462496938857,
+              17.95312874826551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_021",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 1.11,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Kamala Devi",
+        "family_members": 6,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2023-11-18",
+        "survey_number": "SY_847",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.4933883476598,
+              17.967913800030274
+            ],
+            [
+              80.50097877387132,
+              17.970667914859167
+            ],
+            [
+              80.49628109892215,
+              17.98361485327049
+            ],
+            [
+              80.48869067271063,
+              17.980860738441596
+            ],
+            [
+              80.4933883476598,
+              17.967913800030274
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_022",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.68,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "household_head": "Anita Devi",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-07-06",
+        "survey_number": "SY_778",
+        "patta_issued": false,
+        "cultivation_type": "Paddy",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.61846811648562,
+              17.998505727469748
+            ],
+            [
+              80.62493184393954,
+              17.999637905421608
+            ],
+            [
+              80.62314040328687,
+              18.009865435563555
+            ],
+            [
+              80.61667667583295,
+              18.008733257611695
+            ],
+            [
+              80.61846811648562,
+              17.998505727469748
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_023",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 1.17,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Koya",
+        "household_head": "Ramesh Kumar",
+        "family_members": 7,
+        "livelihood": "Mixed",
+        "submission_date": "2024-07-30",
+        "survey_number": "SY_976",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.59462493508354,
+              18.030968050182757
+            ],
+            [
+              80.60433409047204,
+              18.029853436947125
+            ],
+            [
+              80.60569667869404,
+              18.04172264893485
+            ],
+            [
+              80.59598752330555,
+              18.042837262170483
+            ],
+            [
+              80.59462493508354,
+              18.030968050182757
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_KHA_024",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 0.22,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "household_head": "Ravi Rao",
+        "family_members": 4,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-06-12",
+        "survey_number": "SY_971",
+        "patta_issued": true,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.5745354123871,
+              17.941569055740654
+            ],
+            [
+              80.57945006610223,
+              17.943216750146846
+            ],
+            [
+              80.57808482691486,
+              17.947288911719387
+            ],
+            [
+              80.57317017319974,
+              17.945641217313195
+            ],
+            [
+              80.5745354123871,
+              17.941569055740654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_KHA_001",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Grazing Ground",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 4.87,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "beneficiary_households": 58,
+        "usage_pattern": "Seasonal",
+        "traditional_use": true,
+        "community_management": true,
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.40879670059347,
+              18.032422861464802
+            ],
+            [
+              80.41933957145814,
+              18.028900767217394
+            ],
+            [
+              80.41983041587815,
+              18.01835789635273
+            ],
+            [
+              80.41930754291975,
+              18.007847054026442
+            ],
+            [
+              80.40879670059347,
+              18.00540537526701
+            ],
+            [
+              80.4013086690789,
+              18.01086986483816
+            ],
+            [
+              80.39366552602714,
+              18.01835789635273
+            ],
+            [
+              80.39787350406998,
+              18.029281092876214
+            ],
+            [
+              80.40879670059347,
+              18.032422861464802
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_KHA_002",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Sacred Grove",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 13.66,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "beneficiary_households": 62,
+        "usage_pattern": "Seasonal",
+        "traditional_use": false,
+        "community_management": true,
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.60976387907617,
+              17.98080545710226
+            ],
+            [
+              80.62824604931161,
+              17.974873147975824
+            ],
+            [
+              80.62532356215989,
+              17.956582712916823
+            ],
+            [
+              80.61797894275864,
+              17.9430753535334
+            ],
+            [
+              80.60278589507853,
+              17.945644175968212
+            ],
+            [
+              80.58764701368841,
+              17.95508607884554
+            ],
+            [
+              80.59555429434953,
+              17.97146587473083
+            ],
+            [
+              80.60976387907617,
+              17.98080545710226
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_KHA_003",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "NTFP Collection Area",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 11.37,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Koya",
+        "beneficiary_households": 54,
+        "usage_pattern": "Year-round",
+        "traditional_use": true,
+        "community_management": true,
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.5642225411313,
+              18.10143392858481
+            ],
+            [
+              80.57659177356253,
+              18.097203209404174
+            ],
+            [
+              80.58860464994784,
+              18.084833976972952
+            ],
+            [
+              80.57544221335718,
+              18.07361430474707
+            ],
+            [
+              80.5642225411313,
+              18.060418209072235
+            ],
+            [
+              80.55000754924053,
+              18.07061898508219
+            ],
+            [
+              80.55029751846355,
+              18.084833976972952
+            ],
+            [
+              80.54706118706456,
+              18.101995331039703
+            ],
+            [
+              80.5642225411313,
+              18.10143392858481
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_KHA_004",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Grazing Ground",
+        "village": "Bhimaguda",
+        "district": "Khammam",
+        "state": "Telangana",
+        "area_claimed": 10.9,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Koya",
+        "beneficiary_households": 45,
+        "usage_pattern": "Occasional",
+        "traditional_use": true,
+        "community_management": true,
+        "forest_location": "Eastern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.54269504153099,
+              18.00902186216377
+            ],
+            [
+              80.55553140318331,
+              17.996221432015258
+            ],
+            [
+              80.55611730495653,
+              17.98106100775801
+            ],
+            [
+              80.54269504153099,
+              17.970689807268617
+            ],
+            [
+              80.53013888346675,
+              17.9815610539215
+            ],
+            [
+              80.52950682293715,
+              17.99642457671516
+            ],
+            [
+              80.54269504153099,
+              18.00902186216377
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CFR_TG_ADI_NOR",
+        "claim_type": "CFR",
+        "fra_type": "Community Forest Resource Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 227.93,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "gram_sabha": "Ganganagar Gram Sabha",
+        "total_households": 123,
+        "forest_committee_formed": true,
+        "management_plan": "Prepared",
+        "submission_date": "2024-12-18",
+        "forest_type": "Scrub Forest",
+        "forest_location": "Northern_Forest",
+        "base_coordinates": "19.16, 79.11"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.08068868534829,
+              19.28041328560153
+            ],
+            [
+              79.12318478814569,
+              19.238120531769138
+            ],
+            [
+              79.18341188586247,
+              19.205588520384456
+            ],
+            [
+              79.16016037591946,
+              19.14159264664486
+            ],
+            [
+              79.10490461880275,
+              19.120942918231933
+            ],
+            [
+              79.04499937916812,
+              19.089420085743033
+            ],
+            [
+              78.98811801352537,
+              19.134029946293047
+            ],
+            [
+              79.01613124601259,
+              19.198858866949415
+            ],
+            [
+              79.03988877896846,
+              19.236099083594755
+            ],
+            [
+              79.08068868534829,
+              19.28041328560153
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_001",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.15,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Radha Bai",
+        "family_members": 7,
+        "livelihood": "Agriculture",
+        "submission_date": "2023-10-14",
+        "survey_number": "SY_833",
+        "patta_issued": false,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.01721797858876,
+              19.142995338492305
+            ],
+            [
+              79.02220747123194,
+              19.143495260741233
+            ],
+            [
+              79.02190375238196,
+              19.14652653804645
+            ],
+            [
+              79.01691425973878,
+              19.146026615797524
+            ],
+            [
+              79.01721797858876,
+              19.142995338492305
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_002",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.75,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Ravi Rao",
+        "family_members": 7,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2023-11-05",
+        "survey_number": "SY_708",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.1232156530519,
+              19.192553462949373
+            ],
+            [
+              79.13373933925473,
+              19.19334459248183
+            ],
+            [
+              79.13320693170247,
+              19.200426732361702
+            ],
+            [
+              79.12268324549964,
+              19.199635602829247
+            ],
+            [
+              79.1232156530519,
+              19.192553462949373
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_003",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.28,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Gopal Singh",
+        "family_members": 7,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2025-06-12",
+        "survey_number": "SY_867",
+        "patta_issued": true,
+        "cultivation_type": "Paddy",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.13808835936675,
+              19.166392710088893
+            ],
+            [
+              79.14155820824567,
+              19.167371694424546
+            ],
+            [
+              79.13946760896863,
+              19.174781479539106
+            ],
+            [
+              79.13599776008971,
+              19.173802495203454
+            ],
+            [
+              79.13808835936675,
+              19.166392710088893
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_004",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.37,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Chenchu",
+        "household_head": "Ganga Bai",
+        "family_members": 7,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-05-20",
+        "survey_number": "SY_145",
+        "patta_issued": false,
+        "cultivation_type": "Maize",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.0968455459706,
+              19.14215440810357
+            ],
+            [
+              79.10428343757901,
+              19.14018943843266
+            ],
+            [
+              79.105509564374,
+              19.144830628744298
+            ],
+            [
+              79.09807167276558,
+              19.146795598415206
+            ],
+            [
+              79.0968455459706,
+              19.14215440810357
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_005",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.4,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Radha Bai",
+        "family_members": 6,
+        "livelihood": "Mixed",
+        "submission_date": "2025-01-07",
+        "survey_number": "SY_847",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.05424618045787,
+              19.23480719281502
+            ],
+            [
+              79.0605563224149,
+              19.236516354052416
+            ],
+            [
+              79.0589624116934,
+              19.242400996589005
+            ],
+            [
+              79.05265226973637,
+              19.24069183535161
+            ],
+            [
+              79.05424618045787,
+              19.23480719281502
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_006",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.35,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Sita Devi",
+        "family_members": 3,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-11-29",
+        "survey_number": "SY_874",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.09755845063314,
+              19.139695462984793
+            ],
+            [
+              79.10216470570411,
+              19.13866369384988
+            ],
+            [
+              79.10378351977438,
+              19.14589076652322
+            ],
+            [
+              79.09917726470341,
+              19.14692253565813
+            ],
+            [
+              79.09755845063314,
+              19.139695462984793
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_007",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.12,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Chenchu",
+        "household_head": "Anita Devi",
+        "family_members": 8,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-12-17",
+        "survey_number": "SY_676",
+        "patta_issued": true,
+        "cultivation_type": "Paddy",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.99726373292505,
+              19.13592775323229
+            ],
+            [
+              79.00129608292605,
+              19.136417452705928
+            ],
+            [
+              79.0009430293144,
+              19.1393246147674
+            ],
+            [
+              78.9969106793134,
+              19.138834915293764
+            ],
+            [
+              78.99726373292505,
+              19.13592775323229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_008",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.32,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Anita Devi",
+        "family_members": 7,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-09-19",
+        "survey_number": "SY_362",
+        "patta_issued": true,
+        "cultivation_type": "Paddy",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.09965272954612,
+              19.206143827829646
+            ],
+            [
+              79.10552363630799,
+              19.20671467733671
+            ],
+            [
+              79.10499581020561,
+              19.21214310951581
+            ],
+            [
+              79.09912490344374,
+              19.211572260008747
+            ],
+            [
+              79.09965272954612,
+              19.206143827829646
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_009",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 1.16,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Chenchu",
+        "household_head": "Anita Devi",
+        "family_members": 7,
+        "livelihood": "Mixed",
+        "submission_date": "2025-04-09",
+        "survey_number": "SY_762",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.13223633660763,
+              19.141751474610505
+            ],
+            [
+              79.14086633116719,
+              19.138686442583815
+            ],
+            [
+              79.14510326549797,
+              19.150616079829188
+            ],
+            [
+              79.13647327093841,
+              19.153681111855878
+            ],
+            [
+              79.13223633660763,
+              19.141751474610505
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_010",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.24,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "household_head": "Suresh Kumar",
+        "family_members": 4,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-01-05",
+        "survey_number": "SY_723",
+        "patta_issued": true,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.08694176571689,
+              19.14321487821399
+            ],
+            [
+              79.09157521238618,
+              19.14484405995957
+            ],
+            [
+              79.08998401438305,
+              19.14936947961133
+            ],
+            [
+              79.08535056771376,
+              19.14774029786575
+            ],
+            [
+              79.08694176571689,
+              19.14321487821399
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_011",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.91,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "household_head": "Kiran Kumar",
+        "family_members": 6,
+        "livelihood": "Mixed",
+        "submission_date": "2024-07-04",
+        "survey_number": "SY_888",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.13718290811596,
+              19.19654185431724
+            ],
+            [
+              79.14673302790118,
+              19.19287444080859
+            ],
+            [
+              79.14991510883732,
+              19.20116073141496
+            ],
+            [
+              79.1403649890521,
+              19.204828144923606
+            ],
+            [
+              79.13718290811596,
+              19.19654185431724
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_012",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.92,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "household_head": "Kiran Kumar",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-07-12",
+        "survey_number": "SY_841",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.0496436406428,
+              19.151038182659764
+            ],
+            [
+              79.05619856984991,
+              19.152134068779176
+            ],
+            [
+              79.05391230949142,
+              19.165809098085166
+            ],
+            [
+              79.04735738028431,
+              19.164713211965754
+            ],
+            [
+              79.0496436406428,
+              19.151038182659764
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_013",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.33,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "household_head": "Ganga Bai",
+        "family_members": 8,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2023-10-15",
+        "survey_number": "SY_876",
+        "patta_issued": true,
+        "cultivation_type": "Cotton",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.11685726413485,
+              19.196255232013403
+            ],
+            [
+              79.12200470287729,
+              19.195227389964092
+            ],
+            [
+              79.12322488734405,
+              19.20133808061094
+            ],
+            [
+              79.11807744860161,
+              19.202365922660253
+            ],
+            [
+              79.11685726413485,
+              19.196255232013403
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_014",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.35,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Chenchu",
+        "household_head": "Lakshman Singh",
+        "family_members": 6,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-05-11",
+        "survey_number": "SY_113",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.03461945043897,
+              19.218995903614733
+            ],
+            [
+              79.04177414255332,
+              19.218073309572404
+            ],
+            [
+              79.04239179571663,
+              19.222863193328507
+            ],
+            [
+              79.03523710360227,
+              19.223785787370836
+            ],
+            [
+              79.03461945043897,
+              19.218995903614733
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_015",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.7,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "household_head": "Anita Devi",
+        "family_members": 4,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2025-04-27",
+        "survey_number": "SY_124",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.12371567584806,
+              19.18121531413433
+            ],
+            [
+              79.1319419720234,
+              19.17950473904087
+            ],
+            [
+              79.13363722755962,
+              19.187657362206654
+            ],
+            [
+              79.12541093138428,
+              19.189367937300116
+            ],
+            [
+              79.12371567584806,
+              19.18121531413433
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_016",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 1.03,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "household_head": "Radha Bai",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-12-20",
+        "survey_number": "SY_477",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.04309212094475,
+              19.237826285220006
+            ],
+            [
+              79.05723030675414,
+              19.238116418736308
+            ],
+            [
+              79.05708061820965,
+              19.245410730962814
+            ],
+            [
+              79.04294243240027,
+              19.245120597446512
+            ],
+            [
+              79.04309212094475,
+              19.237826285220006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_ADI_017",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 0.83,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "household_head": "Ramesh Kumar",
+        "family_members": 6,
+        "livelihood": "Mixed",
+        "submission_date": "2025-07-21",
+        "survey_number": "SY_681",
+        "patta_issued": true,
+        "cultivation_type": "Cotton",
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.05104944464408,
+              19.11319994281362
+            ],
+            [
+              79.06292625944147,
+              19.112910269077975
+            ],
+            [
+              79.06309613672924,
+              19.119875350260518
+            ],
+            [
+              79.05121932193185,
+              19.12016502399616
+            ],
+            [
+              79.05104944464408,
+              19.11319994281362
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_ADI_001",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Sacred Grove",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 9.45,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "beneficiary_households": 24,
+        "usage_pattern": "Seasonal",
+        "traditional_use": false,
+        "community_management": true,
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.00248679320639,
+              19.17891348996536
+            ],
+            [
+              79.01930222228738,
+              19.174875283527847
+            ],
+            [
+              79.01928114237279,
+              19.155470669009308
+            ],
+            [
+              79.00248679320639,
+              19.149636383774034
+            ],
+            [
+              78.98581566596683,
+              19.155541811221944
+            ],
+            [
+              78.98718911027247,
+              19.17399901238128
+            ],
+            [
+              79.00248679320639,
+              19.17891348996536
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_ADI_002",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Community Water Source",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 9.29,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Chenchu",
+        "beneficiary_households": 28,
+        "usage_pattern": "Occasional",
+        "traditional_use": true,
+        "community_management": true,
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.07696661723125,
+              19.27557197667673
+            ],
+            [
+              79.08928812497658,
+              19.266164354451636
+            ],
+            [
+              79.09412830375655,
+              19.253842846706316
+            ],
+            [
+              79.09033227244822,
+              19.240477191489344
+            ],
+            [
+              79.07696661723125,
+              19.239735353115687
+            ],
+            [
+              79.0669176261533,
+              19.24379385562837
+            ],
+            [
+              79.06282387093523,
+              19.253842846706316
+            ],
+            [
+              79.06322886311547,
+              19.26758060082209
+            ],
+            [
+              79.07696661723125,
+              19.27557197667673
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_ADI_003",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Community Water Source",
+        "village": "Ganganagar",
+        "district": "Adilabad",
+        "state": "Telangana",
+        "area_claimed": 8.64,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Chenchu",
+        "beneficiary_households": 44,
+        "usage_pattern": "Occasional",
+        "traditional_use": false,
+        "community_management": true,
+        "forest_location": "Northern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.08657269806278,
+              19.25516508143081
+            ],
+            [
+              79.09570035070278,
+              19.246710273029304
+            ],
+            [
+              79.0982826938798,
+              19.23675848281557
+            ],
+            [
+              79.09302020024826,
+              19.226042836703346
+            ],
+            [
+              79.0807408515343,
+              19.227321258848022
+            ],
+            [
+              79.06593089959756,
+              19.234719857146576
+            ],
+            [
+              79.07472532226512,
+              19.24887917987266
+            ],
+            [
+              79.08657269806278,
+              19.25516508143081
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CFR_TG_MAH_SOU",
+        "claim_type": "CFR",
+        "fra_type": "Community Forest Resource Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 467.22,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "gram_sabha": "Venkateguda Gram Sabha",
+        "total_households": 60,
+        "forest_committee_formed": false,
+        "management_plan": "Prepared",
+        "submission_date": "2025-03-24",
+        "forest_type": "Moist Deciduous",
+        "forest_location": "Southern_Forest",
+        "base_coordinates": "16.15, 78.72"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.70394794342381,
+              16.29389136703471
+            ],
+            [
+              78.76704282281493,
+              16.243791222314467
+            ],
+            [
+              78.83082018370006,
+              16.180696342923348
+            ],
+            [
+              78.79446582671228,
+              16.090178459634878
+            ],
+            [
+              78.70394794342381,
+              16.073230721642723
+            ],
+            [
+              78.5970159126063,
+              16.073764312105826
+            ],
+            [
+              78.5532766817876,
+              16.180696342923348
+            ],
+            [
+              78.63178916627903,
+              16.252855120068133
+            ],
+            [
+              78.70394794342381,
+              16.29389136703471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_001",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.31,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "household_head": "Anita Devi",
+        "family_members": 7,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2023-10-23",
+        "survey_number": "SY_968",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.74581490267968,
+              16.20259215870062
+            ],
+            [
+              78.75171811048168,
+              16.200429368584494
+            ],
+            [
+              78.7534293768669,
+              16.205100169047864
+            ],
+            [
+              78.74752616906491,
+              16.20726295916399
+            ],
+            [
+              78.74581490267968,
+              16.20259215870062
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_002",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.23,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Yerukala",
+        "household_head": "Radha Bai",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-05-12",
+        "survey_number": "SY_526",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.70788566939594,
+              16.11118062923459
+            ],
+            [
+              78.71178178305476,
+              16.112755615180166
+            ],
+            [
+              78.70972444982372,
+              16.117844933040246
+            ],
+            [
+              78.7058283361649,
+              16.11626994709467
+            ],
+            [
+              78.70788566939594,
+              16.11118062923459
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_003",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.74,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Suresh Kumar",
+        "family_members": 3,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2025-08-11",
+        "survey_number": "SY_508",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.79135902569945,
+              16.15224173489284
+            ],
+            [
+              78.80108219032086,
+              16.15297548025104
+            ],
+            [
+              78.80051307316427,
+              16.160517088167907
+            ],
+            [
+              78.79078990854286,
+              16.159783342809707
+            ],
+            [
+              78.79135902569945,
+              16.15224173489284
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_004",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.31,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Ravi Rao",
+        "family_members": 7,
+        "livelihood": "Mixed",
+        "submission_date": "2023-10-20",
+        "survey_number": "SY_183",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.72111055450422,
+              16.18402700124897
+            ],
+            [
+              78.72774265074904,
+              16.18662652023964
+            ],
+            [
+              78.72615873700614,
+              16.19066752491166
+            ],
+            [
+              78.71952664076133,
+              16.188068005920993
+            ],
+            [
+              78.72111055450422,
+              16.18402700124897
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_005",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.31,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Suresh Kumar",
+        "family_members": 5,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-07-18",
+        "survey_number": "SY_118",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.61311949289409,
+              16.18311761179897
+            ],
+            [
+              78.61896298975455,
+              16.185115533063293
+            ],
+            [
+              78.61733059601308,
+              16.18988993927924
+            ],
+            [
+              78.61148709915261,
+              16.187892018014917
+            ],
+            [
+              78.61311949289409,
+              16.18311761179897
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_006",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 1.04,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "household_head": "Kamala Devi",
+        "family_members": 8,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-01-09",
+        "survey_number": "SY_863",
+        "patta_issued": true,
+        "cultivation_type": "Cotton",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.78474554417339,
+              16.17508940709076
+            ],
+            [
+              78.79342939104019,
+              16.172986167456035
+            ],
+            [
+              78.79617379384565,
+              16.18431724609779
+            ],
+            [
+              78.78748994697885,
+              16.186420485732516
+            ],
+            [
+              78.78474554417339,
+              16.17508940709076
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_007",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.37,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Yerukala",
+        "household_head": "Kiran Kumar",
+        "family_members": 6,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-05-09",
+        "survey_number": "SY_358",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.66203260660684,
+              16.11606526141169
+            ],
+            [
+              78.66990994068574,
+              16.11723206872166
+            ],
+            [
+              78.66922467647329,
+              16.12185841540942
+            ],
+            [
+              78.6613473423944,
+              16.120691608099452
+            ],
+            [
+              78.66203260660684,
+              16.11606526141169
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_008",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 1.0,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Kamala Devi",
+        "family_members": 6,
+        "livelihood": "Mixed",
+        "submission_date": "2025-03-10",
+        "survey_number": "SY_235",
+        "patta_issued": false,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.75538272470435,
+              16.226966223133605
+            ],
+            [
+              78.76224694306315,
+              16.226537070077054
+            ],
+            [
+              78.76315566014146,
+              16.241071820224388
+            ],
+            [
+              78.75629144178266,
+              16.24150097328094
+            ],
+            [
+              78.75538272470435,
+              16.226966223133605
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_009",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.29,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "household_head": "Gopal Singh",
+        "family_members": 4,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-06-20",
+        "survey_number": "SY_358",
+        "patta_issued": false,
+        "cultivation_type": "Cotton",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.7149536576663,
+              16.11341464327904
+            ],
+            [
+              78.71904185158034,
+              16.112234659168703
+            ],
+            [
+              78.72096330828167,
+              16.118891772195585
+            ],
+            [
+              78.71687511436762,
+              16.120071756305922
+            ],
+            [
+              78.7149536576663,
+              16.11341464327904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_010",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 1.07,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Ravi Rao",
+        "family_members": 7,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2024-07-08",
+        "survey_number": "SY_750",
+        "patta_issued": true,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.72260203327953,
+              16.178896086887608
+            ],
+            [
+              78.73386922363179,
+              16.182889326056593
+            ],
+            [
+              78.73086782950459,
+              16.191357959544884
+            ],
+            [
+              78.71960063915233,
+              16.1873647203759
+            ],
+            [
+              78.72260203327953,
+              16.178896086887608
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_011",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.91,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Pushpa Bai",
+        "family_members": 4,
+        "livelihood": "Mixed",
+        "submission_date": "2025-07-23",
+        "survey_number": "SY_894",
+        "patta_issued": true,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.74883973640738,
+              16.18496917847436
+            ],
+            [
+              78.75659352723905,
+              16.186167072754863
+            ],
+            [
+              78.75482041253213,
+              16.197644179526137
+            ],
+            [
+              78.74706662170045,
+              16.196446285245635
+            ],
+            [
+              78.74883973640738,
+              16.18496917847436
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_012",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.4,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "household_head": "Ravi Rao",
+        "family_members": 7,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-12-24",
+        "survey_number": "SY_155",
+        "patta_issued": true,
+        "cultivation_type": "Paddy",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.65928019389547,
+              16.140639616955422
+            ],
+            [
+              78.66386004432556,
+              16.13911041724995
+            ],
+            [
+              78.66646114381207,
+              16.14690053554477
+            ],
+            [
+              78.66188129338198,
+              16.148429735250243
+            ],
+            [
+              78.65928019389547,
+              16.140639616955422
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_013",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 1.15,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Yerukala",
+        "household_head": "Kamala Devi",
+        "family_members": 3,
+        "livelihood": "Animal Husbandry",
+        "submission_date": "2024-05-12",
+        "survey_number": "SY_806",
+        "patta_issued": false,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.68293368630833,
+              16.111875682087067
+            ],
+            [
+              78.69493344381482,
+              16.115778798163287
+            ],
+            [
+              78.692120268672,
+              16.124427636393555
+            ],
+            [
+              78.68012051116551,
+              16.120524520317336
+            ],
+            [
+              78.68293368630833,
+              16.111875682087067
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_014",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.94,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Yerukala",
+        "household_head": "Pushpa Bai",
+        "family_members": 7,
+        "livelihood": "Agriculture",
+        "submission_date": "2025-07-12",
+        "survey_number": "SY_400",
+        "patta_issued": false,
+        "cultivation_type": "Paddy",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.68614605829352,
+              16.08107103641741
+            ],
+            [
+              78.69822852341107,
+              16.076551995290796
+            ],
+            [
+              78.70078477140636,
+              16.08338658173724
+            ],
+            [
+              78.6887023062888,
+              16.087905622863854
+            ],
+            [
+              78.68614605829352,
+              16.08107103641741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_015",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.36,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "household_head": "Anita Devi",
+        "family_members": 6,
+        "livelihood": "NTFP Collection",
+        "submission_date": "2025-06-17",
+        "survey_number": "SY_587",
+        "patta_issued": true,
+        "cultivation_type": "Mixed Crops",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.77112084138147,
+              16.224644560252706
+            ],
+            [
+              78.77578409296375,
+              16.223758377007133
+            ],
+            [
+              78.77720516111663,
+              16.23123628673462
+            ],
+            [
+              78.77254190953435,
+              16.232122469980194
+            ],
+            [
+              78.77112084138147,
+              16.224644560252706
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_016",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.46,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Yerukala",
+        "household_head": "Suresh Kumar",
+        "family_members": 5,
+        "livelihood": "Agriculture",
+        "submission_date": "2024-01-07",
+        "survey_number": "SY_523",
+        "patta_issued": false,
+        "cultivation_type": "Vegetables",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.71766059265708,
+              16.272612862125992
+            ],
+            [
+              78.72296153993155,
+              16.27387189274327
+            ],
+            [
+              78.72099504968132,
+              16.28215148578032
+            ],
+            [
+              78.71569410240686,
+              16.280892455163045
+            ],
+            [
+              78.71766059265708,
+              16.272612862125992
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "IFR_TG_MAH_017",
+        "claim_type": "IFR",
+        "fra_type": "Individual Forest Rights",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 0.64,
+        "area_unit": "hectares",
+        "status": "Under Review",
+        "tribal_community": "Yerukala",
+        "household_head": "Gopal Singh",
+        "family_members": 5,
+        "livelihood": "Mixed",
+        "submission_date": "2024-04-10",
+        "survey_number": "SY_741",
+        "patta_issued": true,
+        "cultivation_type": "Maize",
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.58717324551323,
+              16.089458786281607
+            ],
+            [
+              78.59657704037572,
+              16.092236047589978
+            ],
+            [
+              78.5947261281455,
+              16.098503228452284
+            ],
+            [
+              78.585322333283,
+              16.095725967143913
+            ],
+            [
+              78.58717324551323,
+              16.089458786281607
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_MAH_001",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Community Water Source",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 9.07,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "beneficiary_households": 64,
+        "usage_pattern": "Year-round",
+        "traditional_use": false,
+        "community_management": true,
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5689174200889,
+              16.198589092564433
+            ],
+            [
+              78.57813680474476,
+              16.189835540705992
+            ],
+            [
+              78.58357678814058,
+              16.181909263762105
+            ],
+            [
+              78.58466384416177,
+              16.172029823021273
+            ],
+            [
+              78.57802043099291,
+              16.164616926717652
+            ],
+            [
+              78.5689174200889,
+              16.15638922829433
+            ],
+            [
+              78.5604098258429,
+              16.165436447440893
+            ],
+            [
+              78.55196924139196,
+              16.171639349273878
+            ],
+            [
+              78.55161800495465,
+              16.18276706705821
+            ],
+            [
+              78.55780436645004,
+              16.19244195245752
+            ],
+            [
+              78.5689174200889,
+              16.198589092564433
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_MAH_002",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Community Water Source",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 10.89,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "beneficiary_households": 68,
+        "usage_pattern": "Year-round",
+        "traditional_use": false,
+        "community_management": true,
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.60223819683829,
+              16.236198480554723
+            ],
+            [
+              78.6124580922021,
+              16.227167575241914
+            ],
+            [
+              78.61668451646133,
+              16.215720202469196
+            ],
+            [
+              78.60903252069832,
+              16.20490892178149
+            ],
+            [
+              78.59619956195986,
+              16.206478126120974
+            ],
+            [
+              78.58339672003137,
+              16.21471703652306
+            ],
+            [
+              78.58450963999192,
+              16.233155532960375
+            ],
+            [
+              78.60223819683829,
+              16.236198480554723
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_MAH_003",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Sacred Grove",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 11.5,
+        "area_unit": "hectares",
+        "status": "Pending",
+        "tribal_community": "Yerukala",
+        "beneficiary_households": 70,
+        "usage_pattern": "Seasonal",
+        "traditional_use": true,
+        "community_management": true,
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.62096678345866,
+              16.19529691380288
+            ],
+            [
+              78.63132189918697,
+              16.185773866005402
+            ],
+            [
+              78.64320604255511,
+              16.177354501044128
+            ],
+            [
+              78.63385610521054,
+              16.165991466251338
+            ],
+            [
+              78.62944833442864,
+              16.150130249862457
+            ],
+            [
+              78.61253991509273,
+              16.150280489082338
+            ],
+            [
+              78.60916496947503,
+              16.16661933915408
+            ],
+            [
+              78.59846206371981,
+              16.1774013089177
+            ],
+            [
+              78.61048081609317,
+              16.1859298089141
+            ],
+            [
+              78.62096678345866,
+              16.19529691380288
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_id": "CR_TG_MAH_004",
+        "claim_type": "CR",
+        "fra_type": "Community Rights",
+        "resource_type": "Sacred Grove",
+        "village": "Venkateguda",
+        "district": "Mahbubnagar",
+        "state": "Telangana",
+        "area_claimed": 10.08,
+        "area_unit": "hectares",
+        "status": "Approved",
+        "tribal_community": "Yerukala",
+        "beneficiary_households": 42,
+        "usage_pattern": "Year-round",
+        "traditional_use": true,
+        "community_management": true,
+        "forest_location": "Southern_Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.77127371868976,
+              16.17006054282409
+            ],
+            [
+              78.78320587287364,
+              16.15916596982453
+            ],
+            [
+              78.78383749699867,
+              16.145023236605766
+            ],
+            [
+              78.77127371868976,
+              16.13169621019082
+            ],
+            [
+              78.75797371124663,
+              16.144598174516943
+            ],
+            [
+              78.75691367534866,
+              16.160567712283015
+            ],
+            [
+              78.77127371868976,
+              16.17006054282409
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

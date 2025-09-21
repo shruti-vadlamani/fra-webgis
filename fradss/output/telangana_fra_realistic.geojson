@@ -1,0 +1,3707 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_000",
+        "tribal_community": "Chenchu",
+        "village": "Adilabad Village 1",
+        "district": "Adilabad",
+        "claim_area_ha": 606.57,
+        "community_size": 22,
+        "status": "Under Review",
+        "forest_dependence": "very_high",
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.11395303961129,
+              19.118112965637867
+            ],
+            [
+              79.13182824420326,
+              19.113779414915793
+            ],
+            [
+              79.13745693624146,
+              19.09590421032382
+            ],
+            [
+              79.1295996392085,
+              19.080257610726612
+            ],
+            [
+              79.11395303961129,
+              19.071595182241275
+            ],
+            [
+              79.10269627914245,
+              19.084647449854973
+            ],
+            [
+              79.09627607172415,
+              19.09590421032382
+            ],
+            [
+              79.09439099486758,
+              19.115466255067524
+            ],
+            [
+              79.11395303961129,
+              19.118112965637867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_001",
+        "tribal_community": "Gond",
+        "village": "Adilabad Village 2",
+        "district": "Adilabad",
+        "claim_area_ha": 1340.18,
+        "community_size": 154,
+        "status": "Under Review",
+        "forest_dependence": "high",
+        "year_claimed": 2017
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.04702447845567,
+              19.289479885879725
+            ],
+            [
+              79.07066903095657,
+              19.280382932481945
+            ],
+            [
+              79.07016599308992,
+              19.256245131367674
+            ],
+            [
+              79.06267958558463,
+              19.229018866151524
+            ],
+            [
+              79.03397324811507,
+              19.2344258720166
+            ],
+            [
+              79.0213220018906,
+              19.255660608518802
+            ],
+            [
+              79.01561522528549,
+              19.286575074638332
+            ],
+            [
+              79.04702447845567,
+              19.289479885879725
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_002",
+        "tribal_community": "Koya",
+        "village": "Asifabad Village 1",
+        "district": "Adilabad",
+        "claim_area_ha": 1261.81,
+        "community_size": 145,
+        "status": "Under Review",
+        "forest_dependence": "high",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.27641341087622,
+              19.194791581827715
+            ],
+            [
+              79.30374128751508,
+              19.192459090041574
+            ],
+            [
+              79.30174602462317,
+              19.165131213402717
+            ],
+            [
+              79.29675967124817,
+              19.14478495303077
+            ],
+            [
+              79.27641341087622,
+              19.134652403913258
+            ],
+            [
+              79.24917375997393,
+              19.137891562500425
+            ],
+            [
+              79.24726420052184,
+              19.165131213402717
+            ],
+            [
+              79.259903653527,
+              19.181640970751925
+            ],
+            [
+              79.27641341087622,
+              19.194791581827715
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_003",
+        "tribal_community": "Yerukula",
+        "village": "Kagaznagar Village 1",
+        "district": "Adilabad",
+        "claim_area_ha": 1295.2,
+        "community_size": 41,
+        "status": "Pending",
+        "forest_dependence": "high",
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.45074018853589,
+              19.067094411026595
+            ],
+            [
+              79.47374863007785,
+              19.06177182429955
+            ],
+            [
+              79.48525552502693,
+              19.038763382757597
+            ],
+            [
+              79.47001032293868,
+              19.019493248354816
+            ],
+            [
+              79.45074018853589,
+              19.012246061754396
+            ],
+            [
+              79.42216535787774,
+              19.01018855209945
+            ],
+            [
+              79.41060503639487,
+              19.038763382757597
+            ],
+            [
+              79.43061035408067,
+              19.058893217212812
+            ],
+            [
+              79.45074018853589,
+              19.067094411026595
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_004",
+        "tribal_community": "Kolam",
+        "village": "Khammam Village 1",
+        "district": "Khammam",
+        "claim_area_ha": 821.88,
+        "community_size": 21,
+        "status": "Pending",
+        "forest_dependence": "high",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.46521022656692,
+              17.857981570982766
+            ],
+            [
+              80.48572490405186,
+              17.850551116151642
+            ],
+            [
+              80.48958060298675,
+              17.828628827389647
+            ],
+            [
+              80.47867230276401,
+              17.80623691751037
+            ],
+            [
+              80.45320995263262,
+              17.809272381186588
+            ],
+            [
+              80.44254237251671,
+              17.829017417010512
+            ],
+            [
+              80.43985211231876,
+              17.854413628081048
+            ],
+            [
+              80.46521022656692,
+              17.857981570982766
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_005",
+        "tribal_community": "Pradhan",
+        "village": "Bhadrachalam Village 1",
+        "district": "Khammam",
+        "claim_area_ha": 2639.97,
+        "community_size": 83,
+        "status": "Approved",
+        "forest_dependence": "medium",
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.14107354824453,
+              17.739093979930878
+            ],
+            [
+              80.16896029043235,
+              17.702618238545607
+            ],
+            [
+              80.19860844371036,
+              17.6672473393084
+            ],
+            [
+              80.16562190310397,
+              17.62940411963192
+            ],
+            [
+              80.12660799916856,
+              17.65034128157876
+            ],
+            [
+              80.09394981245255,
+              17.66962361856479
+            ],
+            [
+              80.11126838473534,
+              17.704148128498062
+            ],
+            [
+              80.14107354824453,
+              17.739093979930878
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_006",
+        "tribal_community": "Pradhan",
+        "village": "Bhadrachalam Village 2",
+        "district": "Khammam",
+        "claim_area_ha": 974.2,
+        "community_size": 52,
+        "status": "Under Review",
+        "forest_dependence": "medium",
+        "year_claimed": 2012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.34558654741551,
+              17.72393331974752
+            ],
+            [
+              80.36687930633668,
+              17.71068968950622
+            ],
+            [
+              80.36575091544078,
+              17.68910689547372
+            ],
+            [
+              80.35830208463112,
+              17.667305195793546
+            ],
+            [
+              80.33297430847212,
+              17.667519696866048
+            ],
+            [
+              80.31941556658107,
+              17.687735925296842
+            ],
+            [
+              80.31788289817504,
+              17.715802203934896
+            ],
+            [
+              80.34558654741551,
+              17.72393331974752
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_007",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 431.83,
+        "community_size": 60,
+        "status": "Under Review",
+        "forest_dependence": "medium",
+        "year_claimed": 2008
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.95019575136233,
+              16.387198770091327
+            ],
+            [
+              78.96709307771522,
+              16.389821541804913
+            ],
+            [
+              78.96644526395966,
+              16.372924215452024
+            ],
+            [
+              78.96302566498566,
+              16.36009430182869
+            ],
+            [
+              78.95019575136233,
+              16.359589789326016
+            ],
+            [
+              78.93482854005063,
+              16.35755700414032
+            ],
+            [
+              78.9354135274528,
+              16.372924215452024
+            ],
+            [
+              78.93788424694016,
+              16.3852357198742
+            ],
+            [
+              78.95019575136233,
+              16.387198770091327
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CFR",
+        "claim_id": "CFR_008",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 160.2,
+        "community_size": 57,
+        "status": "Under Review",
+        "forest_dependence": "high",
+        "year_claimed": 2013
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.84368929304233,
+              16.239629952329857
+            ],
+            [
+              78.84899163300415,
+              16.235789467402533
+            ],
+            [
+              78.85300892750915,
+              16.231113687710728
+            ],
+            [
+              78.85278434467071,
+              16.224219354197952
+            ],
+            [
+              78.84850617335046,
+              16.21623611482508
+            ],
+            [
+              78.84008217964902,
+              16.21955992210635
+            ],
+            [
+              78.83157395000926,
+              16.22247558814242
+            ],
+            [
+              78.82989055789635,
+              16.231903474009773
+            ],
+            [
+              78.83452611091171,
+              16.240390639927654
+            ],
+            [
+              78.84368929304233,
+              16.239629952329857
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_000",
+        "tribal_community": "Chenchu",
+        "village": "Adilabad Village 1",
+        "district": "Adilabad",
+        "claim_area_ha": 0.08,
+        "family_head": "Family_1",
+        "family_size": 9,
+        "status": "Under Review",
+        "land_use": "Mixed",
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.13267381709709,
+              19.112376249259672
+            ],
+            [
+              79.13290442725715,
+              19.11212508940741
+            ],
+            [
+              79.13267381709709,
+              19.111864976515847
+            ],
+            [
+              79.13245232292107,
+              19.11212508940741
+            ],
+            [
+              79.13267381709709,
+              19.112376249259672
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_001",
+        "tribal_community": "Chenchu",
+        "village": "Adilabad Village 1",
+        "district": "Adilabad",
+        "claim_area_ha": 0.34,
+        "family_head": "Family_2",
+        "family_size": 4,
+        "status": "Approved",
+        "land_use": "Mixed",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.13230598221826,
+              19.114737363374275
+            ],
+            [
+              79.13276658816758,
+              19.114264269693884
+            ],
+            [
+              79.13230598221826,
+              19.11381567221736
+            ],
+            [
+              79.13184762729718,
+              19.114264269693884
+            ],
+            [
+              79.13230598221826,
+              19.114737363374275
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_002",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.1,
+        "family_head": "Family_1",
+        "family_size": 8,
+        "status": "Under Review",
+        "land_use": "Mixed",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.93919389181214,
+              16.353593634957132
+            ],
+            [
+              78.93951063060162,
+              16.353250737245865
+            ],
+            [
+              78.93919389181214,
+              16.35293675909289
+            ],
+            [
+              78.93889312306463,
+              16.353250737245865
+            ],
+            [
+              78.93919389181214,
+              16.353593634957132
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_003",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.2,
+        "family_head": "Family_2",
+        "family_size": 8,
+        "status": "Pending",
+        "land_use": "Cultivation",
+        "year_claimed": 2016
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.93182713758235,
+              16.354647119777056
+            ],
+            [
+              78.93222290416854,
+              16.354306592403017
+            ],
+            [
+              78.93182713758235,
+              16.353953534053147
+            ],
+            [
+              78.93142055942637,
+              16.354306592403017
+            ],
+            [
+              78.93182713758235,
+              16.354647119777056
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_004",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.35,
+        "family_head": "Family_3",
+        "family_size": 4,
+        "status": "Under Review",
+        "land_use": "Homestead",
+        "year_claimed": 2014
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.96721934643236,
+              16.354532593489722
+            ],
+            [
+              78.96775874037331,
+              16.354019771575864
+            ],
+            [
+              78.96721934643236,
+              16.353521652768016
+            ],
+            [
+              78.96666091850521,
+              16.354019771575864
+            ],
+            [
+              78.96721934643236,
+              16.354532593489722
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_005",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.83,
+        "family_head": "Family_4",
+        "family_size": 3,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.96300489896419,
+              16.39227618751061
+            ],
+            [
+              78.96368089745448,
+              16.391418753654523
+            ],
+            [
+              78.96300489896419,
+              16.39048455749117
+            ],
+            [
+              78.96216551563812,
+              16.391418753654523
+            ],
+            [
+              78.96300489896419,
+              16.39227618751061
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_006",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.57,
+        "family_head": "Family_1",
+        "family_size": 6,
+        "status": "Under Review",
+        "land_use": "Mixed",
+        "year_claimed": 2017
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.82262157705608,
+              16.232285369181287
+            ],
+            [
+              78.82333433247813,
+              16.231493622372174
+            ],
+            [
+              78.82262157705608,
+              16.23072716986291
+            ],
+            [
+              78.82181453845656,
+              16.231493622372174
+            ],
+            [
+              78.82262157705608,
+              16.232285369181287
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_007",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 1.1,
+        "family_head": "Family_2",
+        "family_size": 11,
+        "status": "Approved",
+        "land_use": "Mixed",
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.85497098862008,
+              16.222797200232353
+            ],
+            [
+              78.85585295130798,
+              16.22184508897516
+            ],
+            [
+              78.85497098862008,
+              16.22088166457226
+            ],
+            [
+              78.85395720619034,
+              16.22184508897516
+            ],
+            [
+              78.85497098862008,
+              16.222797200232353
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_008",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.28,
+        "family_head": "Family_3",
+        "family_size": 6,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2013
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.8236051085074,
+              16.211966101931473
+            ],
+            [
+              78.82402304292343,
+              16.211581298520706
+            ],
+            [
+              78.8236051085074,
+              16.211100332287682
+            ],
+            [
+              78.82312110434411,
+              16.211581298520706
+            ],
+            [
+              78.8236051085074,
+              16.211966101931473
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_009",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.1,
+        "family_head": "Family_4",
+        "family_size": 6,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.85622986947212,
+              16.24490681740125
+            ],
+            [
+              78.85646608140705,
+              16.244583720657204
+            ],
+            [
+              78.85622986947212,
+              16.24426240585621
+            ],
+            [
+              78.8559506701127,
+              16.244583720657204
+            ],
+            [
+              78.85622986947212,
+              16.24490681740125
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_010",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 1.15,
+        "family_head": "Family_5",
+        "family_size": 8,
+        "status": "Pending",
+        "land_use": "Homestead",
+        "year_claimed": 2011
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.84069549603936,
+              16.245794876192242
+            ],
+            [
+              78.8415858015085,
+              16.244971627939133
+            ],
+            [
+              78.84069549603936,
+              16.24397420545796
+            ],
+            [
+              78.83980752631282,
+              16.244971627939133
+            ],
+            [
+              78.84069549603936,
+              16.245794876192242
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_011",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.06,
+        "family_head": "Family_6",
+        "family_size": 4,
+        "status": "Under Review",
+        "land_use": "Mixed",
+        "year_claimed": 2019
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.83161305917388,
+              16.23683682036664
+            ],
+            [
+              78.83180879718229,
+              16.236609547987992
+            ],
+            [
+              78.83161305917388,
+              16.23642484472523
+            ],
+            [
+              78.83140936400714,
+              16.236609547987992
+            ],
+            [
+              78.83161305917388,
+              16.23683682036664
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_012",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village 1",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 1.09,
+        "family_head": "Family_7",
+        "family_size": 9,
+        "status": "Under Review",
+        "land_use": "Homestead",
+        "year_claimed": 2014
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.85938049364937,
+              16.21038419795856
+            ],
+            [
+              78.86046039679941,
+              16.20927569309128
+            ],
+            [
+              78.85938049364937,
+              16.208375827257367
+            ],
+            [
+              78.85825609944678,
+              16.20927569309128
+            ],
+            [
+              78.85938049364937,
+              16.21038419795856
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_013",
+        "tribal_community": "Yerukula",
+        "village": "Adilabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.367,
+        "family_head": "Family_14",
+        "family_size": 4,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2009
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.00850774963428,
+              19.06778769883387
+            ],
+            [
+              79.00905354734775,
+              19.067241901120394
+            ],
+            [
+              79.00850774963428,
+              19.066696103406915
+            ],
+            [
+              79.0079619519208,
+              19.067241901120394
+            ],
+            [
+              79.00850774963428,
+              19.06778769883387
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_014",
+        "tribal_community": "Koya",
+        "village": "Adilabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.307,
+        "family_head": "Family_15",
+        "family_size": 3,
+        "status": "Pending",
+        "land_use": "Homestead",
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.09977582381205,
+              19.015935645606366
+            ],
+            [
+              79.10027476629713,
+              19.015436703121278
+            ],
+            [
+              79.09977582381205,
+              19.01493776063619
+            ],
+            [
+              79.09927688132697,
+              19.015436703121278
+            ],
+            [
+              79.09977582381205,
+              19.015935645606366
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_015",
+        "tribal_community": "Chenchu",
+        "village": "Adilabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.303,
+        "family_head": "Family_16",
+        "family_size": 7,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.07317151434607,
+              19.056332476689203
+            ],
+            [
+              79.07366706298268,
+              19.055836928052596
+            ],
+            [
+              79.07317151434607,
+              19.05534137941599
+            ],
+            [
+              79.07267596570946,
+              19.055836928052596
+            ],
+            [
+              79.07317151434607,
+              19.056332476689203
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_016",
+        "tribal_community": "Pradhan",
+        "village": "Adilabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.508,
+        "family_head": "Family_17",
+        "family_size": 5,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2016
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.15063179314677,
+              19.058728458836406
+            ],
+            [
+              79.15127377815502,
+              19.058086473828165
+            ],
+            [
+              79.15063179314677,
+              19.057444488819925
+            ],
+            [
+              79.14998980813853,
+              19.058086473828165
+            ],
+            [
+              79.15063179314677,
+              19.058728458836406
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_017",
+        "tribal_community": "Gond",
+        "village": "Asifabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.107,
+        "family_head": "Family_18",
+        "family_size": 7,
+        "status": "Pending",
+        "land_use": "Collection",
+        "year_claimed": 2015
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.30128752811365,
+              19.109593582321597
+            ],
+            [
+              79.30158224854809,
+              19.109298861887165
+            ],
+            [
+              79.30128752811365,
+              19.109004141452733
+            ],
+            [
+              79.30099280767921,
+              19.109298861887165
+            ],
+            [
+              79.30128752811365,
+              19.109593582321597
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_018",
+        "tribal_community": "Gond",
+        "village": "Asifabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.015,
+        "family_head": "Family_19",
+        "family_size": 3,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.3090459279771,
+              19.1375374246318
+            ],
+            [
+              79.30915550751148,
+              19.137427845097424
+            ],
+            [
+              79.3090459279771,
+              19.137318265563046
+            ],
+            [
+              79.30893634844271,
+              19.137427845097424
+            ],
+            [
+              79.3090459279771,
+              19.1375374246318
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_019",
+        "tribal_community": "Lambada",
+        "village": "Kagaznagar Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.222,
+        "family_head": "Family_20",
+        "family_size": 8,
+        "status": "Pending",
+        "land_use": "Cultivation",
+        "year_claimed": 2011
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.3588812051656,
+              19.099290268007312
+            ],
+            [
+              79.35930584579883,
+              19.09886562737409
+            ],
+            [
+              79.3588812051656,
+              19.098440986740865
+            ],
+            [
+              79.35845656453237,
+              19.09886562737409
+            ],
+            [
+              79.3588812051656,
+              19.099290268007312
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_020",
+        "tribal_community": "Lambada",
+        "village": "Kagaznagar Village",
+        "district": "Adilabad",
+        "claim_area_ha": 0.465,
+        "family_head": "Family_21",
+        "family_size": 4,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.48393845851724,
+              18.87925670057468
+            ],
+            [
+              79.48455249949478,
+              18.878642659597144
+            ],
+            [
+              79.48393845851724,
+              18.87802861861961
+            ],
+            [
+              79.4833244175397,
+              18.878642659597144
+            ],
+            [
+              79.48393845851724,
+              18.87925670057468
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_021",
+        "tribal_community": "Kolam",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.557,
+        "family_head": "Family_22",
+        "family_size": 7,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2017
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.77751756087719,
+              17.893263831544377
+            ],
+            [
+              79.77819010011041,
+              17.892591292311163
+            ],
+            [
+              79.77751756087719,
+              17.89191875307795
+            ],
+            [
+              79.77684502164396,
+              17.892591292311163
+            ],
+            [
+              79.77751756087719,
+              17.893263831544377
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_022",
+        "tribal_community": "Gond",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.386,
+        "family_head": "Family_23",
+        "family_size": 4,
+        "status": "Under Review",
+        "land_use": "Collection",
+        "year_claimed": 2022
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.6798997214029,
+              18.06914385790319
+            ],
+            [
+              79.68045970895238,
+              18.068583870353713
+            ],
+            [
+              79.6798997214029,
+              18.068023882804237
+            ],
+            [
+              79.67933973385342,
+              18.068583870353713
+            ],
+            [
+              79.6798997214029,
+              18.06914385790319
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_023",
+        "tribal_community": "Kolam",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.037,
+        "family_head": "Family_24",
+        "family_size": 5,
+        "status": "Under Review",
+        "land_use": "Collection",
+        "year_claimed": 2009
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.66478013650736,
+              17.889171592921073
+            ],
+            [
+              79.66495322321116,
+              17.888998506217273
+            ],
+            [
+              79.66478013650736,
+              17.888825419513473
+            ],
+            [
+              79.66460704980356,
+              17.888998506217273
+            ],
+            [
+              79.66478013650736,
+              17.889171592921073
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_024",
+        "tribal_community": "Lambada",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.157,
+        "family_head": "Family_25",
+        "family_size": 7,
+        "status": "Pending",
+        "land_use": "Collection",
+        "year_claimed": 2011
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.79111029815571,
+              18.027639978843325
+            ],
+            [
+              79.79146767878439,
+              18.027282598214658
+            ],
+            [
+              79.79111029815571,
+              18.02692521758599
+            ],
+            [
+              79.79075291752704,
+              18.027282598214658
+            ],
+            [
+              79.79111029815571,
+              18.027639978843325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_025",
+        "tribal_community": "Lambada",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.629,
+        "family_head": "Family_26",
+        "family_size": 7,
+        "status": "Approved",
+        "land_use": "Homestead",
+        "year_claimed": 2022
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.84963075347872,
+              18.07998896447764
+            ],
+            [
+              79.85034540016308,
+              18.079274317793274
+            ],
+            [
+              79.84963075347872,
+              18.07855967110891
+            ],
+            [
+              79.84891610679436,
+              18.079274317793274
+            ],
+            [
+              79.84963075347872,
+              18.07998896447764
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_026",
+        "tribal_community": "Koya",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.084,
+        "family_head": "Family_27",
+        "family_size": 6,
+        "status": "Approved",
+        "land_use": "Collection",
+        "year_claimed": 2014
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.97992628913381,
+              18.226565916411833
+            ],
+            [
+              79.98018761011272,
+              18.226304595432925
+            ],
+            [
+              79.97992628913381,
+              18.226043274454018
+            ],
+            [
+              79.9796649681549,
+              18.226304595432925
+            ],
+            [
+              79.97992628913381,
+              18.226565916411833
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_027",
+        "tribal_community": "Kolam",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.386,
+        "family_head": "Family_28",
+        "family_size": 3,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2022
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.9597065689844,
+              18.044975279645193
+            ],
+            [
+              79.96026633731614,
+              18.044415511313456
+            ],
+            [
+              79.9597065689844,
+              18.04385574298172
+            ],
+            [
+              79.95914680065266,
+              18.044415511313456
+            ],
+            [
+              79.9597065689844,
+              18.044975279645193
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_028",
+        "tribal_community": "Pradhan",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.042,
+        "family_head": "Family_29",
+        "family_size": 6,
+        "status": "Under Review",
+        "land_use": "Collection",
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.84698699353518,
+              18.06592904074141
+            ],
+            [
+              79.84717218758622,
+              18.06574384669036
+            ],
+            [
+              79.84698699353518,
+              18.06555865263931
+            ],
+            [
+              79.84680179948414,
+              18.06574384669036
+            ],
+            [
+              79.84698699353518,
+              18.06592904074141
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_029",
+        "tribal_community": "Yerukula",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 0.571,
+        "family_head": "Family_30",
+        "family_size": 6,
+        "status": "Approved",
+        "land_use": "Collection",
+        "year_claimed": 2008
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.8596288284396,
+              18.0598745287161
+            ],
+            [
+              79.86030939826735,
+              18.059193958888354
+            ],
+            [
+              79.8596288284396,
+              18.058513389060607
+            ],
+            [
+              79.85894825861185,
+              18.059193958888354
+            ],
+            [
+              79.8596288284396,
+              18.0598745287161
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_030",
+        "tribal_community": "Kolam",
+        "village": "Khammam Village",
+        "district": "Khammam",
+        "claim_area_ha": 0.777,
+        "family_head": "Family_31",
+        "family_size": 8,
+        "status": "Pending",
+        "land_use": "Cultivation",
+        "year_claimed": 2009
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.40049603888517,
+              18.007230155789475
+            ],
+            [
+              80.40129003625061,
+              18.00643615842403
+            ],
+            [
+              80.40049603888517,
+              18.005642161058585
+            ],
+            [
+              80.39970204151972,
+              18.00643615842403
+            ],
+            [
+              80.40049603888517,
+              18.007230155789475
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_031",
+        "tribal_community": "Koya",
+        "village": "Khammam Village",
+        "district": "Khammam",
+        "claim_area_ha": 0.403,
+        "family_head": "Family_32",
+        "family_size": 5,
+        "status": "Pending",
+        "land_use": "Cultivation",
+        "year_claimed": 2012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.32757344531875,
+              17.96629906737269
+            ],
+            [
+              80.32814503623322,
+              17.965727476458216
+            ],
+            [
+              80.32757344531875,
+              17.96515588554374
+            ],
+            [
+              80.32700185440427,
+              17.965727476458216
+            ],
+            [
+              80.32757344531875,
+              17.96629906737269
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_032",
+        "tribal_community": "Koya",
+        "village": "Khammam Village",
+        "district": "Khammam",
+        "claim_area_ha": 0.078,
+        "family_head": "Family_33",
+        "family_size": 6,
+        "status": "Pending",
+        "land_use": "Homestead",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.4887708921843,
+              17.93004966739686
+            ],
+            [
+              80.48902182056123,
+              17.92979873901993
+            ],
+            [
+              80.4887708921843,
+              17.929547810642998
+            ],
+            [
+              80.48851996380738,
+              17.92979873901993
+            ],
+            [
+              80.4887708921843,
+              17.93004966739686
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_033",
+        "tribal_community": "Yerukula",
+        "village": "Bhadrachalam Village",
+        "district": "Khammam",
+        "claim_area_ha": 0.283,
+        "family_head": "Family_34",
+        "family_size": 6,
+        "status": "Pending",
+        "land_use": "Collection",
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.30626504871763,
+              17.667092576179474
+            ],
+            [
+              80.30674442490226,
+              17.666613199994842
+            ],
+            [
+              80.30626504871763,
+              17.66613382381021
+            ],
+            [
+              80.305785672533,
+              17.666613199994842
+            ],
+            [
+              80.30626504871763,
+              17.667092576179474
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_034",
+        "tribal_community": "Lambada",
+        "village": "Bhadrachalam Village",
+        "district": "Khammam",
+        "claim_area_ha": 0.491,
+        "family_head": "Family_35",
+        "family_size": 7,
+        "status": "Under Review",
+        "land_use": "Collection",
+        "year_claimed": 2013
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.29118364358068,
+              17.641948273512917
+            ],
+            [
+              80.29181520933872,
+              17.641316707754882
+            ],
+            [
+              80.29118364358068,
+              17.640685141996848
+            ],
+            [
+              80.29055207782264,
+              17.641316707754882
+            ],
+            [
+              80.29118364358068,
+              17.641948273512917
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_035",
+        "tribal_community": "Gond",
+        "village": "Bhadrachalam Village",
+        "district": "Khammam",
+        "claim_area_ha": 0.038,
+        "family_head": "Family_36",
+        "family_size": 6,
+        "status": "Under Review",
+        "land_use": "Cultivation",
+        "year_claimed": 2014
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.34677693921793,
+              17.603439563783077
+            ],
+            [
+              80.34695242600269,
+              17.603264076998325
+            ],
+            [
+              80.34677693921793,
+              17.603088590213574
+            ],
+            [
+              80.34660145243318,
+              17.603264076998325
+            ],
+            [
+              80.34677693921793,
+              17.603439563783077
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_036",
+        "tribal_community": "Lambada",
+        "village": "Medak Village",
+        "district": "Medak",
+        "claim_area_ha": 0.446,
+        "family_head": "Family_37",
+        "family_size": 5,
+        "status": "Approved",
+        "land_use": "Collection",
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.80881086352457,
+              18.12610933055454
+            ],
+            [
+              78.80941261458797,
+              18.125507579491142
+            ],
+            [
+              78.80881086352457,
+              18.124905828427742
+            ],
+            [
+              78.80820911246117,
+              18.125507579491142
+            ],
+            [
+              78.80881086352457,
+              18.12610933055454
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_037",
+        "tribal_community": "Yerukula",
+        "village": "Medak Village",
+        "district": "Medak",
+        "claim_area_ha": 0.564,
+        "family_head": "Family_38",
+        "family_size": 6,
+        "status": "Pending",
+        "land_use": "Collection",
+        "year_claimed": 2016
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.71217112985967,
+              18.138432683990708
+            ],
+            [
+              78.7128478686506,
+              18.137755945199782
+            ],
+            [
+              78.71217112985967,
+              18.137079206408856
+            ],
+            [
+              78.71149439106874,
+              18.137755945199782
+            ],
+            [
+              78.71217112985967,
+              18.138432683990708
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_038",
+        "tribal_community": "Yerukula",
+        "village": "Medak Village",
+        "district": "Medak",
+        "claim_area_ha": 0.024,
+        "family_head": "Family_39",
+        "family_size": 5,
+        "status": "Pending",
+        "land_use": "Homestead",
+        "year_claimed": 2019
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.79396165333864,
+              18.165885440776865
+            ],
+            [
+              78.7941015632487,
+              18.16574553086681
+            ],
+            [
+              78.79396165333864,
+              18.165605620956757
+            ],
+            [
+              78.79382174342858,
+              18.16574553086681
+            ],
+            [
+              78.79396165333864,
+              18.165885440776865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_039",
+        "tribal_community": "Gond",
+        "village": "Vikarabad Village",
+        "district": "Medak",
+        "claim_area_ha": 0.131,
+        "family_head": "Family_40",
+        "family_size": 7,
+        "status": "Approved",
+        "land_use": "Collection",
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5146785971213,
+              17.961913009945444
+            ],
+            [
+              78.51500412513661,
+              17.961587481930135
+            ],
+            [
+              78.5146785971213,
+              17.961261953914825
+            ],
+            [
+              78.514353069106,
+              17.961587481930135
+            ],
+            [
+              78.5146785971213,
+              17.961913009945444
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_040",
+        "tribal_community": "Lambada",
+        "village": "Vikarabad Village",
+        "district": "Medak",
+        "claim_area_ha": 0.531,
+        "family_head": "Family_41",
+        "family_size": 5,
+        "status": "Pending",
+        "land_use": "Collection",
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.67005658854163,
+              17.736332708253233
+            ],
+            [
+              78.67071308156322,
+              17.735676215231635
+            ],
+            [
+              78.67005658854163,
+              17.735019722210037
+            ],
+            [
+              78.66940009552003,
+              17.735676215231635
+            ],
+            [
+              78.67005658854163,
+              17.736332708253233
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_041",
+        "tribal_community": "Pradhan",
+        "village": "Vikarabad Village",
+        "district": "Medak",
+        "claim_area_ha": 0.786,
+        "family_head": "Family_42",
+        "family_size": 5,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2022
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.74668331987552,
+              17.743728925711316
+            ],
+            [
+              78.74748210357545,
+              17.742930142011378
+            ],
+            [
+              78.74668331987552,
+              17.74213135831144
+            ],
+            [
+              78.74588453617558,
+              17.742930142011378
+            ],
+            [
+              78.74668331987552,
+              17.743728925711316
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_042",
+        "tribal_community": "Koya",
+        "village": "Vikarabad Village",
+        "district": "Medak",
+        "claim_area_ha": 0.561,
+        "family_head": "Family_43",
+        "family_size": 4,
+        "status": "Under Review",
+        "land_use": "Collection",
+        "year_claimed": 2021
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.65218209070699,
+              17.99781945204169
+            ],
+            [
+              78.65285705667588,
+              17.997144486072788
+            ],
+            [
+              78.65218209070699,
+              17.996469520103886
+            ],
+            [
+              78.65150712473809,
+              17.997144486072788
+            ],
+            [
+              78.65218209070699,
+              17.99781945204169
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_043",
+        "tribal_community": "Chenchu",
+        "village": "Vikarabad Village",
+        "district": "Medak",
+        "claim_area_ha": 0.759,
+        "family_head": "Family_44",
+        "family_size": 8,
+        "status": "Under Review",
+        "land_use": "Homestead",
+        "year_claimed": 2009
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.55214726771416,
+              17.87198036183087
+            ],
+            [
+              78.55293209191035,
+              17.871195537634687
+            ],
+            [
+              78.55214726771416,
+              17.870410713438503
+            ],
+            [
+              78.55136244351797,
+              17.871195537634687
+            ],
+            [
+              78.55214726771416,
+              17.87198036183087
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_044",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.024,
+        "family_head": "Family_45",
+        "family_size": 6,
+        "status": "Approved",
+        "land_use": "Collection",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.85171014567553,
+              16.537915993972387
+            ],
+            [
+              78.85184930511294,
+              16.537776834534974
+            ],
+            [
+              78.85171014567553,
+              16.53763767509756
+            ],
+            [
+              78.85157098623812,
+              16.537776834534974
+            ],
+            [
+              78.85171014567553,
+              16.537915993972387
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_045",
+        "tribal_community": "Koya",
+        "village": "Mahbubnagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.022,
+        "family_head": "Family_46",
+        "family_size": 6,
+        "status": "Pending",
+        "land_use": "Homestead",
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.91572130268916,
+              16.566569992590278
+            ],
+            [
+              78.9158553272191,
+              16.566435968060336
+            ],
+            [
+              78.91572130268916,
+              16.566301943530394
+            ],
+            [
+              78.91558727815922,
+              16.566435968060336
+            ],
+            [
+              78.91572130268916,
+              16.566569992590278
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_046",
+        "tribal_community": "Kolam",
+        "village": "Nagarjuna Sagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.114,
+        "family_head": "Family_47",
+        "family_size": 5,
+        "status": "Pending",
+        "land_use": "Homestead",
+        "year_claimed": 2013
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.05953292316227,
+              16.23204076550064
+            ],
+            [
+              79.05983700721983,
+              16.231736681443078
+            ],
+            [
+              79.05953292316227,
+              16.231432597385517
+            ],
+            [
+              79.0592288391047,
+              16.231736681443078
+            ],
+            [
+              79.05953292316227,
+              16.23204076550064
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_047",
+        "tribal_community": "Yerukula",
+        "village": "Nagarjuna Sagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.155,
+        "family_head": "Family_48",
+        "family_size": 6,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.95391218539127,
+              16.111995109991042
+            ],
+            [
+              78.95426701445435,
+              16.111640280927972
+            ],
+            [
+              78.95391218539127,
+              16.1112854518649
+            ],
+            [
+              78.9535573563282,
+              16.111640280927972
+            ],
+            [
+              78.95391218539127,
+              16.111995109991042
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_048",
+        "tribal_community": "Pradhan",
+        "village": "Nagarjuna Sagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.099,
+        "family_head": "Family_49",
+        "family_size": 5,
+        "status": "Approved",
+        "land_use": "Cultivation",
+        "year_claimed": 2012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.05970045065884,
+              16.27263220288908
+            ],
+            [
+              79.05998452769435,
+              16.272348125853565
+            ],
+            [
+              79.05970045065884,
+              16.27206404881805
+            ],
+            [
+              79.05941637362332,
+              16.272348125853565
+            ],
+            [
+              79.05970045065884,
+              16.27263220288908
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "IFR",
+        "claim_id": "IFR_049",
+        "tribal_community": "Yerukula",
+        "village": "Nagarjuna Sagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 0.149,
+        "family_head": "Family_50",
+        "family_size": 3,
+        "status": "Under Review",
+        "land_use": "Homestead",
+        "year_claimed": 2008
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.90725177049103,
+              16.26151685404915
+            ],
+            [
+              78.90759941584983,
+              16.261169208690355
+            ],
+            [
+              78.90725177049103,
+              16.260821563331557
+            ],
+            [
+              78.90690412513223,
+              16.261169208690355
+            ],
+            [
+              78.90725177049103,
+              16.26151685404915
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_000",
+        "tribal_community": "Kolam",
+        "village": "Adilabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 122.85,
+        "resource_type": "Burial Ground",
+        "status": "Pending",
+        "community_users": 20,
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.09145262220667,
+              19.181935417144967
+            ],
+            [
+              79.10034756188885,
+              19.178746615683927
+            ],
+            [
+              79.10394876048863,
+              19.16880097597374
+            ],
+            [
+              79.09499621951092,
+              19.164294782368565
+            ],
+            [
+              79.08751687488424,
+              19.16348047446514
+            ],
+            [
+              79.0832690425741,
+              19.169785289343384
+            ],
+            [
+              79.08275404464075,
+              19.17859002212162
+            ],
+            [
+              79.09145262220667,
+              19.181935417144967
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_001",
+        "tribal_community": "Pradhan",
+        "village": "Asifabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 61.05,
+        "resource_type": "Water Body",
+        "status": "Pending",
+        "community_users": 90,
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.20118271337817,
+              19.05562874591868
+            ],
+            [
+              79.20689843764691,
+              19.048644082448053
+            ],
+            [
+              79.20631458667324,
+              19.039723513433415
+            ],
+            [
+              79.19621084918283,
+              19.03994374706539
+            ],
+            [
+              79.19382652463322,
+              19.049177101667347
+            ],
+            [
+              79.20118271337817,
+              19.05562874591868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_002",
+        "tribal_community": "Kolam",
+        "village": "Asifabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 111.04,
+        "resource_type": "Grazing Land",
+        "status": "Under Review",
+        "community_users": 150,
+        "year_claimed": 2009
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.30572677685625,
+              19.062561251962485
+            ],
+            [
+              79.31445909895143,
+              19.057598905136377
+            ],
+            [
+              79.30994964032284,
+              19.04894932876576
+            ],
+            [
+              79.30156270276979,
+              19.0490302454057
+            ],
+            [
+              79.29485209998745,
+              19.058294998398644
+            ],
+            [
+              79.30572677685625,
+              19.062561251962485
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_003",
+        "tribal_community": "Kolam",
+        "village": "Asifabad Village",
+        "district": "Adilabad",
+        "claim_area_ha": 105.59,
+        "resource_type": "Grazing Land",
+        "status": "Pending",
+        "community_users": 71,
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.17029708412849,
+              18.969884984913097
+            ],
+            [
+              79.17867217619487,
+              18.96278309669821
+            ],
+            [
+              79.17730220105733,
+              18.953903328894626
+            ],
+            [
+              79.17029708412849,
+              18.951158600082042
+            ],
+            [
+              79.16078410652935,
+              18.952455414861536
+            ],
+            [
+              79.16287321968794,
+              18.96223390517238
+            ],
+            [
+              79.17029708412849,
+              18.969884984913097
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_004",
+        "tribal_community": "Chenchu",
+        "village": "Kagaznagar Village",
+        "district": "Adilabad",
+        "claim_area_ha": 107.15,
+        "resource_type": "Water Body",
+        "status": "Under Review",
+        "community_users": 42,
+        "year_claimed": 2012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.35192566679531,
+              19.009291388136678
+            ],
+            [
+              79.36194663844127,
+              19.008173905915193
+            ],
+            [
+              79.3597552132435,
+              18.997867904488356
+            ],
+            [
+              79.35192566679531,
+              18.995811745957663
+            ],
+            [
+              79.34320173187807,
+              18.997351529064996
+            ],
+            [
+              79.34452099286543,
+              19.00666338572453
+            ],
+            [
+              79.35192566679531,
+              19.009291388136678
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_005",
+        "tribal_community": "Yerukula",
+        "village": "Kagaznagar Village",
+        "district": "Adilabad",
+        "claim_area_ha": 101.07,
+        "resource_type": "Water Body",
+        "status": "Pending",
+        "community_users": 119,
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.32035320312504,
+              18.975278066645053
+            ],
+            [
+              79.32903735082112,
+              18.970602360797404
+            ],
+            [
+              79.32946339129018,
+              18.961597643105492
+            ],
+            [
+              79.3247351807313,
+              18.954577713845943
+            ],
+            [
+              79.31568907660942,
+              18.953991825598653
+            ],
+            [
+              79.3100825928799,
+              18.961332784338193
+            ],
+            [
+              79.31303018288745,
+              18.969516897870374
+            ],
+            [
+              79.32035320312504,
+              18.975278066645053
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_006",
+        "tribal_community": "Pradhan",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 157.42,
+        "resource_type": "Sacred Grove",
+        "status": "Pending",
+        "community_users": 124,
+        "year_claimed": 2019
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.79829647787706,
+              17.984617380446778
+            ],
+            [
+              79.80744060196783,
+              17.98361997459811
+            ],
+            [
+              79.80895963292994,
+              17.973893983413856
+            ],
+            [
+              79.80240293895757,
+              17.967800624673224
+            ],
+            [
+              79.79288214433755,
+              17.96508479952813
+            ],
+            [
+              79.78703857988062,
+              17.97375823721805
+            ],
+            [
+              79.79018740156951,
+              17.982794551534774
+            ],
+            [
+              79.79829647787706,
+              17.984617380446778
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_007",
+        "tribal_community": "Pradhan",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 51.67,
+        "resource_type": "Grazing Land",
+        "status": "Pending",
+        "community_users": 123,
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.74511927154796,
+              17.93883645235424
+            ],
+            [
+              79.75105453294756,
+              17.93507558058123
+            ],
+            [
+              79.75024294693166,
+              17.92869070045245
+            ],
+            [
+              79.74511927154796,
+              17.924844373724582
+            ],
+            [
+              79.74047028468229,
+              17.92896476199611
+            ],
+            [
+              79.74112675819444,
+              17.933953934473866
+            ],
+            [
+              79.74511927154796,
+              17.93883645235424
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_008",
+        "tribal_community": "Kolam",
+        "village": "Warangal Village",
+        "district": "Warangal",
+        "claim_area_ha": 212.66,
+        "resource_type": "Burial Ground",
+        "status": "Pending",
+        "community_users": 43,
+        "year_claimed": 2012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.89738895026497,
+              17.952188646203005
+            ],
+            [
+              79.91285228676719,
+              17.945609217724844
+            ],
+            [
+              79.90449023625555,
+              17.930810793476255
+            ],
+            [
+              79.89128961863676,
+              17.93218986534578
+            ],
+            [
+              79.88606091782056,
+              17.944265575986545
+            ],
+            [
+              79.89738895026497,
+              17.952188646203005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_009",
+        "tribal_community": "Yerukula",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 181.11,
+        "resource_type": "Sacred Grove",
+        "status": "Approved",
+        "community_users": 114,
+        "year_claimed": 2018
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.92245714109535,
+              18.220847701044203
+            ],
+            [
+              79.93417117175356,
+              18.213942207532618
+            ],
+            [
+              79.9286092754701,
+              18.20166840172378
+            ],
+            [
+              79.91335771560696,
+              18.1976118035206
+            ],
+            [
+              79.9092615238191,
+              18.214423604206495
+            ],
+            [
+              79.92245714109535,
+              18.220847701044203
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_010",
+        "tribal_community": "Yerukula",
+        "village": "Pakhal Village",
+        "district": "Warangal",
+        "claim_area_ha": 125.19,
+        "resource_type": "Burial Ground",
+        "status": "Approved",
+        "community_users": 23,
+        "year_claimed": 2021
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.86684331345616,
+              18.11163823260348
+            ],
+            [
+              79.87665369233405,
+              18.109015777561478
+            ],
+            [
+              79.87608407824156,
+              18.098016594639112
+            ],
+            [
+              79.86684331345616,
+              18.09205624328298
+            ],
+            [
+              79.85991768372642,
+              18.099353238486714
+            ],
+            [
+              79.85849070386769,
+              18.108174134069817
+            ],
+            [
+              79.86684331345616,
+              18.11163823260348
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_011",
+        "tribal_community": "Kolam",
+        "village": "Khammam Village",
+        "district": "Khammam",
+        "claim_area_ha": 209.88,
+        "resource_type": "Burial Ground",
+        "status": "Under Review",
+        "community_users": 142,
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.45243449810388,
+              18.018866167021372
+            ],
+            [
+              80.46270662336356,
+              18.008943511154886
+            ],
+            [
+              80.46507363260007,
+              17.995715689167366
+            ],
+            [
+              80.45243449810388,
+              17.990865672165437
+            ],
+            [
+              80.44197801785877,
+              17.99697584518677
+            ],
+            [
+              80.43880394849872,
+              18.010882498354807
+            ],
+            [
+              80.45243449810388,
+              18.018866167021372
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_012",
+        "tribal_community": "Yerukula",
+        "village": "Khammam Village",
+        "district": "Khammam",
+        "claim_area_ha": 201.21,
+        "resource_type": "Burial Ground",
+        "status": "Pending",
+        "community_users": 123,
+        "year_claimed": 2022
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.43352708709128,
+              17.937297541232997
+            ],
+            [
+              80.44254280586117,
+              17.929602007788706
+            ],
+            [
+              80.44228897885948,
+              17.91461291376579
+            ],
+            [
+              80.42721033635503,
+              17.91797836167518
+            ],
+            [
+              80.42463257144549,
+              17.929562626506442
+            ],
+            [
+              80.43352708709128,
+              17.937297541232997
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_013",
+        "tribal_community": "Lambada",
+        "village": "Khammam Village",
+        "district": "Khammam",
+        "claim_area_ha": 167.34,
+        "resource_type": "Sacred Grove",
+        "status": "Under Review",
+        "community_users": 117,
+        "year_claimed": 2010
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.38794850704403,
+              17.89535789050457
+            ],
+            [
+              80.39470387851614,
+              17.890821136722565
+            ],
+            [
+              80.40050443957705,
+              17.882568098075996
+            ],
+            [
+              80.39381557568224,
+              17.873250814179144
+            ],
+            [
+              80.38375640444144,
+              17.87672891699065
+            ],
+            [
+              80.37762554525169,
+              17.88307775907606
+            ],
+            [
+              80.37715396739947,
+              17.89404226585331
+            ],
+            [
+              80.38794850704403,
+              17.89535789050457
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_014",
+        "tribal_community": "Pradhan",
+        "village": "Bhadrachalam Village",
+        "district": "Khammam",
+        "claim_area_ha": 123.63,
+        "resource_type": "Sacred Grove",
+        "status": "Approved",
+        "community_users": 107,
+        "year_claimed": 2011
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.16008881321225,
+              17.807091244280535
+            ],
+            [
+              80.17074446630234,
+              17.802536019231386
+            ],
+            [
+              80.16535499507066,
+              17.791825510166376
+            ],
+            [
+              80.15386268054513,
+              17.790504251228704
+            ],
+            [
+              80.1519941874236,
+              17.80170389101857
+            ],
+            [
+              80.16008881321225,
+              17.807091244280535
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_015",
+        "tribal_community": "Lambada",
+        "village": "Medak Village",
+        "district": "Medak",
+        "claim_area_ha": 97.69,
+        "resource_type": "Burial Ground",
+        "status": "Under Review",
+        "community_users": 146,
+        "year_claimed": 2011
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.73198925448135,
+              18.25792027755696
+            ],
+            [
+              78.74252728882385,
+              18.251845989312322
+            ],
+            [
+              78.73780667881924,
+              18.240414976712476
+            ],
+            [
+              78.72712319821522,
+              18.24172442252618
+            ],
+            [
+              78.72523366871619,
+              18.250616997269557
+            ],
+            [
+              78.73198925448135,
+              18.25792027755696
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_016",
+        "tribal_community": "Koya",
+        "village": "Vikarabad Village",
+        "district": "Medak",
+        "claim_area_ha": 240.5,
+        "resource_type": "Sacred Grove",
+        "status": "Under Review",
+        "community_users": 126,
+        "year_claimed": 2012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.61803231166877,
+              17.84555427168986
+            ],
+            [
+              78.62895658959215,
+              17.836841437848864
+            ],
+            [
+              78.63357219782559,
+              17.821562345593282
+            ],
+            [
+              78.61803231166877,
+              17.818315967812506
+            ],
+            [
+              78.60332778295393,
+              17.822044639437276
+            ],
+            [
+              78.6044572700716,
+              17.838371856969477
+            ],
+            [
+              78.61803231166877,
+              17.84555427168986
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_017",
+        "tribal_community": "Pradhan",
+        "village": "Mahbubnagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 89.21,
+        "resource_type": "Sacred Grove",
+        "status": "Pending",
+        "community_users": 146,
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.76714823168577,
+              16.466080240325514
+            ],
+            [
+              78.77495334321813,
+              16.462408791275262
+            ],
+            [
+              78.77785897402516,
+              16.45373976548611
+            ],
+            [
+              78.77128957528508,
+              16.447584833936418
+            ],
+            [
+              78.7638937510129,
+              16.449426423779006
+            ],
+            [
+              78.7576858180765,
+              16.45402468837265
+            ],
+            [
+              78.75909343268928,
+              16.462607910383447
+            ],
+            [
+              78.76714823168577,
+              16.466080240325514
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_018",
+        "tribal_community": "Yerukula",
+        "village": "Mahbubnagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 190.05,
+        "resource_type": "Burial Ground",
+        "status": "Pending",
+        "community_users": 27,
+        "year_claimed": 2008
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.87730321000733,
+              16.392386536834596
+            ],
+            [
+              78.88898576887206,
+              16.385781440552144
+            ],
+            [
+              78.88571307322981,
+              16.374181075251414
+            ],
+            [
+              78.87730321000733,
+              16.36440258859153
+            ],
+            [
+              78.86714731804408,
+              16.373173005087924
+            ],
+            [
+              78.86945412449838,
+              16.383568183678253
+            ],
+            [
+              78.87730321000733,
+              16.392386536834596
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_019",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 63.22,
+        "resource_type": "Burial Ground",
+        "status": "Under Review",
+        "community_users": 21,
+        "year_claimed": 2020
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.00604071202194,
+              16.258225459874133
+            ],
+            [
+              79.0122074110566,
+              16.257483938855145
+            ],
+            [
+              79.0134163646254,
+              16.250882715901664
+            ],
+            [
+              79.00901426237671,
+              16.246391519542318
+            ],
+            [
+              79.00201512818435,
+              16.244206949505326
+            ],
+            [
+              78.99707679102863,
+              16.250520204006097
+            ],
+            [
+              78.9995709621894,
+              16.257725613801952
+            ],
+            [
+              79.00604071202194,
+              16.258225459874133
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "claim_type": "CR",
+        "claim_id": "CR_020",
+        "tribal_community": "Gond",
+        "village": "Nagarjuna Sagar Village",
+        "district": "Mahbubnagar",
+        "claim_area_ha": 122.19,
+        "resource_type": "Grazing Land",
+        "status": "Pending",
+        "community_users": 87,
+        "year_claimed": 2023
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.89658635914783,
+              16.21796107432198
+            ],
+            [
+              78.9080816080441,
+              16.213228790547657
+            ],
+            [
+              78.90164998599396,
+              16.20252427332514
+            ],
+            [
+              78.89246439210461,
+              16.203820356853097
+            ],
+            [
+              78.88639200545543,
+              16.212806104073184
+            ],
+            [
+              78.89658635914783,
+              16.21796107432198
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanachitra.AI - Telangana FRA Atlas (Forest Rights Only)</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet Search Plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Main Layout */
+        .gee-container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Side Panel */
+        .side-panel {
+            width: 350px;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid #444;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+        }
+
+        .panel-header {
+            padding: 20px;
+            border-bottom: 1px solid #444;
+            background: #2a2a2a;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #4285f4;
+            margin-bottom: 5px;
+        }
+
+        .panel-subtitle {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-label {
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .control-input {
+            width: 100%;
+            padding: 8px 12px;
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .control-input:focus {
+            outline: none;
+            border-color: #4285f4;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #3367d6;
+        }
+
+        .btn-secondary {
+            background: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #777;
+        }
+
+        /* Map Container */
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            cursor: grab;
+        }
+        
+        #map:active {
+            cursor: grabbing;
+        }
+
+        /* Legend */
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            min-width: 200px;
+            z-index: 1000;
+        }
+
+        .legend-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #4285f4;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            margin-right: 8px;
+            border: 1px solid #666;
+        }
+
+        /* Top Controls */
+        .top-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(42, 42, 42, 0.95);
+            border: 1px solid #444;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ccc;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            background: #4285f4;
+            color: white;
+        }
+
+        /* Search Box */
+        .search-container {
+            position: absolute;
+            top: 20px;
+            left: 380px;
+            z-index: 1000;
+        }
+
+        .search-box {
+            width: 300px;
+            padding: 10px 40px 10px 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .search-box::placeholder {
+            color: #666;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #4285f4;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* Info Panel */
+        .info-panel {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            max-width: 300px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .info-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #4285f4;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        /* Loading Indicator */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            background: rgba(42, 42, 42, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #333;
+            border-top: 4px solid #4285f4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .side-panel {
+                width: 280px;
+            }
+            
+            .search-container {
+                left: 300px;
+            }
+            
+            .search-box {
+                width: 200px;
+            }
+        }
+        
+        /* Forest layer popup styling */
+        .popup-content h4 {
+            color: #228B22;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+        
+        .popup-content {
+            max-width: 300px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .popup-content strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="gee-container">
+        <!-- Side Panel -->
+        <div class="side-panel">
+            <div class="panel-header">
+                <div class="panel-title">Telangana FRA Atlas</div>
+                <div class="panel-subtitle">Forest Rights Act Claims (Forest Areas Only)</div>
+            </div>
+            
+            <div class="controls-section">
+                <div class="control-group">
+                    <label class="control-label">State Selection</label>
+                    <select id="stateFilter" class="control-input">
+                        <option value="telangana">Telangana</option>
+                        <option value="odisha">Odisha</option>
+                        <option value="madhya pradesh">Madhya Pradesh</option>
+                        <option value="tripura">Tripura</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">Land-use Filter</label>
+                    <select id="landuseFilter" class="control-input">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">District Filter</label>
+                    <select id="districtFilter" class="control-input">
+                        <option value="">All Districts</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">Area Range (km²)</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="number" id="minArea" class="control-input" placeholder="Min" style="width: 50%;">
+                        <input type="number" id="maxArea" class="control-input" placeholder="Max" style="width: 50%;">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <button id="applyFilters" class="btn">Apply Filters</button>
+                    <button id="clearFilters" class="btn btn-secondary" style="margin-left: 10px;">Clear</button>
+                </div>
+            </div>
+            
+            <div class="controls-section">
+                <div class="control-group">
+                    <label class="control-label">Layer Opacity</label>
+                    <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.8" class="control-input">
+                </div>
+                
+                <div class="control-group">
+                    <button id="exportData" class="btn">Export Data</button>
+                </div>
+            </div>
+            
+            <div class="controls-section">
+                <h4 style="color: #4285f4; margin-bottom: 15px;">🌳 FRA Layers (Forest-Constrained)</h4>
+                
+                <div class="control-group">
+                    <label class="control-label">
+                        <input type="checkbox" id="toggleCFR" checked style="margin-right: 8px;">
+                        🌲 CFR - Community Forest Rights
+                    </label>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">
+                        <input type="checkbox" id="toggleIFR" checked style="margin-right: 8px;">
+                        🏠 IFR - Individual Forest Rights
+                    </label>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">
+                        <input type="checkbox" id="toggleCR" checked style="margin-right: 8px;">
+                        🤝 CR - Community Rights
+                    </label>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">FRA Layer Opacity</label>
+                    <input type="range" id="fraOpacitySlider" min="0" max="1" step="0.1" value="0.6" class="control-input">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Map Container -->
+        <div class="map-container">
+            <div id="map"></div>
+            
+            <!-- Search Box -->
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search places in Telangana...">
+            </div>
+            
+            <!-- Top Controls -->
+            <div class="top-controls">
+                <div class="control-btn" id="fullscreenBtn" title="Fullscreen">
+                    <span class="material-icons">fullscreen</span>
+                </div>
+            </div>
+            
+            <!-- Legend -->
+            <div class="legend" id="legend">
+                <div class="legend-title">Land-use Categories</div>
+                <div id="legendContent"></div>
+            </div>
+            
+            <!-- Info Panel -->
+            <div class="info-panel" id="infoPanel">
+                <div class="info-title">Feature Information</div>
+                <div id="infoContent"></div>
+            </div>
+            
+            <!-- Loading Indicator -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div>Loading data...</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+    
+    <script>
+        // Global variables
+        let map;
+        let landuseLayer;
+        let fraLayers = {}; // FRA layers (CFR, IFR, CR)
+        let districtBoundariesLayer;
+        let telanganaForestLayer; // Add forest layer variable
+        let categories = {};
+        let currentData = null;
+        let currentState = 'telangana';
+        let availableDistricts = [];
+        let fraData = null;
+        
+        // Initialize map
+        function initMap() {
+            // Create map centered on Telangana
+            map = L.map('map', {
+                center: [17.9689, 78.9629],
+                zoom: 7,
+                zoomControl: false,
+                scrollWheelZoom: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                keyboard: true
+            });
+            
+            // Add zoom control to bottom right
+            L.control.zoom({
+                position: 'bottomleft'
+            }).addTo(map);
+            
+            // Create custom panes for proper layer ordering
+            map.createPane('districts');
+            map.getPane('districts').style.zIndex = 300; // Lower z-index for districts
+            
+            map.createPane('fraLayers');
+            map.getPane('fraLayers').style.zIndex = 400; // Higher z-index for FRA layers
+            
+            // Fix scroll wheel zoom behavior
+            map.scrollWheelZoom.disable();
+            
+            // Enable scroll wheel zoom when mouse enters map
+            map.getContainer().addEventListener('mouseenter', function() {
+                map.scrollWheelZoom.enable();
+            });
+            
+            // Disable scroll wheel zoom when mouse leaves map
+            map.getContainer().addEventListener('mouseleave', function() {
+                map.scrollWheelZoom.disable();
+            });
+            
+            // Add click to focus functionality
+            map.on('click', function() {
+                map.getContainer().focus();
+            });
+        }
+        
+        // Load land-use categories
+        async function loadCategories() {
+            try {
+                const response = await fetch('/api/telangana_landuse_categories');
+                categories = await response.json();
+                updateLegend();
+                updateFilters();
+            } catch (error) {
+                console.error('Error loading categories:', error);
+            }
+        }
+        
+        // Load state boundaries
+        async function loadStateBoundaries(state) {
+            try {
+                showLoading(true);
+                const response = await fetch(`/api/boundaries/${state}`);
+                const data = await response.json();
+                
+                if (data.error) {
+                    console.warn('Boundary data not available for', state);
+                    return;
+                }
+                
+                // Remove existing boundaries
+                if (districtBoundariesLayer) {
+                    map.removeLayer(districtBoundariesLayer);
+                }
+                
+                // Add district boundaries
+                if (data.districts) {
+                    districtBoundariesLayer = L.geoJSON(data.districts, {
+                        pane: 'districts', // Use districts pane with lower z-index
+                        style: {
+                            fillColor: 'transparent',
+                            weight: 2,
+                            opacity: 0.8,
+                            color: '#ff00ff', // Magenta like in your reference image
+                            fillOpacity: 0
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const props = feature.properties;
+                            const districtName = props.D_N || props.NAME || 'Unknown District';
+                            
+                            // Popup for district info
+                            const popupContent = `
+                                <div style="color: #333; font-family: Roboto, sans-serif;">
+                                    <h4 style="margin: 0 0 10px 0; color: #4285f4;">${districtName}</h4>
+                                    <p><strong>State:</strong> ${currentState.charAt(0).toUpperCase() + currentState.slice(1)}</p>
+                                    <p><strong>Area:</strong> ${(props.AREA / 1000000).toFixed(2)} km²</p>
+                                    ${props.Total ? `<p><strong>Villages:</strong> ${props.Total}</p>` : ''}
+                                </div>
+                            `;
+                            
+                            layer.bindPopup(popupContent);
+                            
+                            // Hover effects
+                            layer.on('mouseover', function(e) {
+                                this.setStyle({
+                                    weight: 3,
+                                    color: '#ff0080',
+                                    fillOpacity: 0.1,
+                                    fillColor: '#ff00ff'
+                                });
+                            });
+                            
+                            layer.on('mouseout', function(e) {
+                                this.setStyle({
+                                    weight: 2,
+                                    color: '#ff00ff',
+                                    fillOpacity: 0
+                                });
+                            });
+                        }
+                    }).addTo(map);
+                    
+                    // Fit map to boundaries
+                    map.fitBounds(districtBoundariesLayer.getBounds(), { padding: [20, 20] });
+                }
+                
+            } catch (error) {
+                console.error('Error loading boundaries:', error);
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        // Load districts for a state
+        async function loadStateDistricts(state) {
+            try {
+                const response = await fetch(`/api/districts/${state}`);
+                const data = await response.json();
+                
+                if (data.districts) {
+                    availableDistricts = data.districts;
+                    updateDistrictFilter();
+                }
+            } catch (error) {
+                console.error('Error loading districts:', error);
+                availableDistricts = [];
+                updateDistrictFilter();
+            }
+        }
+        
+        // Update district filter dropdown
+        function updateDistrictFilter() {
+            const districtSelect = document.getElementById('districtFilter');
+            districtSelect.innerHTML = '<option value="">All Districts</option>';
+            
+            availableDistricts.forEach(district => {
+                const option = document.createElement('option');
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            });
+        }
+        
+        // Handle state change
+        async function handleStateChange(newState) {
+            console.log('Changing state to:', newState);
+            currentState = newState.toLowerCase();
+            
+            // Update panel title
+            document.querySelector('.panel-title').textContent = 
+                `${newState.charAt(0).toUpperCase() + newState.slice(1)} Land-use Atlas`;
+            
+            // Load boundaries and districts
+            await Promise.all([
+                loadStateBoundaries(currentState),
+                loadStateDistricts(currentState)
+            ]);
+            
+            // Update map center based on state
+            const stateCenters = {
+                'telangana': [17.9689, 78.9629],
+                'odisha': [20.9517, 85.0985],
+                'madhya pradesh': [22.9734, 78.6569],
+                'tripura': [23.9408, 91.9882]
+            };
+            
+            const center = stateCenters[currentState] || [20.5937, 78.9629];
+            map.setView(center, 7);
+            
+            // Load only FRA data - land-use representation removed as requested
+            // loadLanduseData(); // REMOVED: Focus only on FRA layers
+        }
+        
+        // Load land-use data
+        async function loadLanduseData(filters = {}) {
+            console.log('Loading land-use data for state:', currentState, 'with filters:', filters);
+            showLoading(true);
+            
+            try {
+                const params = new URLSearchParams(filters);
+                const url = `/api/landuse_data/${currentState}?${params}`;
+                console.log('Fetching from URL:', url);
+                const response = await fetch(url);
+                const data = await response.json();
+                console.log('Received data:', data);
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                currentData = data;
+                displayLanduseData(data);
+                updateInfoPanel(data);
+                
+            } catch (error) {
+                console.error('Error loading land-use data:', error);
+                alert('Error loading data: ' + error.message);
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        // Display land-use data on map
+        function displayLanduseData(data) {
+            // Remove existing layer
+            if (landuseLayer) {
+                map.removeLayer(landuseLayer);
+            }
+            
+            // Create new layer
+            landuseLayer = L.geoJSON(data, {
+                style: function(feature) {
+                    const props = feature.properties;
+                    return {
+                        fillColor: props.color,
+                        weight: 1,
+                        opacity: 0.8,
+                        color: '#ffffff',
+                        fillOpacity: 0.7
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const props = feature.properties;
+                    
+                    // Popup content
+                    const popupContent = `
+                        <div style="color: #333; font-family: Roboto, sans-serif;">
+                            <h4 style="margin: 0 0 10px 0; color: #4285f4;">${props.landuse_type}</h4>
+                            <p><strong>District:</strong> ${props.district}</p>
+                            <p><strong>Area:</strong> ${props.area_km2} km² (${props.area_hectares} ha)</p>
+                            <p><strong>Confidence:</strong> ${(props.confidence * 100).toFixed(1)}%</p>
+                            <p><strong>Description:</strong> ${props.description}</p>
+                            <p style="font-size: 11px; color: #666; margin-top: 10px;">
+                                Source: ${props.data_source}<br>
+                                Resolution: ${props.resolution}
+                            </p>
+                        </div>
+                    `;
+                    
+                    layer.bindPopup(popupContent);
+                    
+                    // Hover effects
+                    layer.on('mouseover', function(e) {
+                        this.setStyle({
+                            weight: 3,
+                            fillOpacity: 0.9
+                        });
+                        
+                        showFeatureInfo(props);
+                    });
+                    
+                    layer.on('mouseout', function(e) {
+                        this.setStyle({
+                            weight: 1,
+                            fillOpacity: 0.7
+                        });
+                        
+                        hideFeatureInfo();
+                    });
+                }
+            }).addTo(map);
+            
+            // Fit bounds to data
+            if (data.features.length > 0) {
+                map.fitBounds(landuseLayer.getBounds(), { padding: [20, 20] });
+            }
+        }
+        
+        // Update legend - fixed to show only the 4 required categories
+        function updateLegend() {
+            const legendContent = document.getElementById('legendContent');
+            legendContent.innerHTML = '';
+            
+            // Fixed 4 categories as requested
+            const fixedCategories = {
+                'Forest': { color: '#228B22' },
+                'Agricultural': { color: '#FFD700' },
+                'Water Bodies': { color: '#4169E1' },
+                'Homesteads': { color: '#8B4513' }
+            };
+            
+            Object.entries(fixedCategories).forEach(([name, info]) => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = `
+                    <div class="legend-color" style="background-color: ${info.color}"></div>
+                    <span>${name}</span>
+                `;
+                legendContent.appendChild(item);
+            });
+        }
+        
+        // Update filter dropdowns - simplified to only 4 land use categories
+        function updateFilters() {
+            const landuseSelect = document.getElementById('landuseFilter');
+            
+            // Clear existing options
+            landuseSelect.innerHTML = '<option value="">All Categories</option>';
+            
+            // Add only the 4 specified land-use categories
+            const allowedCategories = {
+                'forest': 'Forest',
+                'agricultural': 'Agricultural', 
+                'water_bodies': 'Water Bodies',
+                'homesteads': 'Homesteads'
+            };
+            
+            Object.entries(allowedCategories).forEach(([value, label]) => {
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = label;
+                landuseSelect.appendChild(option);
+            });
+        }
+        
+        // Show feature information
+        function showFeatureInfo(props) {
+            const infoPanel = document.getElementById('infoPanel');
+            const infoContent = document.getElementById('infoContent');
+            
+            infoContent.innerHTML = `
+                <div class="info-item"><strong>Type:</strong> ${props.landuse_type}</div>
+                <div class="info-item"><strong>District:</strong> ${props.district}</div>
+                <div class="info-item"><strong>Area:</strong> ${props.area_km2} km²</div>
+                <div class="info-item"><strong>Confidence:</strong> ${(props.confidence * 100).toFixed(1)}%</div>
+            `;
+            
+            infoPanel.style.display = 'block';
+        }
+        
+        // Hide feature information
+        function hideFeatureInfo() {
+            document.getElementById('infoPanel').style.display = 'none';
+        }
+        
+        // Load Telangana Forest boundaries
+        async function loadTelanganaForest() {
+            try {
+                console.log('Loading Telangana forest boundaries...');
+                const response = await fetch('/api/telangana_forest');
+                
+                if (!response.ok) {
+                    console.error('Forest data not available, status:', response.status);
+                    return null;
+                }
+                
+                console.log('Forest API response received, parsing JSON...');
+                const forestData = await response.json();
+                console.log(`Loaded ${forestData.features?.length || 0} forest features`);
+                
+                if (!forestData.features || forestData.features.length === 0) {
+                    console.warn('No forest features found in data');
+                    return null;
+                }
+                
+                console.log('Creating forest layer...');
+                telanganaForestLayer = L.geoJSON(forestData, {
+                    style: {
+                        color: '#228B22',      // Forest green border
+                        fillColor: '#32CD32',  // Lime green fill
+                        weight: 2,
+                        opacity: 0.8,
+                        fillOpacity: 0.4
+                    },
+                    onEachFeature: function(feature, layer) {
+                        // Add popup with forest information
+                        let popupContent = '<div class="popup-content">';
+                        popupContent += '<h4>🌲 Forest Area</h4>';
+                        
+                        if (feature.properties) {
+                            Object.keys(feature.properties).forEach(key => {
+                                if (feature.properties[key] !== null && feature.properties[key] !== '') {
+                                    popupContent += `<strong>${key}:</strong> ${feature.properties[key]}<br>`;
+                                }
+                            });
+                        }
+                        
+                        popupContent += '</div>';
+                        layer.bindPopup(popupContent);
+                        
+                        // Add hover effects
+                        layer.on({
+                            mouseover: function(e) {
+                                e.target.setStyle({
+                                    weight: 3,
+                                    fillOpacity: 0.6
+                                });
+                            },
+                            mouseout: function(e) {
+                                telanganaForestLayer.resetStyle(e.target);
+                            }
+                        });
+                    }
+                });
+                
+                console.log('Forest layer created successfully');
+                return telanganaForestLayer;
+                
+            } catch (error) {
+                console.error('Error loading forest data:', error);
+                return null;
+            }
+        }
+        
+        // Load FRA data for Telangana
+        async function loadFRAData() {
+            try {
+                console.log('Loading Telangana FRA data...');
+                const response = await fetch('/api/telangana_fra_constrained');
+                
+                if (!response.ok) {
+                    console.warn('FRA data not available');
+                    return;
+                }
+                
+                fraData = await response.json();
+                console.log(`Loaded ${fraData.features?.length || 0} FRA features`);
+                
+                displayFRALayers();
+                
+            } catch (error) {
+                console.error('Error loading FRA data:', error);
+            }
+        }
+        
+        // Display FRA layers
+        function displayFRALayers() {
+            if (!fraData || !fraData.features) {
+                return;
+            }
+            
+            // Clear existing FRA layers
+            Object.values(fraLayers).forEach(layer => {
+                if (layer && map.hasLayer(layer)) {
+                    map.removeLayer(layer);
+                }
+            });
+            
+            // Group features by type
+            const featureGroups = {
+                'CFR': [],
+                'IFR': [],
+                'CR': []
+            };
+            
+            fraData.features.forEach(feature => {
+                const claimType = feature.properties.claim_type;
+                if (featureGroups[claimType]) {
+                    featureGroups[claimType].push(feature);
+                }
+            });
+            
+            // Create layers for each FRA type
+            Object.entries(featureGroups).forEach(([type, features]) => {
+                if (features.length === 0) return;
+                
+                const color = getFRAColor(type);
+                
+                fraLayers[type] = L.geoJSON(features, {
+                    pane: 'fraLayers', // Use fraLayers pane with higher z-index
+                    style: function(feature) {
+                        return {
+                            fillColor: color.fillColor,
+                            weight: 2,
+                            opacity: 0.8,
+                            color: color.color,
+                            fillOpacity: color.fillOpacity
+                        };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        const props = feature.properties;
+                        
+                        // Create popup content
+                        const popupContent = `
+                            <div style="color: #333; font-family: Roboto, sans-serif;">
+                                <h4 style="margin: 0 0 10px 0; color: ${color.color};">${props.fra_type}</h4>
+                                <p><strong>Claim ID:</strong> ${props.claim_id}</p>
+                                <p><strong>Village:</strong> ${props.village}</p>
+                                <p><strong>District:</strong> ${props.district}</p>
+                                <p><strong>Status:</strong> ${props.status}</p>
+                                ${props.area_claimed ? `<p><strong>Area:</strong> ${props.area_claimed} ha</p>` : ''}
+                                ${props.household_head ? `<p><strong>Household Head:</strong> ${props.household_head}</p>` : ''}
+                                ${props.tribal_community ? `<p><strong>Tribal Community:</strong> ${props.tribal_community}</p>` : ''}
+                                <p style="font-size: 11px; color: #666; margin-top: 10px;">
+                                    Forest-constrained FRA data
+                                </p>
+                            </div>
+                        `;
+                        
+                        layer.bindPopup(popupContent);
+                        
+                        // Hover effects with event stopPropagation to prevent district hover
+                        layer.on('mouseover', function(e) {
+                            e.originalEvent.stopPropagation(); // Stop event from bubbling to district layer
+                            this.setStyle({
+                                weight: 4,
+                                fillOpacity: Math.min(color.fillOpacity + 0.2, 0.9)
+                            });
+                        });
+                        
+                        layer.on('mouseout', function(e) {
+                            e.originalEvent.stopPropagation(); // Stop event from bubbling to district layer
+                            this.setStyle({
+                                weight: 2,
+                                fillOpacity: color.fillOpacity
+                            });
+                        });
+                        
+                        // Also stop click events from propagating
+                        layer.on('click', function(e) {
+                            e.originalEvent.stopPropagation();
+                        });
+                    }
+                });
+                
+                // Add to map by default
+                fraLayers[type].addTo(map);
+            });
+            
+            // Update layer control
+            updateLayerControl();
+        }
+        
+        // Get color scheme for FRA types
+        function getFRAColor(type) {
+            const colors = {
+                'CFR': { color: '#8B4513', fillColor: '#D2691E', fillOpacity: 0.5 },
+                'IFR': { color: '#FF4500', fillColor: '#FF6347', fillOpacity: 0.7 },
+                'CR': { color: '#9B59B6', fillColor: '#BA68C8', fillOpacity: 0.6 }
+            };
+            return colors[type] || { color: '#333333', fillColor: '#666666', fillOpacity: 0.5 };
+        }
+        
+        // Update layer control - simplified to only base layers
+        function updateLayerControl() {
+            // Remove existing layer controls
+            map.eachLayer(function (layer) {
+                if (layer instanceof L.Control.Layers) {
+                    map.removeControl(layer);
+                }
+            });
+            
+            // Base layers only (no overlays since FRA controls are in left panel)
+            const baseLayers = {
+                'Satellite': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+                'OpenStreetMap': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+                'Terrain': L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png')
+            };
+            
+            // Add default satellite layer if no layer is currently active
+            let hasActiveBaseLayer = false;
+            map.eachLayer(function(layer) {
+                if (layer.options && layer.options.attribution && 
+                    (layer.options.attribution.includes('Esri') || 
+                     layer.options.attribution.includes('OpenStreetMap') || 
+                     layer.options.attribution.includes('Stamen'))) {
+                    hasActiveBaseLayer = true;
+                }
+            });
+            
+            if (!hasActiveBaseLayer) {
+                baseLayers['Satellite'].addTo(map);
+            }
+            
+            // Add simplified layer control with only base layers
+            L.control.layers(baseLayers, {}, {
+                position: 'topleft'
+            }).addTo(map);
+        }
+        
+        // Update info panel with data summary
+        function updateInfoPanel(data) {
+            // This could show summary statistics
+        }
+        
+        // Show/hide loading indicator
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing map...');
+            initMap();
+            console.log('Map initialized, loading categories...');
+            loadCategories();
+            
+            // Initialize with Telangana
+            console.log('Initializing with Telangana...');
+            handleStateChange('telangana');
+            
+            // Load FRA data and forest boundaries for Telangana
+            console.log('Loading FRA data...');
+            loadFRAData();
+            
+            console.log('Loading forest boundaries...');
+            loadTelanganaForest().then(forestLayer => {
+                console.log('Forest loading promise resolved:', forestLayer ? 'success' : 'failed');
+                if (forestLayer) {
+                    console.log('Forest layer loaded successfully, adding to map...');
+                    // Add to map by default
+                    forestLayer.addTo(map);
+                    console.log('Forest layer added to map, updating layer control...');
+                    // Update layer control to include forest layer
+                    updateLayerControl();
+                    // Fit map to show forest areas
+                    if (forestLayer.getBounds && forestLayer.getBounds().isValid()) {
+                        console.log('Fitting map bounds to forest areas...');
+                        map.fitBounds(forestLayer.getBounds(), {padding: [20, 20]});
+                    } else {
+                        console.log('Forest layer bounds not valid or not available');
+                    }
+                } else {
+                    console.error('Failed to load forest layer');
+                }
+            }).catch(error => {
+                console.error('Error in forest loading promise:', error);
+            });
+            
+            // State selection change
+            document.getElementById('stateFilter').addEventListener('change', function(e) {
+                handleStateChange(e.target.value);
+            });
+            
+            // Filter controls
+            document.getElementById('applyFilters').addEventListener('click', function() {
+                const filters = {
+                    landuse_type: document.getElementById('landuseFilter').value,
+                    district: document.getElementById('districtFilter').value,
+                    min_area: document.getElementById('minArea').value,
+                    max_area: document.getElementById('maxArea').value
+                };
+                
+                // Remove empty filters
+                Object.keys(filters).forEach(key => {
+                    if (!filters[key]) delete filters[key];
+                });
+                
+                // Focus only on FRA data - land-use filters disabled
+                // loadLanduseData(filters); // REMOVED: No land-use representation
+            });
+            
+            document.getElementById('clearFilters').addEventListener('click', function() {
+                document.getElementById('landuseFilter').value = '';
+                document.getElementById('districtFilter').value = '';
+                document.getElementById('minArea').value = '';
+                document.getElementById('maxArea').value = '';
+                
+                // Reload only FRA data - land-use removed
+                // loadLanduseData(); // REMOVED: Focus only on FRA layers
+            });
+            
+            // Opacity control
+            document.getElementById('opacitySlider').addEventListener('input', function(e) {
+                if (landuseLayer) {
+                    landuseLayer.setStyle({
+                        fillOpacity: parseFloat(e.target.value)
+                    });
+                }
+            });
+            
+            // Export data
+            document.getElementById('exportData').addEventListener('click', function() {
+                if (currentData) {
+                    const dataStr = JSON.stringify(currentData, null, 2);
+                    const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                    const url = URL.createObjectURL(dataBlob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'telangana_landuse_data.geojson';
+                    link.click();
+                }
+            });
+            
+            // FRA layer toggle controls
+            document.getElementById('toggleCFR').addEventListener('change', function(e) {
+                if (fraLayers.CFR) {
+                    if (e.target.checked) {
+                        fraLayers.CFR.addTo(map);
+                    } else {
+                        map.removeLayer(fraLayers.CFR);
+                    }
+                }
+            });
+            
+            document.getElementById('toggleIFR').addEventListener('change', function(e) {
+                if (fraLayers.IFR) {
+                    if (e.target.checked) {
+                        fraLayers.IFR.addTo(map);
+                    } else {
+                        map.removeLayer(fraLayers.IFR);
+                    }
+                }
+            });
+            
+            document.getElementById('toggleCR').addEventListener('change', function(e) {
+                if (fraLayers.CR) {
+                    if (e.target.checked) {
+                        fraLayers.CR.addTo(map);
+                    } else {
+                        map.removeLayer(fraLayers.CR);
+                    }
+                }
+            });
+            
+            // Land use filter - connect forest option to forest layer
+            document.getElementById('landuseFilter').addEventListener('change', function(e) {
+                const selectedValue = e.target.value;
+                
+                // Handle forest layer toggle
+                if (telanganaForestLayer) {
+                    if (selectedValue === 'forest') {
+                        // Show forest layer when forest is selected
+                        if (!map.hasLayer(telanganaForestLayer)) {
+                            telanganaForestLayer.addTo(map);
+                        }
+                    } else {
+                        // Hide forest layer when other categories selected
+                        if (map.hasLayer(telanganaForestLayer)) {
+                            map.removeLayer(telanganaForestLayer);
+                        }
+                    }
+                }
+                
+                // TODO: Add handlers for agricultural, water_bodies, homesteads when GeoJSON files are provided
+            });
+            
+            // FRA opacity control
+            document.getElementById('fraOpacitySlider').addEventListener('input', function(e) {
+                const opacity = parseFloat(e.target.value);
+                Object.values(fraLayers).forEach(layer => {
+                    if (layer && map.hasLayer(layer)) {
+                        layer.eachLayer(function(subLayer) {
+                            const style = subLayer.options.style || subLayer.options;
+                            subLayer.setStyle({
+                                fillOpacity: opacity
+                            });
+                        });
+                    }
+                });
+            });
+            
+            // Top controls
+            document.getElementById('fullscreenBtn').addEventListener('click', function() {
+                // Simple fullscreen toggle for the map container
+                const mapContainer = document.getElementById('map');
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else {
+                    mapContainer.requestFullscreen().catch(err => {
+                        console.log('Fullscreen not supported');
+                    });
+                }
+            });
+            
+            // Search functionality
+            const searchBox = document.getElementById('searchBox');
+            
+            // Add search on Enter key press
+            searchBox.addEventListener('keypress', async function(e) {
+                if (e.key === 'Enter') {
+                    const query = e.target.value.trim();
+                    if (query) {
+                        await searchLocation(query);
+                    }
+                }
+            });
+            
+            // Search function using OpenStreetMap Nominatim API
+            async function searchLocation(query) {
+                try {
+                    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=IN&limit=1&bounded=1&viewbox=77.2,15.8,81.8,19.9`);
+                    const data = await response.json();
+                    
+                    if (data && data.length > 0) {
+                        const result = data[0];
+                        const lat = parseFloat(result.lat);
+                        const lon = parseFloat(result.lon);
+                        
+                        // Zoom to the location
+                        map.setView([lat, lon], 12);
+                        
+                        // Add a marker for the searched location
+                        if (window.searchMarker) {
+                            map.removeLayer(window.searchMarker);
+                        }
+                        
+                        window.searchMarker = L.marker([lat, lon]).addTo(map)
+                            .bindPopup(`<strong>${result.display_name}</strong>`)
+                            .openPopup();
+                        
+                        // Remove marker after 5 seconds
+                        setTimeout(() => {
+                            if (window.searchMarker) {
+                                map.removeLayer(window.searchMarker);
+                                window.searchMarker = null;
+                            }
+                        }, 5000);
+                        
+                    } else {
+                        alert('Location not found. Please try a different search term.');
+                    }
+                } catch (error) {
+                    console.error('Search error:', error);
+                    alert('Search failed. Please try again.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

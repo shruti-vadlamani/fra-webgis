@@ -1,0 +1,1880 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "name": "Telangana Land-use Classification",
+    "description": "Dummy ESA WorldCover-style land-use data for Telangana",
+    "total_features": 29,
+    "categories": 7,
+    "generated_at": "2025-09-17T12:28:49.089295",
+    "bounds": {
+      "min_lat": 15.8,
+      "max_lat": 19.9,
+      "min_lon": 77.3,
+      "max_lon": 81.1
+    },
+    "projection": "EPSG:4326",
+    "data_source": "Generated for Vanachitra.AI prototype"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_001",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Urban areas including Hyderabad metro",
+        "district": "Hyderabad",
+        "area_km2": 1556.78,
+        "area_hectares": 155677.97,
+        "confidence": 0.96,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.4867,
+              17.60328436376209
+            ],
+            [
+              78.57567495683612,
+              17.50186921493479
+            ],
+            [
+              78.69097475761345,
+              17.448340884526356
+            ],
+            [
+              78.74287030419534,
+              17.305567505027607
+            ],
+            [
+              78.6280485814344,
+              17.199337670600833
+            ],
+            [
+              78.4867,
+              17.13004555407741
+            ],
+            [
+              78.3963876220213,
+              17.266374073238318
+            ],
+            [
+              78.23809845594697,
+              17.307914402744103
+            ],
+            [
+              78.33893748057015,
+              17.43081774463901
+            ],
+            [
+              78.339461138369,
+              17.57839925276278
+            ],
+            [
+              78.4867,
+              17.60328436376209
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_002",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Urban areas including Hyderabad metro",
+        "district": "Hyderabad",
+        "area_km2": 198.79,
+        "area_hectares": 19879.05,
+        "confidence": 0.97,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.4867,
+              17.482966738673177
+            ],
+            [
+              78.5508426936125,
+              17.42034109063514
+            ],
+            [
+              78.5478367626952,
+              17.35131510543347
+            ],
+            [
+              78.4867,
+              17.326303861909455
+            ],
+            [
+              78.40009045036625,
+              17.337280208842387
+            ],
+            [
+              78.41153696871929,
+              17.42641303321235
+            ],
+            [
+              78.4867,
+              17.482966738673177
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_003",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Adilabad",
+        "area_km2": 836.91,
+        "area_hectares": 83691.45,
+        "confidence": 0.93,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5311,
+              19.78476205283767
+            ],
+            [
+              78.63762492860891,
+              19.770308870758843
+            ],
+            [
+              78.65163919873025,
+              19.67
+            ],
+            [
+              78.64913803306798,
+              19.5588498499059
+            ],
+            [
+              78.5311,
+              19.51141276687733
+            ],
+            [
+              78.38524552795802,
+              19.532656585864803
+            ],
+            [
+              78.32828033342629,
+              19.67
+            ],
+            [
+              78.41060330464043,
+              19.78346534186438
+            ],
+            [
+              78.5311,
+              19.78476205283767
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_004",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Adilabad",
+        "area_km2": 625.78,
+        "area_hectares": 62578.47,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5311,
+              19.810229438251167
+            ],
+            [
+              78.6499687838222,
+              19.73462421511693
+            ],
+            [
+              78.68544167893346,
+              19.58609058711476
+            ],
+            [
+              78.5311,
+              19.53366592720839
+            ],
+            [
+              78.42269264755821,
+              19.611063247732616
+            ],
+            [
+              78.3938056100888,
+              19.744641481999505
+            ],
+            [
+              78.5311,
+              19.810229438251167
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_005",
+        "landuse_type": "Grassland",
+        "landuse_code": 30,
+        "color": "#FFFF4C",
+        "description": "Natural grasslands and grazing areas",
+        "district": "Warangal",
+        "area_km2": 524.51,
+        "area_hectares": 52451.49,
+        "confidence": 0.98,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.5941,
+              18.074177312321325
+            ],
+            [
+              79.65451366306213,
+              18.058320292981552
+            ],
+            [
+              79.69546823643363,
+              18.012935324420866
+            ],
+            [
+              79.70033089381236,
+              17.95437129147036
+            ],
+            [
+              79.68920358122048,
+              17.890511787780838
+            ],
+            [
+              79.63831218148854,
+              17.825671463099162
+            ],
+            [
+              79.55238112056601,
+              17.833748694154146
+            ],
+            [
+              79.49265191705179,
+              17.885282393246207
+            ],
+            [
+              79.49431456880683,
+              17.955252807612908
+            ],
+            [
+              79.47776590996897,
+              18.01943663332771
+            ],
+            [
+              79.51599079176762,
+              18.084512064070893
+            ],
+            [
+              79.5941,
+              18.074177312321325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_006",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Warangal",
+        "area_km2": 912.18,
+        "area_hectares": 91218.11,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.5941,
+              18.1496769625045
+            ],
+            [
+              79.69042269883964,
+              18.111470463607812
+            ],
+            [
+              79.74201390279859,
+              18.033155203851333
+            ],
+            [
+              79.7725118858822,
+              17.944499430681773
+            ],
+            [
+              79.69086579757312,
+              17.88914172193754
+            ],
+            [
+              79.64626435223931,
+              17.799909834890126
+            ],
+            [
+              79.53738135646948,
+              17.78515588119916
+            ],
+            [
+              79.48166614960664,
+              17.8762274800786
+            ],
+            [
+              79.41620360676713,
+              17.944569932229697
+            ],
+            [
+              79.46547254221178,
+              18.024776989009705
+            ],
+            [
+              79.52171653032038,
+              18.07603720601772
+            ],
+            [
+              79.5941,
+              18.1496769625045
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_007",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Warangal",
+        "area_km2": 1532.38,
+        "area_hectares": 153238.14,
+        "confidence": 0.94,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.5941,
+              18.129388786896495
+            ],
+            [
+              79.68644625552733,
+              18.121046780551268
+            ],
+            [
+              79.83692748889898,
+              18.102258306208
+            ],
+            [
+              79.81118047840185,
+              17.9689
+            ],
+            [
+              79.81680960863376,
+              17.846590222312514
+            ],
+            [
+              79.69096492148975,
+              17.809308407803236
+            ],
+            [
+              79.5941,
+              17.72375154478162
+            ],
+            [
+              79.4998778254102,
+              17.81366251431618
+            ],
+            [
+              79.41988867891058,
+              17.873224972398795
+            ],
+            [
+              79.43527912180556,
+              17.9689
+            ],
+            [
+              79.35934462586278,
+              18.09782518557151
+            ],
+            [
+              79.49298212998065,
+              18.135498616173372
+            ],
+            [
+              79.5941,
+              18.129388786896495
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_008",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Warangal",
+        "area_km2": 606.14,
+        "area_hectares": 60614.3,
+        "confidence": 0.91,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.5941,
+              18.126013914091555
+            ],
+            [
+              79.64891240985308,
+              18.059207199201317
+            ],
+            [
+              79.71789142829087,
+              18.036884952094148
+            ],
+            [
+              79.75403687310398,
+              17.9689
+            ],
+            [
+              79.69118451086814,
+              17.915582206421064
+            ],
+            [
+              79.65603971595968,
+              17.866850075856238
+            ],
+            [
+              79.5941,
+              17.849163106997537
+            ],
+            [
+              79.53793066382899,
+              17.876357171757324
+            ],
+            [
+              79.47879083362011,
+              17.905573417048455
+            ],
+            [
+              79.43203211874123,
+              17.9689
+            ],
+            [
+              79.48253789124318,
+              18.0301687382646
+            ],
+            [
+              79.52286546682818,
+              18.086263772080144
+            ],
+            [
+              79.5941,
+              18.126013914091555
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_009",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Khammam",
+        "area_km2": 376.07,
+        "area_hectares": 37607.03,
+        "confidence": 0.94,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.1514,
+              17.36278123442884
+            ],
+            [
+              80.23379858449796,
+              17.325993442956904
+            ],
+            [
+              80.26130874433537,
+              17.2473
+            ],
+            [
+              80.23273440461121,
+              17.16962288492936
+            ],
+            [
+              80.1514,
+              17.176340663364382
+            ],
+            [
+              80.08363106489728,
+              17.182578368417992
+            ],
+            [
+              80.03487076257184,
+              17.2473
+            ],
+            [
+              80.06718241925505,
+              17.327730646068744
+            ],
+            [
+              80.1514,
+              17.36278123442884
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_010",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Khammam",
+        "area_km2": 1437.34,
+        "area_hectares": 143733.91,
+        "confidence": 0.97,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.1514,
+              17.393565617322437
+            ],
+            [
+              80.2551457213526,
+              17.365379759560245
+            ],
+            [
+              80.31600832108151,
+              17.275019752738523
+            ],
+            [
+              80.38238250253413,
+              17.11993876825912
+            ],
+            [
+              80.23606458602977,
+              17.025145703673786
+            ],
+            [
+              80.09675445611255,
+              17.103913692702545
+            ],
+            [
+              79.92662506084956,
+              17.123361550980682
+            ],
+            [
+              79.90611490907537,
+              17.28860557936685
+            ],
+            [
+              80.00762764638135,
+              17.410936675569506
+            ],
+            [
+              80.1514,
+              17.393565617322437
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_011",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Khammam",
+        "area_km2": 737.94,
+        "area_hectares": 73793.79,
+        "confidence": 0.89,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.1514,
+              17.43201449746763
+            ],
+            [
+              80.24422325731221,
+              17.31799550480323
+            ],
+            [
+              80.33526082074133,
+              17.207221970580896
+            ],
+            [
+              80.2079180073373,
+              17.13521640619405
+            ],
+            [
+              80.0772890849859,
+              17.100327060111077
+            ],
+            [
+              79.979377242992,
+              17.209802434785594
+            ],
+            [
+              80.05485918617731,
+              17.32082684838835
+            ],
+            [
+              80.1514,
+              17.43201449746763
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_012",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Khammam",
+        "area_km2": 195.59,
+        "area_hectares": 19558.66,
+        "confidence": 0.86,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.1514,
+              17.310772717364344
+            ],
+            [
+              80.19410691656009,
+              17.310765116569325
+            ],
+            [
+              80.23702210643057,
+              17.284644028303653
+            ],
+            [
+              80.2028709082016,
+              17.240232367596416
+            ],
+            [
+              80.20862630128572,
+              17.199942855052644
+            ],
+            [
+              80.17403432964498,
+              17.173680782958183
+            ],
+            [
+              80.12577361122328,
+              17.16394897052655
+            ],
+            [
+              80.10701616743187,
+              17.210570532167477
+            ],
+            [
+              80.06396560638632,
+              17.23529410822379
+            ],
+            [
+              80.08755623847237,
+              17.27514541676082
+            ],
+            [
+              80.10097157579688,
+              17.322239753984686
+            ],
+            [
+              80.1514,
+              17.310772717364344
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_013",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Nizamabad",
+        "area_km2": 120.81,
+        "area_hectares": 12080.54,
+        "confidence": 0.86,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.0937,
+              18.739083969157175
+            ],
+            [
+              78.13977403341738,
+              18.71614888298225
+            ],
+            [
+              78.13982719019039,
+              18.6725
+            ],
+            [
+              78.14410158508164,
+              18.624751350138613
+            ],
+            [
+              78.0937,
+              18.613893788192254
+            ],
+            [
+              78.04390977954725,
+              18.625330535010583
+            ],
+            [
+              78.02756340609916,
+              18.6725
+            ],
+            [
+              78.05947021828626,
+              18.704928064697437
+            ],
+            [
+              78.0937,
+              18.739083969157175
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_014",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Nizamabad",
+        "area_km2": 390.02,
+        "area_hectares": 39002.29,
+        "confidence": 0.95,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.0937,
+              18.79773377212948
+            ],
+            [
+              78.21702167222529,
+              18.739952131638827
+            ],
+            [
+              78.16956090110789,
+              18.631007053987876
+            ],
+            [
+              78.0937,
+              18.568100476131722
+            ],
+            [
+              77.98930628180561,
+              18.61540071895027
+            ],
+            [
+              78.00042105081414,
+              18.72351993709687
+            ],
+            [
+              78.0937,
+              18.79773377212948
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_015",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Karimnagar",
+        "area_km2": 373.78,
+        "area_hectares": 37378.41,
+        "confidence": 0.9,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.1288,
+              18.55337421738438
+            ],
+            [
+              79.23359580458323,
+              18.517881548641828
+            ],
+            [
+              79.23460371953095,
+              18.41569072561344
+            ],
+            [
+              79.16859925292813,
+              18.360198682827885
+            ],
+            [
+              79.08633386027081,
+              18.354945131000434
+            ],
+            [
+              79.02350593446162,
+              18.415801079041564
+            ],
+            [
+              79.04013319872485,
+              18.5056794154992
+            ],
+            [
+              79.1288,
+              18.55337421738438
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_016",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Karimnagar",
+        "area_km2": 275.16,
+        "area_hectares": 27516.25,
+        "confidence": 0.9,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.1288,
+              18.54242596080367
+            ],
+            [
+              79.18093901421423,
+              18.488062361175114
+            ],
+            [
+              79.22353207152668,
+              18.4386
+            ],
+            [
+              79.17597868601555,
+              18.393843319371555
+            ],
+            [
+              79.1288,
+              18.363579611748364
+            ],
+            [
+              79.07129142792262,
+              18.38404373717792
+            ],
+            [
+              79.00605426866761,
+              18.4386
+            ],
+            [
+              79.04619477247333,
+              18.516964534896793
+            ],
+            [
+              79.1288,
+              18.54242596080367
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_017",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Karimnagar",
+        "area_km2": 1281.9,
+        "area_hectares": 128189.62,
+        "confidence": 0.86,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.1288,
+              18.5730212907916
+            ],
+            [
+              79.2386669223378,
+              18.619125939940687
+            ],
+            [
+              79.24463510150508,
+              18.502044150226997
+            ],
+            [
+              79.33163448506726,
+              18.4386
+            ],
+            [
+              79.32986130452092,
+              18.32847652755413
+            ],
+            [
+              79.24229144365127,
+              18.252118490329806
+            ],
+            [
+              79.1288,
+              18.230758768335143
+            ],
+            [
+              79.01481572531651,
+              18.251308703512912
+            ],
+            [
+              78.97597095580693,
+              18.35489386332081
+            ],
+            [
+              78.91520367812392,
+              18.4386
+            ],
+            [
+              78.94166487394497,
+              18.541095952400585
+            ],
+            [
+              79.05726324166777,
+              18.556144391555158
+            ],
+            [
+              79.1288,
+              18.5730212907916
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_018",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Medak",
+        "area_km2": 272.85,
+        "area_hectares": 27285.34,
+        "confidence": 0.97,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.2747,
+              18.10610554241118
+            ],
+            [
+              78.32103931986903,
+              18.099345630889843
+            ],
+            [
+              78.35481780825639,
+              18.063452325204683
+            ],
+            [
+              78.3459818048315,
+              18.01667755015065
+            ],
+            [
+              78.33930094993107,
+              17.954154836719088
+            ],
+            [
+              78.2747,
+              17.94482408764662
+            ],
+            [
+              78.214348380992,
+              17.959716061083586
+            ],
+            [
+              78.16517233218438,
+              18.00486152498822
+            ],
+            [
+              78.20941481621757,
+              18.05886979913952
+            ],
+            [
+              78.20796694805817,
+              18.126035507893842
+            ],
+            [
+              78.2747,
+              18.10610554241118
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_019",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Medak",
+        "area_km2": 185.94,
+        "area_hectares": 18594.28,
+        "confidence": 0.98,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.2747,
+              18.095479616350644
+            ],
+            [
+              78.32906138453208,
+              18.07992091358674
+            ],
+            [
+              78.37758714135353,
+              18.016370943416597
+            ],
+            [
+              78.30861137706647,
+              17.971743500572465
+            ],
+            [
+              78.23679221523543,
+              17.96385277206487
+            ],
+            [
+              78.20852834028632,
+              18.02433911180225
+            ],
+            [
+              78.21218236243902,
+              18.08610560156313
+            ],
+            [
+              78.2747,
+              18.095479616350644
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_020",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Medak",
+        "area_km2": 153.75,
+        "area_hectares": 15374.75,
+        "confidence": 0.86,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.2747,
+              18.110035987731298
+            ],
+            [
+              78.3165798636746,
+              18.100663256336354
+            ],
+            [
+              78.32903917137631,
+              18.062296107999703
+            ],
+            [
+              78.33820934140641,
+              18.030017559035365
+            ],
+            [
+              78.32352234218799,
+              17.99847458315105
+            ],
+            [
+              78.29523640943049,
+              17.97219716187063
+            ],
+            [
+              78.25975493961538,
+              17.990303568532482
+            ],
+            [
+              78.23558900423639,
+              18.006475898544338
+            ],
+            [
+              78.2010013525028,
+              18.028624566340987
+            ],
+            [
+              78.20468575662096,
+              18.06910281267538
+            ],
+            [
+              78.23295223681058,
+              18.100467807366183
+            ],
+            [
+              78.2747,
+              18.110035987731298
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_021",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Medak",
+        "area_km2": 275.88,
+        "area_hectares": 27587.72,
+        "confidence": 0.93,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.2747,
+              18.12722289782731
+            ],
+            [
+              78.34306796920428,
+              18.128175172203008
+            ],
+            [
+              78.33542634633677,
+              18.057461350388042
+            ],
+            [
+              78.37639030924339,
+              18.007282869909492
+            ],
+            [
+              78.34156987796956,
+              17.951185423859183
+            ],
+            [
+              78.2747,
+              17.973115307798192
+            ],
+            [
+              78.21505402162393,
+              17.960639553733575
+            ],
+            [
+              78.20400356114732,
+              18.016858398446264
+            ],
+            [
+              78.19489850790994,
+              18.063354599607997
+            ],
+            [
+              78.21361821016173,
+              18.118639534958483
+            ],
+            [
+              78.2747,
+              18.12722289782731
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_022",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Urban areas including Hyderabad metro",
+        "district": "Rangareddy",
+        "area_km2": 337.13,
+        "area_hectares": 33712.61,
+        "confidence": 0.89,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.2466,
+              17.53011924208737
+            ],
+            [
+              78.30270906943949,
+              17.480190982895717
+            ],
+            [
+              78.34112692130952,
+              17.43580716947947
+            ],
+            [
+              78.33703297996394,
+              17.378462117948832
+            ],
+            [
+              78.32209273126914,
+              17.307351437668128
+            ],
+            [
+              78.2466,
+              17.317773365822152
+            ],
+            [
+              78.20273003686724,
+              17.34888327715738
+            ],
+            [
+              78.15936479210191,
+              17.379453556647906
+            ],
+            [
+              78.16638592219101,
+              17.431369609000487
+            ],
+            [
+              78.17715229250537,
+              17.49770931564642
+            ],
+            [
+              78.2466,
+              17.53011924208737
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_023",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Rangareddy",
+        "area_km2": 774.09,
+        "area_hectares": 77408.52,
+        "confidence": 0.85,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.2466,
+              17.521843643399343
+            ],
+            [
+              78.40201570642637,
+              17.52476423600073
+            ],
+            [
+              78.42774693187707,
+              17.367047759107987
+            ],
+            [
+              78.31458610625033,
+              17.271790289445775
+            ],
+            [
+              78.1924293436658,
+              17.29916463638258
+            ],
+            [
+              78.08621494420123,
+              17.37156951682104
+            ],
+            [
+              78.119667344144,
+              17.50308993877472
+            ],
+            [
+              78.2466,
+              17.521843643399343
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_024",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Mahbubnagar",
+        "area_km2": 523.66,
+        "area_hectares": 52365.74,
+        "confidence": 0.94,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.9974,
+              16.862107216482787
+            ],
+            [
+              78.04768495879262,
+              16.820926671667515
+            ],
+            [
+              78.13975722552594,
+              16.808255288181098
+            ],
+            [
+              78.15681128047652,
+              16.72405211635907
+            ],
+            [
+              78.10971207414363,
+              16.65280818725511
+            ],
+            [
+              78.03384696831147,
+              16.627137066624705
+            ],
+            [
+              77.97062817725855,
+              16.658690203595064
+            ],
+            [
+              77.92928968648316,
+              16.689484940228777
+            ],
+            [
+              77.86900754504025,
+              16.728322815214792
+            ],
+            [
+              77.88785764939308,
+              16.793904773220138
+            ],
+            [
+              77.9323123258179,
+              16.84298333080387
+            ],
+            [
+              77.9974,
+              16.862107216482787
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_025",
+        "landuse_type": "Bare/sparse vegetation",
+        "landuse_code": 60,
+        "color": "#B4B4B4",
+        "description": "Rocky outcrops and sparse vegetation",
+        "district": "Mahbubnagar",
+        "area_km2": 521.82,
+        "area_hectares": 52181.92,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.9974,
+              16.884467063368838
+            ],
+            [
+              78.09232697499303,
+              16.798481868270372
+            ],
+            [
+              78.10626116101577,
+              16.685814398250777
+            ],
+            [
+              77.9974,
+              16.624485850780694
+            ],
+            [
+              77.86863260228813,
+              16.67480892280904
+            ],
+            [
+              77.87274284000439,
+              16.814918667747797
+            ],
+            [
+              77.9974,
+              16.884467063368838
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_026",
+        "landuse_type": "Grassland",
+        "landuse_code": 30,
+        "color": "#FFFF4C",
+        "description": "Natural grasslands and grazing areas",
+        "district": "Mahbubnagar",
+        "area_km2": 227.31,
+        "area_hectares": 22730.78,
+        "confidence": 0.98,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.9974,
+              16.811553848442482
+            ],
+            [
+              78.06174505468482,
+              16.8076162760412
+            ],
+            [
+              78.09163627661985,
+              16.746
+            ],
+            [
+              78.07397235965281,
+              16.67267496091806
+            ],
+            [
+              77.9974,
+              16.683392170067055
+            ],
+            [
+              77.95386243024807,
+              16.70430879421676
+            ],
+            [
+              77.90566249996961,
+              16.746
+            ],
+            [
+              77.93056114578704,
+              16.810004317218098
+            ],
+            [
+              77.9974,
+              16.811553848442482
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_027",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Mahbubnagar",
+        "area_km2": 334.94,
+        "area_hectares": 33493.5,
+        "confidence": 0.97,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.9974,
+              16.83704133274654
+            ],
+            [
+              78.04372190460981,
+              16.82282937634777
+            ],
+            [
+              78.06412830622013,
+              16.782891791581967
+            ],
+            [
+              78.07346558172769,
+              16.746
+            ],
+            [
+              78.08135464017289,
+              16.69958435927655
+            ],
+            [
+              78.03309942418485,
+              16.686789038810044
+            ],
+            [
+              77.9974,
+              16.62533325023461
+            ],
+            [
+              77.94357751955708,
+              16.656730190376425
+            ],
+            [
+              77.8910707468894,
+              16.687214203281552
+            ],
+            [
+              77.87086097943472,
+              16.746
+            ],
+            [
+              77.90666021735963,
+              16.79616691324846
+            ],
+            [
+              77.95260902884105,
+              16.820290174575934
+            ],
+            [
+              77.9974,
+              16.83704133274654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_028",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Agricultural areas - rice, cotton, maize",
+        "district": "Nalgonda",
+        "area_km2": 112.45,
+        "area_hectares": 11244.96,
+        "confidence": 0.88,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.2673,
+              17.09718942215477
+            ],
+            [
+              79.2961331081069,
+              17.09709236869114
+            ],
+            [
+              79.33296050711914,
+              17.082867590535237
+            ],
+            [
+              79.31133436775852,
+              17.048147210208615
+            ],
+            [
+              79.30978817696945,
+              17.019002676750834
+            ],
+            [
+              79.2854375953878,
+              16.99514523146431
+            ],
+            [
+              79.24849117688171,
+              16.99295975993891
+            ],
+            [
+              79.22792542155491,
+              17.021581990375154
+            ],
+            [
+              79.19648753012925,
+              17.04446639834851
+            ],
+            [
+              79.22132937197864,
+              17.0742709254099
+            ],
+            [
+              79.23197138977405,
+              17.106755131050733
+            ],
+            [
+              79.2673,
+              17.09718942215477
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TG_LU_029",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Dense forest areas, mainly in eastern districts",
+        "district": "Nalgonda",
+        "area_km2": 514.06,
+        "area_hectares": 51406.06,
+        "confidence": 0.89,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.2673,
+              17.181491460136304
+            ],
+            [
+              79.3374759290077,
+              17.107702597936456
+            ],
+            [
+              79.41059409823451,
+              17.02293221093286
+            ],
+            [
+              79.32056379059878,
+              16.94846007914062
+            ],
+            [
+              79.20386382687867,
+              16.92826574241026
+            ],
+            [
+              79.12088281770285,
+              17.022250731828606
+            ],
+            [
+              79.17437001424696,
+              17.125050443083424
+            ],
+            [
+              79.2673,
+              17.181491460136304
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

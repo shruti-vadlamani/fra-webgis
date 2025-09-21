@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSS - Polygon {{ polygon_id }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        body { background: #f7f9fb; }
+        .page-header { background: #2c3e50; color: white; padding: 16px 0; margin-bottom: 20px; }
+        .badge-fra { background: #6fa824; }
+        .card-stat { border-left: 4px solid #3498db; }
+        .scheme { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+        .scheme h6 { margin: 0; }
+    </style>
+    <script>
+        window.__DSS__ = {
+            polygon_id: {{ polygon_id|tojson }},
+            attrs: {{ attrs|tojson }},
+            meta: {{ meta|tojson }},
+            recs: {{ recs|tojson }},
+            schemes: {{ (schemes or [])|tojson }}
+        };
+    </script>
+</head>
+<body>
+    <div class="page-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h3 class="mb-0">Decision Support System</h3>
+                    <small>Polygon ID: <strong>{{ polygon_id }}</strong></small>
+                </div>
+                <div>
+                    <span class="badge badge-fra">{{ meta.fra_type or 'FRA Polygon' }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-4">
+        <div class="row g-3">
+            <div class="col-md-3">
+                <div class="card card-stat">
+                    <div class="card-body">
+                        <div class="text-muted">State</div>
+                        <div class="h5">{{ meta.state or '-' }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stat">
+                    <div class="card-body">
+                        <div class="text-muted">District</div>
+                        <div class="h5">{{ meta.district or '-' }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stat">
+                    <div class="card-body">
+                        <div class="text-muted">Village</div>
+                        <div class="h5">{{ meta.village or '-' }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stat">
+                    <div class="card-body">
+                        <div class="text-muted">Area (ha)</div>
+                        <div class="h5">{{ (meta.area_hectares or 0)|round(2) }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-header bg-white">
+                        <strong>Analytics</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <canvas id="pieLandUse"></canvas>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <canvas id="barSoilYield"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <canvas id="gaugeGroundwater"></canvas>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <canvas id="gaugePoverty"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <canvas id="gaugeInfra"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-white"><strong>Attributes</strong></div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-6"><div class="text-muted">Water Level (cm)</div><div class="h6">{{ attrs.water_level }}</div></div>
+                            <div class="col-6"><div class="text-muted">Groundwater</div><div class="h6">{{ attrs.groundwater_index }}</div></div>
+                            <div class="col-6"><div class="text-muted">Soil Quality</div><div class="h6">{{ attrs.soil_quality }}</div></div>
+                            <div class="col-6"><div class="text-muted">Crop Yield</div><div class="h6">{{ attrs.crop_yield }}</div></div>
+                            <div class="col-6"><div class="text-muted">Forest Cover (%)</div><div class="h6">{{ attrs.forest_cover_percentage }}</div></div>
+                            <div class="col-6"><div class="text-muted">Poverty Index</div><div class="h6">{{ attrs.poverty_index }}</div></div>
+                            <div class="col-6"><div class="text-muted">Infra Index</div><div class="h6">{{ attrs.infra_index }}</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-white"><strong>Recommended Schemes</strong></div>
+                    <div class="card-body">
+                        {% if recs and recs|length > 0 %}
+                            <div class="list-group">
+                                {% for r in recs %}
+                                <label class="list-group-item scheme d-flex align-items-center gap-2">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                    <h6 class="mb-0">{{ r }}</h6>
+                                </label>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="text-muted">No specific schemes triggered by current attributes.</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg-white"><strong>Applicable Central & State Schemes</strong></div>
+                    <div class="card-body">
+                        {% if schemes and schemes|length > 0 %}
+                            <div class="list-group">
+                                {% for s in schemes %}
+                                <div class="list-group-item">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h6 class="mb-1">{{ s.name }}</h6>
+                                            <small class="text-muted">{{ s.implementing_agency }}</small>
+                                        </div>
+                                        <span class="badge {{ 'bg-primary' if s.type=='Central' else 'bg-success' }}">{{ s.type }}</span>
+                                    </div>
+                                    <div class="mt-2"><small><strong>Objective:</strong> {{ s.objective }}</small></div>
+                                    <div class="mt-1"><small><strong>Sectors:</strong> {{ s.sectors|join(', ') }}</small></div>
+                                    <div class="mt-1"><small><strong>Beneficiaries:</strong> {{ s.beneficiaries }}</small></div>
+                                    <div class="mt-1"><small><strong>Coverage:</strong> {{ s.geography|join(', ') }}</small></div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="text-muted">No schemes matched for this polygon's state and sectors.</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const d = window.__DSS__;
+        const fraType = d.meta.fra_type || 'FRA';
+        const landUse = {
+            'Community Forest Resource Rights': { forest: 0.8, agri: 0.15, water: 0.05 },
+            'Individual Forest Rights': { forest: 0.5, agri: 0.45, water: 0.05 },
+            'Community Rights': { forest: 0.6, agri: 0.35, water: 0.05 },
+            'Agriculture': { forest: 0.1, agri: 0.85, water: 0.05 },
+            'Water Body': { forest: 0.15, agri: 0.05, water: 0.8 }
+        }[fraType] || { forest: 0.4, agri: 0.5, water: 0.1 };
+
+        new Chart(document.getElementById('pieLandUse'), {
+            type: 'pie',
+            data: {
+                labels: ['Forest', 'Agriculture', 'Water'],
+                datasets: [{ data: [landUse.forest, landUse.agri, landUse.water].map(x=>Math.round(x*100)), backgroundColor: ['#2e7d32','#27ae60','#2980b9'] }]
+            },
+            options: { plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Sectoral Share (%)' } } }
+        });
+
+        new Chart(document.getElementById('barSoilYield'), {
+            type: 'bar',
+            data: {
+                labels: ['Soil Quality', 'Crop Yield (q/ha)'],
+                datasets: [{
+                    label: 'Values',
+                    data: [
+                        { 'Poor': 1, 'Moderate': 2, 'Good': 3, 'Excellent': 4 }[d.attrs.soil_quality] || 2,
+                        d.attrs.crop_yield || 0
+                    ],
+                    backgroundColor: ['#8e44ad', '#f39c12']
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false }, title: { display: true, text: `Soil Quality & Crop Yield (Soil: ${d.attrs.soil_quality || '-'}, Yield: ${(d.attrs.crop_yield||0)} q/ha)` } } }
+        });
+
+        function makeGauge(ctx, value, min, max, label, color){
+            const pct = Math.max(0, Math.min(1, (value - min) / (max - min)));
+            const percentLabel = `${Math.round(pct*100)}%`;
+            new Chart(ctx, { type: 'doughnut', data: { labels: [label, ''], datasets: [{ data: [pct, 1-pct], backgroundColor: [color, '#ecf0f1'], borderWidth: 0 }] }, options: { cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: () => percentLabel } }, title: { display: true, text: `${label}: ${percentLabel}` } } } });
+        }
+
+        makeGauge(document.getElementById('gaugeGroundwater'), (d.attrs.groundwater_index||0)*100, 0, 100, 'Groundwater Index', '#16a085');
+        makeGauge(document.getElementById('gaugePoverty'), (d.attrs.poverty_index||0)*100, 0, 100, 'Poverty Index', '#c0392b');
+        makeGauge(document.getElementById('gaugeInfra'), (d.attrs.infra_index||0)*100, 0, 100, 'Infrastructure Index', '#8e44ad');
+    </script>
+</body>
+</html>
+
+

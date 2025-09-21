@@ -1,0 +1,816 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "name": "Tripura Land-use Classification",
+    "description": "Dummy ESA WorldCover-style land-use data for Tripura",
+    "total_features": 13,
+    "generated_at": "2025-09-17T14:45:59.698349",
+    "bounds": {
+      "min_lat": 22.94,
+      "max_lat": 24.53,
+      "min_lon": 91.09,
+      "max_lon": 92.2
+    },
+    "projection": "EPSG:4326",
+    "data_source": "Generated for Vanachitra.AI prototype"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_001",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Agartala, Tripura",
+        "district": "Agartala",
+        "state": "Tripura",
+        "area_km2": 1202.69,
+        "area_hectares": 120269.23,
+        "confidence": 0.85,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.39692253892885,
+              23.551405484518828
+            ],
+            [
+              91.51923194550166,
+              23.493263059395254
+            ],
+            [
+              91.55304992949938,
+              23.38472078322504
+            ],
+            [
+              91.5528800845061,
+              23.27678588024957
+            ],
+            [
+              91.45568498626972,
+              23.211232302150055
+            ],
+            [
+              91.31764214267761,
+              23.159480253737826
+            ],
+            [
+              91.24188406851678,
+              23.277273015852963
+            ],
+            [
+              91.1717400190983,
+              23.395899042587892
+            ],
+            [
+              91.23732889591592,
+              23.534054701794886
+            ],
+            [
+              91.39692253892885,
+              23.551405484518828
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_002",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Agartala, Tripura",
+        "district": "Agartala",
+        "state": "Tripura",
+        "area_km2": 1901.14,
+        "area_hectares": 190114.07,
+        "confidence": 0.92,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.39692253892885,
+              23.554453121685587
+            ],
+            [
+              91.6376623152885,
+              23.580455409013496
+            ],
+            [
+              91.75960637880421,
+              23.359447751603135
+            ],
+            [
+              91.5373454212816,
+              23.230534562661614
+            ],
+            [
+              91.39692253892885,
+              23.137008052432865
+            ],
+            [
+              91.23368764723494,
+              23.20959232859647
+            ],
+            [
+              91.17658202966199,
+              23.359447751603135
+            ],
+            [
+              91.24148862481682,
+              23.50214160036995
+            ],
+            [
+              91.39692253892885,
+              23.554453121685587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_003",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Agartala, Tripura",
+        "district": "Agartala",
+        "state": "Tripura",
+        "area_km2": 507.64,
+        "area_hectares": 50764.49,
+        "confidence": 0.95,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.39692253892885,
+              23.510119302968455
+            ],
+            [
+              91.5163865900796,
+              23.446908443041796
+            ],
+            [
+              91.52662727541419,
+              23.332269990683596
+            ],
+            [
+              91.44271372769998,
+              23.272155077608037
+            ],
+            [
+              91.34260764663875,
+              23.255906168320468
+            ],
+            [
+              91.25583456348463,
+              23.329884796778597
+            ],
+            [
+              91.31011641385882,
+              23.422999285697305
+            ],
+            [
+              91.39692253892885,
+              23.510119302968455
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_004",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Agartala, Tripura",
+        "district": "Agartala",
+        "state": "Tripura",
+        "area_km2": 381.47,
+        "area_hectares": 38147.37,
+        "confidence": 0.86,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.39692253892885,
+              23.461111159016948
+            ],
+            [
+              91.47086867314985,
+              23.452883679433306
+            ],
+            [
+              91.48893480039548,
+              23.386893887661167
+            ],
+            [
+              91.53791848475379,
+              23.317390379563157
+            ],
+            [
+              91.46479957955675,
+              23.273680532853326
+            ],
+            [
+              91.39692253892885,
+              23.249159467192264
+            ],
+            [
+              91.34967094588094,
+              23.299742176938615
+            ],
+            [
+              91.30766801841938,
+              23.33282421605852
+            ],
+            [
+              91.27395758608682,
+              23.396126698216086
+            ],
+            [
+              91.33759773134979,
+              23.434408647096724
+            ],
+            [
+              91.39692253892885,
+              23.461111159016948
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_005",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Dharmanagar, Tripura",
+        "district": "Dharmanagar",
+        "state": "Tripura",
+        "area_km2": 602.93,
+        "area_hectares": 60293.14,
+        "confidence": 0.92,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.100642112034,
+              24.608879520981883
+            ],
+            [
+              92.19211664435181,
+              24.56355815419789
+            ],
+            [
+              92.27108440896046,
+              24.461775929261478
+            ],
+            [
+              92.16085614962948,
+              24.383396115105736
+            ],
+            [
+              92.02089536379778,
+              24.346487173747697
+            ],
+            [
+              91.97643683029067,
+              24.471379236468376
+            ],
+            [
+              91.96574198978834,
+              24.595071505337934
+            ],
+            [
+              92.100642112034,
+              24.608879520981883
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_006",
+        "landuse_type": "Built-up",
+        "landuse_code": 50,
+        "color": "#FA0000",
+        "description": "Built-up in Dharmanagar, Tripura",
+        "district": "Dharmanagar",
+        "state": "Tripura",
+        "area_km2": 1868.34,
+        "area_hectares": 186833.98,
+        "confidence": 0.87,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.100642112034,
+              24.70968510397217
+            ],
+            [
+              92.2313593889671,
+              24.66089743354754
+            ],
+            [
+              92.33874106944293,
+              24.567575300865403
+            ],
+            [
+              92.3553926522498,
+              24.4218540070509
+            ],
+            [
+              92.26525768891746,
+              24.29099824114267
+            ],
+            [
+              92.100642112034,
+              24.260497713283666
+            ],
+            [
+              91.97478744039263,
+              24.339545591566615
+            ],
+            [
+              91.82774080447138,
+              24.4164873518869
+            ],
+            [
+              91.85850756198049,
+              24.568768508496355
+            ],
+            [
+              91.96776428038228,
+              24.66360349023994
+            ],
+            [
+              92.100642112034,
+              24.70968510397217
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_007",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Dharmanagar, Tripura",
+        "district": "Dharmanagar",
+        "state": "Tripura",
+        "area_km2": 825.92,
+        "area_hectares": 82592.29,
+        "confidence": 0.84,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.100642112034,
+              24.696932938118696
+            ],
+            [
+              92.24732695574625,
+              24.57424136556852
+            ],
+            [
+              92.22658551067052,
+              24.43100843488328
+            ],
+            [
+              92.100642112034,
+              24.326938508670118
+            ],
+            [
+              91.91483102796644,
+              24.399555259072326
+            ],
+            [
+              91.98533738317047,
+              24.557754937837114
+            ],
+            [
+              92.100642112034,
+              24.696932938118696
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_008",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Dharmanagar, Tripura",
+        "district": "Dharmanagar",
+        "state": "Tripura",
+        "area_km2": 2242.94,
+        "area_hectares": 224293.64,
+        "confidence": 0.89,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.100642112034,
+              24.727862358866005
+            ],
+            [
+              92.29005684250018,
+              24.734414959205534
+            ],
+            [
+              92.3644999071785,
+              24.575191441654987
+            ],
+            [
+              92.40810586336703,
+              24.406268240275978
+            ],
+            [
+              92.27108203343765,
+              24.283703352319893
+            ],
+            [
+              92.100642112034,
+              24.324507280694696
+            ],
+            [
+              91.9285498739497,
+              24.281633854809318
+            ],
+            [
+              91.9140276578723,
+              24.44199987036843
+            ],
+            [
+              91.85182770763825,
+              24.57074354757407
+            ],
+            [
+              91.90186349647276,
+              24.746143060192836
+            ],
+            [
+              92.100642112034,
+              24.727862358866005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_009",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Kailashahar, Tripura",
+        "district": "Kailashahar",
+        "state": "Tripura",
+        "area_km2": 977.81,
+        "area_hectares": 97780.66,
+        "confidence": 0.88,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.15790836772807,
+              23.54520839464956
+            ],
+            [
+              92.32165268670818,
+              23.48821706325113
+            ],
+            [
+              92.3090682263009,
+              23.337869527357924
+            ],
+            [
+              92.25175437534082,
+              23.251701554716956
+            ],
+            [
+              92.15790836772807,
+              23.215277037736907
+            ],
+            [
+              92.05866335650384,
+              23.246744271958566
+            ],
+            [
+              91.96356747809239,
+              23.337869527357924
+            ],
+            [
+              91.99767382984747,
+              23.48499443578459
+            ],
+            [
+              92.15790836772807,
+              23.54520839464956
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_010",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Kailashahar, Tripura",
+        "district": "Kailashahar",
+        "state": "Tripura",
+        "area_km2": 1070.68,
+        "area_hectares": 107068.47,
+        "confidence": 0.82,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.15790836772807,
+              23.511146354547044
+            ],
+            [
+              92.34648166731563,
+              23.47594815866662
+            ],
+            [
+              92.35345655010276,
+              23.296888558036436
+            ],
+            [
+              92.24558791685925,
+              23.17069704487298
+            ],
+            [
+              92.08847728100933,
+              23.20549011570022
+            ],
+            [
+              92.00807659946625,
+              23.30646933215306
+            ],
+            [
+              91.99273930580698,
+              23.458810922849686
+            ],
+            [
+              92.15790836772807,
+              23.511146354547044
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_011",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Udaipur, Tripura",
+        "district": "Udaipur",
+        "state": "Tripura",
+        "area_km2": 1553.68,
+        "area_hectares": 155367.76,
+        "confidence": 0.83,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.47647205139893,
+              24.664877482462096
+            ],
+            [
+              91.62041783277004,
+              24.601167594817312
+            ],
+            [
+              91.7172251976217,
+              24.491995557768593
+            ],
+            [
+              91.6637086726849,
+              24.36537462041669
+            ],
+            [
+              91.6283149374821,
+              24.230472712885746
+            ],
+            [
+              91.47647205139893,
+              24.25476627830438
+            ],
+            [
+              91.36164334249968,
+              24.276860446936126
+            ],
+            [
+              91.23801149633132,
+              24.350219999903132
+            ],
+            [
+              91.3123582524903,
+              24.469321777384913
+            ],
+            [
+              91.32405149709425,
+              24.611788539084866
+            ],
+            [
+              91.47647205139893,
+              24.664877482462096
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_012",
+        "landuse_type": "Cropland",
+        "landuse_code": 40,
+        "color": "#F096FF",
+        "description": "Cropland in Udaipur, Tripura",
+        "district": "Udaipur",
+        "state": "Tripura",
+        "area_km2": 1964.87,
+        "area_hectares": 196487.41,
+        "confidence": 0.89,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.47647205139893,
+              24.741775324202315
+            ],
+            [
+              91.66342971591894,
+              24.519051724274227
+            ],
+            [
+              91.66364748547099,
+              24.322371088629065
+            ],
+            [
+              91.47647205139893,
+              24.14964212684594
+            ],
+            [
+              91.25491387218163,
+              24.304296183746715
+            ],
+            [
+              91.21888246163668,
+              24.556182713234474
+            ],
+            [
+              91.47647205139893,
+              24.741775324202315
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TR_LU_013",
+        "landuse_type": "Tree cover",
+        "landuse_code": 10,
+        "color": "#006400",
+        "description": "Tree cover in Udaipur, Tripura",
+        "district": "Udaipur",
+        "state": "Tripura",
+        "area_km2": 448.15,
+        "area_hectares": 44815.34,
+        "confidence": 0.88,
+        "last_updated": "2024-01-15",
+        "data_source": "ESA WorldCover 2021 (Simulated)",
+        "resolution": "10m"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.47647205139893,
+              24.537256486836945
+            ],
+            [
+              91.57968222124187,
+              24.495712288482572
+            ],
+            [
+              91.59322174139672,
+              24.39650532799508
+            ],
+            [
+              91.52527209953578,
+              24.328500295521167
+            ],
+            [
+              91.42053922174303,
+              24.31501403851395
+            ],
+            [
+              91.30877803515611,
+              24.385917904324245
+            ],
+            [
+              91.39986596254082,
+              24.476394359693472
+            ],
+            [
+              91.47647205139893,
+              24.537256486836945
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
