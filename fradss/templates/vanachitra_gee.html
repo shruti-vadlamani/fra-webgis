@@ -382,6 +382,13 @@
                 
                 <div class="control-group">
                     <label class="control-label">
+                        <input type="checkbox" id="toggleForest" checked style="margin-right: 8px;">
+                        🌲 Forest Boundaries
+                    </label>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">
                         <input type="checkbox" id="toggleCFR" checked style="margin-right: 8px;">
                         🌲 CFR - Community Forest Rights
                     </label>
@@ -401,10 +408,10 @@
                     </label>
                 </div>
                 
-                <div class="control-group">
+                <!-- <div class="control-group">
                     <label class="control-label">FRA Layer Opacity</label>
                     <input type="range" id="fraOpacitySlider" min="0" max="1" step="0.1" value="0.6" class="control-input">
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -1034,17 +1041,20 @@
                 'Terrain': L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png')
             };
             
-            // Add default satellite layer if no layer is currently active
+            // Check if any base layer is already on the map
             let hasActiveBaseLayer = false;
+            let currentBaseLayer = null;
             map.eachLayer(function(layer) {
                 if (layer.options && layer.options.attribution && 
                     (layer.options.attribution.includes('Esri') || 
                      layer.options.attribution.includes('OpenStreetMap') || 
                      layer.options.attribution.includes('Stamen'))) {
                     hasActiveBaseLayer = true;
+                    currentBaseLayer = layer;
                 }
             });
             
+            // Only add default satellite layer if no base layer exists
             if (!hasActiveBaseLayer) {
                 baseLayers['Satellite'].addTo(map);
             }
@@ -1069,7 +1079,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, initializing map...');
             initMap();
-            console.log('Map initialized, loading categories...');
+            console.log('Map initialized, setting up base layers...');
+            updateLayerControl();
+            console.log('Layer control initialized, loading categories...');
             loadCategories();
             
             // Initialize with Telangana
@@ -1087,9 +1099,7 @@
                     console.log('Forest layer loaded successfully, adding to map...');
                     // Add to map by default
                     forestLayer.addTo(map);
-                    console.log('Forest layer added to map, updating layer control...');
-                    // Update layer control to include forest layer
-                    updateLayerControl();
+                    console.log('Forest layer added to map');
                     // Fit map to show forest areas
                     if (forestLayer.getBounds && forestLayer.getBounds().isValid()) {
                         console.log('Fitting map bounds to forest areas...');
@@ -1159,6 +1169,17 @@
                 }
             });
             
+            // Forest layer toggle control
+            document.getElementById('toggleForest').addEventListener('change', function(e) {
+                if (telanganaForestLayer) {
+                    if (e.target.checked) {
+                        telanganaForestLayer.addTo(map);
+                    } else {
+                        map.removeLayer(telanganaForestLayer);
+                    }
+                }
+            });
+
             // FRA layer toggle controls
             document.getElementById('toggleCFR').addEventListener('change', function(e) {
                 if (fraLayers.CFR) {

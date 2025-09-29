@@ -377,35 +377,11 @@ def index():
     """Serve the React frontend (Vanachitra.AI landing page)."""
     return send_file(os.path.join(REACT_BUILD_DIR, 'index.html'))
 
-@app.route('/webgis')
-def webgis():
-    """Serve the FRA WebGIS main page."""
-    return render_template('vanachitra.html')
-
-@app.route('/india')
-def india_webgis():
-    """Serve the India Asset Management WebGIS."""
-    return render_template('india_webgis.html')
-
-@app.route('/enhanced')
-def enhanced_webgis():
-    """Serve the Enhanced India Asset Management WebGIS Demo."""
-    return render_template('india_webgis_enhanced.html')
-
-@app.route('/vanachitra')
-def vanachitra():
-    """Vanachitra.AI FRA WebGIS interface."""
-    return render_template('vanachitra.html')
 
 @app.route('/gee')
 def vanachitra_gee():
     """Google Earth Engine-style Telangana Land-use WebGIS interface."""
     return render_template('vanachitra_gee.html')
-
-@app.route('/test-gee')
-def test_gee():
-    """Test page for debugging GEE interface."""
-    return render_template('test_gee.html')
 
 @app.route('/dss/<polygon_id>')
 def dss_details(polygon_id):
