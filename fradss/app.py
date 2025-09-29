@@ -840,8 +840,8 @@ def get_state_boundaries(state):
         # Map state names to available boundary files
         boundary_files = {
             'telangana': {
-                'districts': 'telangana_districts_33.geojson',
-                'blocks': 'telangana/blocks.json'
+                'districts': os.path.join(os.path.dirname(__file__), 'telangana_districts_33.geojson'),
+                'blocks': os.path.join(os.path.dirname(__file__), 'telangana/blocks.json')
             }
         }
         

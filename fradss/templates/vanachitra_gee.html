@@ -7,8 +7,6 @@
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Leaflet Search Plugin -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google Fonts -->
@@ -352,13 +350,13 @@
                     </select>
                 </div>
                 
-                <div class="control-group">
+                <!-- <div class="control-group">
                     <label class="control-label">Area Range (km²)</label>
                     <div style="display: flex; gap: 10px;">
                         <input type="number" id="minArea" class="control-input" placeholder="Min" style="width: 50%;">
                         <input type="number" id="maxArea" class="control-input" placeholder="Max" style="width: 50%;">
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="control-group">
                     <button id="applyFilters" class="btn">Apply Filters</button>
@@ -367,10 +365,10 @@
             </div>
             
             <div class="controls-section">
-                <div class="control-group">
+                <!-- <div class="control-group">
                     <label class="control-label">Layer Opacity</label>
                     <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.8" class="control-input">
-                </div>
+                </div> -->
                 
                 <div class="control-group">
                     <button id="exportData" class="btn">Export Data</button>
@@ -378,33 +376,33 @@
             </div>
             
             <div class="controls-section">
-                <h4 style="color: #4285f4; margin-bottom: 15px;">🌳 FRA Layers (Forest-Constrained)</h4>
+                <h4 style="color: #4285f4; margin-bottom: 15px;"> FRA Layers </h4>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleForest" checked style="margin-right: 8px;">
-                        🌲 Forest Boundaries
+                        Forest Boundaries
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleCFR" checked style="margin-right: 8px;">
-                        🌲 CFR - Community Forest Rights
+                        CFR - Community Forest Resource
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleIFR" checked style="margin-right: 8px;">
-                        🏠 IFR - Individual Forest Rights
+                        IFR - Individual Forest Right
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleCR" checked style="margin-right: 8px;">
-                        🤝 CR - Community Rights
+                        CR - Community Right
                     </label>
                 </div>
                 
@@ -453,7 +451,6 @@
     
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
     
     <script>
         // Global variables
@@ -554,15 +551,22 @@
                         },
                         onEachFeature: function(feature, layer) {
                             const props = feature.properties;
-                            const districtName = props.D_N || props.NAME || 'Unknown District';
+                            // Check multiple possible district name properties
+                            const districtName = props.DISTRICT_N || props.D_N || props.NAME || 
+                                               props.district || props.name || props.DISTRICT || 
+                                               props.District || 'Unknown District';
+                            
+                            console.log('District properties:', props); // Debug log
+                            console.log('District name:', districtName); // Debug log
                             
                             // Popup for district info
                             const popupContent = `
                                 <div style="color: #333; font-family: Roboto, sans-serif;">
                                     <h4 style="margin: 0 0 10px 0; color: #4285f4;">${districtName}</h4>
                                     <p><strong>State:</strong> ${currentState.charAt(0).toUpperCase() + currentState.slice(1)}</p>
-                                    <p><strong>Area:</strong> ${(props.AREA / 1000000).toFixed(2)} km²</p>
+                                    <p><strong>Area:</strong> ${props.AREA ? (props.AREA / 1000000).toFixed(2) + ' km²' : 'N/A'}</p>
                                     ${props.Total ? `<p><strong>Villages:</strong> ${props.Total}</p>` : ''}
+                                    <p style="font-size: 11px; color: #666;">Click to focus on district</p>
                                 </div>
                             `;
                             
@@ -961,12 +965,12 @@
                         // Create popup content
                         const popupContent = `
                             <div style="color: #333; font-family: Roboto, sans-serif;">
-                                <h4 style="margin: 0 0 10px 0; color: ${color.color};">${props.fra_type}</h4>
+                                <h4 style="margin: 0 0 10px 0; color: ${color.color};">${props.claim_type}</h4>
                                 <p><strong>Claim ID:</strong> ${props.claim_id}</p>
                                 <p><strong>Village:</strong> ${props.village}</p>
                                 <p><strong>District:</strong> ${props.district}</p>
                                 <p><strong>Status:</strong> ${props.status}</p>
-                                ${props.area_claimed ? `<p><strong>Area:</strong> ${props.area_claimed} ha</p>` : ''}
+                                ${props.claim_area_ha ? `<p><strong>Area:</strong> ${props.claim_area_ha} ha</p>` : ''}
                                 ${props.household_head ? `<p><strong>Household Head:</strong> ${props.household_head}</p>` : ''}
                                 ${props.tribal_community ? `<p><strong>Tribal Community:</strong> ${props.tribal_community}</p>` : ''}
                                 <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #ddd;">
@@ -1249,35 +1253,56 @@
             });
             
             // Top controls
-            document.getElementById('fullscreenBtn').addEventListener('click', function() {
-                // Simple fullscreen toggle for the map container
-                const mapContainer = document.getElementById('map');
-                if (document.fullscreenElement) {
-                    document.exitFullscreen();
-                } else {
-                    mapContainer.requestFullscreen().catch(err => {
-                        console.log('Fullscreen not supported');
-                    });
-                }
-            });
+            console.log('Setting up fullscreen button...');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            if (fullscreenBtn) {
+                console.log('Fullscreen button found, attaching event listener');
+                fullscreenBtn.addEventListener('click', function() {
+                    console.log('Fullscreen button clicked');
+                    // Simple fullscreen toggle for the entire page
+                    if (document.fullscreenElement) {
+                        document.exitFullscreen();
+                    } else {
+                        document.documentElement.requestFullscreen().catch(err => {
+                            console.log('Fullscreen not supported:', err);
+                        });
+                    }
+                    
+                    // Refresh map size after fullscreen change
+                    setTimeout(() => {
+                        map.invalidateSize();
+                    }, 200);
+                });
+            } else {
+                console.error('Fullscreen button not found!');
+            }
             
             // Search functionality
+            console.log('Setting up search box...');
             const searchBox = document.getElementById('searchBox');
-            
-            // Add search on Enter key press
-            searchBox.addEventListener('keypress', async function(e) {
-                if (e.key === 'Enter') {
-                    const query = e.target.value.trim();
-                    if (query) {
-                        await searchLocation(query);
+            if (searchBox) {
+                console.log('Search box found, attaching event listener');
+                
+                // Add search on Enter key press
+                searchBox.addEventListener('keypress', async function(e) {
+                    console.log('Key pressed in search box:', e.key);
+                    if (e.key === 'Enter') {
+                        const query = e.target.value.trim();
+                        console.log('Enter pressed, searching for:', query);
+                        if (query) {
+                            await searchLocation(query);
+                        }
                     }
-                }
-            });
+                });
+            } else {
+                console.error('Search box not found!');
+            }
             
             // Search function using OpenStreetMap Nominatim API
             async function searchLocation(query) {
                 try {
-                    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=IN&limit=1&bounded=1&viewbox=77.2,15.8,81.8,19.9`);
+                    console.log('Searching for:', query);
+                    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=IN&limit=1`);
                     const data = await response.json();
                     
                     if (data && data.length > 0) {
@@ -1310,7 +1335,7 @@
                     }
                 } catch (error) {
                     console.error('Search error:', error);
-                    alert('Search failed. Please try again.');
+                    alert('Search failed. Please check your internet connection.');
                 }
             }
         });
