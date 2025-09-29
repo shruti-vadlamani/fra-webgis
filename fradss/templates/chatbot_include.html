@@ -1,0 +1,30 @@
+<!-- FRA WebGIS Chatbot Integration -->
+<!-- Add this include to any template to enable the chatbot -->
+
+<!-- Chatbot Styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+
+<!-- Chatbot Scripts -->
+<script src="{{ url_for('static', filename='chatbot-data.js') }}"></script>
+<script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
+<!-- Initialize chatbot with page context -->
+<script>
+// Initialize chatbot when page is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Determine page type from URL or page title
+    let pageType = 'general';
+    const path = window.location.pathname;
+    
+    if (path === '/' || path.includes('index')) {
+        pageType = 'landing';
+    } else if (path.includes('gee') || path.includes('map')) {
+        pageType = 'map';
+    } else if (path.includes('dss')) {
+        pageType = 'dss';
+    }
+    
+    // Initialize chatbot with context
+    initializeFRAChatbot(pageType);
+});
+</script>

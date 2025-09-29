@@ -601,6 +601,11 @@ def test_page():
     """Serve the test page."""
     return send_from_directory('.', 'test_fra_webgis.html')
 
+@app.route('/chatbot-test')
+def chatbot_test():
+    """Serve the chatbot test page."""
+    return render_template('chatbot_test.html')
+
 @app.route('/api/claims')
 def get_claims():
     """API endpoint to get filtered FRA claims (legacy endpoint)."""
