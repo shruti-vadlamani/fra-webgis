@@ -953,7 +953,10 @@ def react_fra_claims():
 if __name__ == '__main__':
     print("=== FRA WebGIS Integration Application ===")
     print("Starting FRA WebGIS server...")
-    print("Open your browser to: http://127.0.0.1:5001")
+    
+    # Get port from environment variable (Railway/Heroku) or default to 5001
+    port = int(os.environ.get('PORT', 5001))
+    print(f"Server will run on port: {port}")
     print("Press Ctrl+C to stop the server\n")
     
     # Check if output directory exists
@@ -974,6 +977,12 @@ if __name__ == '__main__':
     # Generate FRA data if it doesn't exist
     if not os.path.exists(FRA_GEOJSON_FILE):
         print("Generating FRA data...")
-        os.system('python scripts/fra_webgis_generator.py')
+        try:
+            import subprocess
+            subprocess.run(['python', 'scripts/fra_webgis_generator.py'], check=True)
+        except Exception as e:
+            print(f"Warning: Could not generate FRA data: {e}")
+            print("The app will still start, but some features may not work.")
     
-    app.run(debug=True, host='127.0.0.1', port=5001)
+    # Use 0.0.0.0 for Railway/Heroku deployment
+    app.run(debug=False, host='0.0.0.0', port=port)
