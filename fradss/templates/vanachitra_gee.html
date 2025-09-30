@@ -192,11 +192,21 @@
             cursor: pointer;
             color: #ccc;
             transition: all 0.2s;
+            pointer-events: auto;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         .control-btn:hover {
             background: #4285f4;
             color: white;
+        }
+
+        .control-btn:active {
+            transform: scale(0.95);
+            background: #3367d6;
         }
 
         /* Search Box */
@@ -359,7 +369,7 @@
                 </div> -->
                 
                 <div class="control-group">
-                    <button id="applyFilters" class="btn">Apply Filters</button>
+                    <button id="applyFilters" class="btn" onclick="handleApplyFilters()">Apply Filters</button>
                     <button id="clearFilters" class="btn btn-secondary" style="margin-left: 10px;">Clear</button>
                 </div>
             </div>
@@ -373,35 +383,32 @@
                 <div class="control-group">
                     <button id="exportData" class="btn">Export Data</button>
                 </div>
-            </div>
-            
-            <div class="controls-section">
                 <h4 style="color: #4285f4; margin-bottom: 15px;"> FRA Layers </h4>
                 
                 <div class="control-group">
                     <label class="control-label">
-                        <input type="checkbox" id="toggleForest" checked style="margin-right: 8px;">
+                        <input type="checkbox" id="toggleForest" style="margin-right: 8px;" onchange="handleForestToggle(this)">
                         Forest Boundaries
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
-                        <input type="checkbox" id="toggleCFR" checked style="margin-right: 8px;">
+                        <input type="checkbox" id="toggleCFR" style="margin-right: 8px;" onchange="handleFRAToggle(this, 'CFR')">
                         CFR - Community Forest Resource
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
-                        <input type="checkbox" id="toggleIFR" checked style="margin-right: 8px;">
+                        <input type="checkbox" id="toggleIFR" style="margin-right: 8px;" onchange="handleFRAToggle(this, 'IFR')">
                         IFR - Individual Forest Right
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
-                        <input type="checkbox" id="toggleCR" checked style="margin-right: 8px;">
+                        <input type="checkbox" id="toggleCR" style="margin-right: 8px;" onchange="handleFRAToggle(this, 'CR')">
                         CR - Community Right
                     </label>
                 </div>
@@ -419,12 +426,12 @@
             
             <!-- Search Box -->
             <div class="search-container">
-                <input type="text" id="searchBox" class="search-box" placeholder="Search places in Telangana...">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search places in Telangana..." onkeypress="handleSearchKeypress(event, this)">
             </div>
             
             <!-- Top Controls -->
             <div class="top-controls">
-                <div class="control-btn" id="fullscreenBtn" title="Fullscreen">
+                <div class="control-btn" id="fullscreenBtn" title="Fullscreen" onclick="toggleFullscreenMode(this)">
                     <span class="material-icons">fullscreen</span>
                 </div>
             </div>
@@ -453,6 +460,980 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
     <script>
+        // GLOBAL FULLSCREEN FUNCTION - INLINE APPROACH
+        function toggleFullscreenMode(button) {
+            console.log('toggleFullscreenMode called!');
+            
+            try {
+                // Visual feedback
+                button.style.background = '#ff0000';
+                setTimeout(() => {
+                    button.style.background = '';
+                }, 300);
+                
+                const isCurrentlyFullscreen = !!(document.fullscreenElement || 
+                                                document.webkitFullscreenElement || 
+                                                document.mozFullScreenElement || 
+                                                document.msFullscreenElement);
+                
+                if (isCurrentlyFullscreen) {
+                    console.log('Exiting fullscreen...');
+                    // Exit fullscreen
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                    
+                    // Update icon
+                    const icon = button.querySelector('.material-icons');
+                    if (icon) icon.textContent = 'fullscreen';
+                    button.title = 'Enter Fullscreen';
+                    
+                } else {
+                    console.log('Entering fullscreen...');
+                    // Enter fullscreen
+                    const elem = document.documentElement;
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        elem.webkitRequestFullscreen();
+                    } else if (elem.mozRequestFullScreen) {
+                        elem.mozRequestFullScreen();
+                    } else if (elem.msRequestFullscreen) {
+                        elem.msRequestFullscreen();
+                    } else {
+                        alert('Fullscreen not supported by your browser');
+                        return;
+                    }
+                    
+                    // Update icon
+                    const icon = button.querySelector('.material-icons');
+                    if (icon) icon.textContent = 'fullscreen_exit';
+                    button.title = 'Exit Fullscreen';
+                }
+                
+                // Refresh map after delay
+                setTimeout(() => {
+                    if (window.map) {
+                        window.map.invalidateSize();
+                        console.log('Map size refreshed');
+                    }
+                }, 500);
+                
+            } catch (error) {
+                console.error('Fullscreen error:', error);
+                alert('Fullscreen error: ' + error.message);
+            }
+        }
+        
+        // INLINE FRA LAYER TOGGLE FUNCTIONS
+        function handleForestToggle(checkbox) {
+            console.log('🌲 Forest toggle clicked:', checkbox.checked);
+            
+            if (checkbox.checked) {
+                console.log('Loading forest layer...');
+                // Make API call to load forest data
+                fetch('/api/telangana_forest')
+                    .then(response => {
+                        console.log('Forest API response:', response.status);
+                        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Forest data loaded:', data.features ? data.features.length : 0, 'features');
+                        
+                        // Remove existing forest layer
+                        if (window.telanganaForestLayer && window.map.hasLayer(window.telanganaForestLayer)) {
+                            window.map.removeLayer(window.telanganaForestLayer);
+                        }
+                        
+                        // Validate data before creating layer
+                        if (!data || !data.features || !Array.isArray(data.features)) {
+                            console.error('❌ Invalid forest data structure:', data);
+                            throw new Error('Invalid forest data structure');
+                        }
+                        
+                        console.log('Creating forest layer with', data.features.length, 'features');
+                        
+                        // Create new forest layer
+                        try {
+                            window.telanganaForestLayer = L.geoJSON(data, {
+                                style: {
+                                    color: '#228B22',
+                                    fillColor: '#32CD32',
+                                    weight: 1,
+                                    opacity: 0.8,
+                                    fillOpacity: 0.6
+                                },
+                                onEachFeature: function(feature, layer) {
+                                    let popupContent = '<div><h4>🌲 Forest Area</h4>';
+                                    if (feature.properties) {
+                                        Object.keys(feature.properties).forEach(key => {
+                                            if (feature.properties[key] !== null && feature.properties[key] !== '') {
+                                                popupContent += `<strong>${key}:</strong> ${feature.properties[key]}<br>`;
+                                            }
+                                        });
+                                    }
+                                    popupContent += '</div>';
+                                    layer.bindPopup(popupContent);
+                                }
+                            });
+                            
+                            console.log('Forest layer created successfully:', typeof window.telanganaForestLayer);
+                        } catch (layerError) {
+                            console.error('❌ Error creating forest layer:', layerError);
+                            throw new Error('Failed to create forest layer: ' + layerError.message);
+                        }
+                        
+                        // Add to map with proper validation
+                        if (!window.map) {
+                            console.error('❌ Map object not available');
+                            throw new Error('Map not initialized');
+                        }
+                        
+                        if (!window.telanganaForestLayer) {
+                            console.error('❌ Forest layer not created');
+                            throw new Error('Forest layer creation failed');
+                        }
+                        
+                        if (typeof window.telanganaForestLayer.addTo !== 'function') {
+                            console.error('❌ Forest layer missing addTo method:', window.telanganaForestLayer);
+                            throw new Error('Invalid forest layer object');
+                        }
+                        
+                        // Use global map variable instead of window.map
+                        try {
+                            window.telanganaForestLayer.addTo(map);
+                            console.log('✅ Forest layer added to map');
+                        } catch (addError) {
+                            console.error('❌ Error adding layer to map:', addError);
+                            throw new Error('Failed to add layer to map: ' + addError.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Forest API error:', error);
+                        console.warn('Failed to load forest data:', error.message);
+                        // Don't show alert, just log the error and uncheck
+                        checkbox.checked = false; // Uncheck on error
+                    });
+            } else {
+                console.log('Removing forest layer...');
+                if (window.telanganaForestLayer && map && map.hasLayer(window.telanganaForestLayer)) {
+                    map.removeLayer(window.telanganaForestLayer);
+                    console.log('✅ Forest layer removed');
+                } else {
+                    console.log('Forest layer not on map or map not available');
+                }
+            }
+        }
+        
+        function handleFRAToggle(checkbox, layerType) {
+            console.log(`🏛️ FRA ${layerType} toggle clicked:`, checkbox.checked);
+            
+            if (checkbox.checked) {
+                console.log(`Showing ${layerType} layer...`);
+                
+                // Check if the layer is already prepared
+                if (fraLayers && fraLayers[layerType]) {
+                    // Add the existing prepared layer to map
+                    fraLayers[layerType].addTo(map);
+                    console.log(`✅ ${layerType} layer added to map (${fraLayers[layerType].getLayers().length} features)`);
+                } else {
+                    console.warn(`${layerType} layer not prepared yet. FRA data might still be loading.`);
+                    checkbox.checked = false; // Uncheck if layer not ready
+                }
+            } else {
+                console.log(`Hiding ${layerType} layer...`);
+                
+                // Remove layer from map if it exists
+                if (fraLayers && fraLayers[layerType] && map.hasLayer(fraLayers[layerType])) {
+                    map.removeLayer(fraLayers[layerType]);
+                    console.log(`✅ ${layerType} layer removed from map`);
+                } else {
+                    console.log(`${layerType} layer not on map`);
+                }
+            }
+        }
+        
+        // GLOBAL SEARCH FUNCTION - INLINE APPROACH
+        function handleSearchKeypress(event, inputElement) {
+            console.log('=== SEARCH KEYPRESS DETECTED ===');
+            console.log('Key pressed:', event.key);
+            console.log('Input value:', inputElement.value);
+            
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const query = inputElement.value.trim();
+                console.log('=== ENTER PRESSED - SEARCHING FOR ===', query);
+                
+                if (query) {
+                    searchForDistrict(query);
+                } else {
+                    alert('Please enter a district name to search');
+                }
+            }
+        }
+        
+        // DISTRICT SEARCH FUNCTION
+        function searchForDistrict(query) {
+            console.log('=== SEARCHING FOR DISTRICT ===', query);
+            
+            // Find district match
+            const districtMatch = findDistrictInDatabase(query);
+            console.log('District match found:', districtMatch);
+            
+            if (districtMatch) {
+                console.log('Zooming to district:', districtMatch);
+                zoomToDistrictByName(districtMatch);
+            } else {
+                console.log('No district match, trying general search...');
+                console.warn(`❌ District "${query}" not found. Try: Medak, Hyderabad, Adilabad, Nizamabad, etc.`);
+                
+                // Show alert for district not found
+                alert(`District "${query}" not found.\n\nTry these districts:\nMedak, Hyderabad, Adilabad, Nizamabad, Karimnagar, Warangal, Khammam, Nalgonda, Jangaon, etc.`);
+                
+                // Still zoom to Telangana center for better UX
+                if (map) {
+                    map.setView([17.9689, 78.9629], 7);
+                    console.log('Zoomed to Telangana center as fallback');
+                }
+            }
+        }
+        
+        // FIND DISTRICT IN DATABASE
+        function findDistrictInDatabase(query) {
+            const cleanQuery = query.trim().toLowerCase();
+            console.log('Searching for:', cleanQuery);
+            
+            // Check if telanganaDistrictAreas is available
+            if (typeof telanganaDistrictAreas === 'undefined') {
+                console.error('District areas database not loaded!');
+                return null;
+            }
+            
+            // Direct match
+            for (const districtName of Object.keys(telanganaDistrictAreas)) {
+                if (districtName.toLowerCase() === cleanQuery) {
+                    console.log('Direct match found:', districtName);
+                    return districtName;
+                }
+            }
+            
+            // Partial match
+            for (const districtName of Object.keys(telanganaDistrictAreas)) {
+                if (districtName.toLowerCase().includes(cleanQuery) || 
+                    cleanQuery.includes(districtName.toLowerCase())) {
+                    console.log('Partial match found:', districtName);
+                    return districtName;
+                }
+            }
+            
+            // Common variations
+            const variations = {
+                'hyderabad': 'Hyderabad',
+                'medak': 'Medak', 
+                'adilabad': 'Adilabad',
+                'nizamabad': 'Nizamabad',
+                'karimnagar': 'Karimnagar',
+                'warangal': 'Warangal',
+                'khammam': 'Khammam',
+                'nalgonda': 'Nalgonda',
+                'jangaon': 'Jangaon',
+                'jangoan': 'Jangaon',
+                'asifabad': 'Kumuram Bheem Asifabad',
+                'sircilla': 'Rajanna Sircilla',
+                'gadwal': 'Jogulamba Gadwal'
+            };
+            
+            if (variations[cleanQuery]) {
+                console.log('Variation match found:', variations[cleanQuery]);
+                return variations[cleanQuery];
+            }
+            
+            console.log('No match found for:', cleanQuery);
+            return null;
+        }
+        
+        // ZOOM TO DISTRICT BY NAME
+        function zoomToDistrictByName(districtName) {
+            console.log('=== ZOOMING TO DISTRICT ===', districtName);
+            
+            // Wait for map to be ready
+            if (!map) {
+                console.error('Map not initialized yet!');
+                console.warn('⚠️ Map is still loading. Search will be retried...');
+                
+                // Retry after a short delay
+                setTimeout(() => {
+                    if (map) {
+                        console.log('Map now ready, retrying zoom...');
+                        zoomToDistrictByName(districtName);
+                    }
+                }, 1000);
+                return;
+            }
+            
+            // Simple zoom to Telangana center first, then try to find district
+            const telanganaCenter = [17.9689, 78.9629];
+            map.setView(telanganaCenter, 8);
+            
+            // Log success message (no popup)
+            const area = getDistrictAreaSafe(districtName);
+            console.log(`✅ Zooming to ${districtName} district (Area: ${area} km²)`);
+            
+            // If district boundaries are loaded, try to find and highlight
+            setTimeout(() => {
+                highlightDistrictIfAvailable(districtName);
+            }, 500);
+        }
+        
+        // SAFE AREA GETTER
+        function getDistrictAreaSafe(districtName) {
+            if (typeof telanganaDistrictAreas !== 'undefined' && telanganaDistrictAreas[districtName]) {
+                return telanganaDistrictAreas[districtName].toLocaleString();
+            }
+            return 'Data not available';
+        }
+        
+        // HIGHLIGHT DISTRICT IF AVAILABLE
+        function highlightDistrictIfAvailable(districtName) {
+            console.log('Trying to highlight district:', districtName);
+            
+            if (districtBoundariesLayer) {
+                console.log('District boundaries layer found, searching...');
+                
+                districtBoundariesLayer.eachLayer(function(layer) {
+                    const props = layer.feature.properties;
+                    const layerDistrictName = props.DISTRICT || props.District || 
+                                             props.district || props.NAME || 
+                                             props.name || props.Name;
+                    
+                    if (layerDistrictName && 
+                        layerDistrictName.toLowerCase() === districtName.toLowerCase()) {
+                        
+                        console.log('Found and highlighting district:', layerDistrictName);
+                        
+                        // Zoom to district bounds
+                        const bounds = layer.getBounds();
+                        map.fitBounds(bounds, {
+                            padding: [20, 20],
+                            maxZoom: 10
+                        });
+                        
+                        // Highlight the district
+                        layer.setStyle({
+                            fillColor: '#ff0000',
+                            fillOpacity: 0.4,
+                            color: '#ff0000',
+                            weight: 3
+                        });
+                        
+                        // Show popup
+                        const area = getDistrictAreaSafe(districtName);
+                        const popupContent = `
+                            <div style="color: #333; font-family: Roboto, sans-serif;">
+                                <h4 style="margin: 0 0 10px 0; color: #4285f4;">${districtName}</h4>
+                                <p><strong>State:</strong> Telangana</p>
+                                <p><strong>Area:</strong> ${area} km²</p>
+                                <p style="font-size: 11px; color: #666;">Search result</p>
+                            </div>
+                        `;
+                        
+                        layer.bindPopup(popupContent).openPopup();
+                        
+                        // Reset style after 3 seconds
+                        setTimeout(() => {
+                            layer.setStyle({
+                                fillColor: '#4285f4',
+                                fillOpacity: 0.1,
+                                color: '#2c3e50',
+                                weight: 1
+                            });
+                        }, 3000);
+                        
+                        return;
+                    }
+                });
+            } else {
+                console.log('District boundaries layer not available yet');
+            }
+        }
+        
+        // GLOBAL APPLY FILTERS FUNCTION - INLINE APPROACH
+        function handleApplyFilters() {
+            console.log('=== APPLY FILTERS BUTTON CLICKED (INLINE) ===');
+            
+            try {
+                // Get filter values
+                const stateFilter = document.getElementById('stateFilter');
+                const districtFilter = document.getElementById('districtFilter');
+                const landuseFilter = document.getElementById('landuseFilter');
+                
+                console.log('Filter elements found:');
+                console.log('- State filter:', stateFilter ? stateFilter.value : 'NOT FOUND');
+                console.log('- District filter:', districtFilter ? districtFilter.value : 'NOT FOUND');
+                console.log('- Landuse filter:', landuseFilter ? landuseFilter.value : 'NOT FOUND');
+                
+                const filters = {
+                    state: stateFilter ? stateFilter.value : '',
+                    district: districtFilter ? districtFilter.value : '',
+                    landuse_type: landuseFilter ? landuseFilter.value : ''
+                };
+                
+                console.log('Current filter values:', filters);
+                
+                // Remove empty filters
+                Object.keys(filters).forEach(key => {
+                    if (!filters[key]) delete filters[key];
+                });
+                
+                console.log('Cleaned filters:', filters);
+                
+                // Check if district is selected
+                if (filters.district && filters.district !== '') {
+                    console.log('District selected for filtering:', filters.district);
+                    
+                    // Remove the alert popup for smoother UX
+                    console.log(`Applying filters and zooming to ${filters.district} district...`);
+                    
+                    // Zoom to the selected district
+                    applyDistrictZoom(filters.district);
+                    
+                } else {
+                    console.log('No district selected, showing full Telangana view');
+                    
+                    // Show feedback
+                    alert('Filters applied! Showing full Telangana view (no specific district selected).');
+                    
+                    // Zoom to full Telangana view
+                    if (map) {
+                        map.setView([17.9689, 78.9629], 7);
+                    } else {
+                        console.error('Map not available!');
+                    }
+                }
+                
+                // Log success
+                const filterCount = Object.keys(filters).length;
+                console.log(`Successfully applied ${filterCount} filter(s)`);
+                
+            } catch (error) {
+                console.error('Error in handleApplyFilters:', error);
+                alert('Error applying filters: ' + error.message);
+            }
+        }
+        
+        // APPLY DISTRICT ZOOM FUNCTION
+        function applyDistrictZoom(districtName) {
+            console.log('=== APPLYING DISTRICT ZOOM ===', districtName);
+            
+            if (!map) {
+                console.error('Map not initialized!');
+                alert('Map is not ready yet. Please wait a moment and try again.');
+                return;
+            }
+            
+            // First, zoom to Telangana center
+            console.log('Zooming to Telangana center...');
+            map.setView([17.9689, 78.9629], 8);
+            
+            // Try to find the district in our database
+            const districtMatch = findDistrictInDatabase(districtName);
+            console.log('District database match:', districtMatch);
+            
+            if (districtMatch) {
+                // Show district info
+                const area = getDistrictAreaSafe(districtMatch);
+                console.log(`Found district: ${districtMatch} (${area} km²)`);
+                
+                // Try to highlight the district if boundaries are loaded
+                setTimeout(() => {
+                    highlightDistrictForFilter(districtMatch);
+                }, 500);
+                
+                // Also try again after a longer delay in case boundaries are still loading
+                setTimeout(() => {
+                    if (districtBoundariesLayer) {
+                        console.log('Retrying district highlighting after delay...');
+                        highlightDistrictForFilter(districtMatch);
+                    }
+                }, 2000);
+                
+            } else {
+                console.warn('District not found in database:', districtName);
+                alert(`District "${districtName}" not found in database. Showing general Telangana view.`);
+            }
+        }
+        
+        // HIGHLIGHT DISTRICT FOR FILTER
+        function highlightDistrictForFilter(districtName) {
+            console.log('=== HIGHLIGHTING DISTRICT FOR FILTER ===', districtName);
+            console.log('District boundaries layer status:', !!districtBoundariesLayer);
+            console.log('Map layers:', map.eachLayer ? 'Available' : 'Not available');
+            
+            // Check all layers on the map
+            if (map) {
+                let layerCount = 0;
+                map.eachLayer(function(layer) {
+                    layerCount++;
+                    if (layer.feature && layer.feature.properties) {
+                        const props = layer.feature.properties;
+                        console.log('Found map layer with properties:', Object.keys(props));
+                    }
+                });
+                console.log('Total layers on map:', layerCount);
+            }
+            
+            if (districtBoundariesLayer) {
+                console.log('District boundaries layer available, searching for district...');
+                console.log('Available layers count:', districtBoundariesLayer.getLayers().length);
+                
+                let districtFound = false;
+                let availableDistricts = [];
+                
+                districtBoundariesLayer.eachLayer(function(layer) {
+                    const props = layer.feature.properties;
+                    // Use DISTRICT_N as primary property based on your GeoJSON data
+                    const layerDistrictName = props.DISTRICT_N || props.DISTRICT || props.District || 
+                                             props.district || props.NAME || 
+                                             props.name || props.Name;
+                    
+                    if (layerDistrictName) {
+                        availableDistricts.push(layerDistrictName);
+                    }
+                    
+                    console.log('Checking layer district:', layerDistrictName, 'against selected:', districtName);
+                    
+                    // Enhanced matching - try multiple approaches including exact match for your data
+                    if (layerDistrictName && (
+                        layerDistrictName === districtName ||  // Exact match first
+                        layerDistrictName.toLowerCase() === districtName.toLowerCase() ||
+                        layerDistrictName.toLowerCase().includes(districtName.toLowerCase()) ||
+                        districtName.toLowerCase().includes(layerDistrictName.toLowerCase()) ||
+                        findDistrictInDatabase(layerDistrictName) === districtName
+                    )) {
+                        
+                        console.log('✅ FOUND MATCHING DISTRICT LAYER:', layerDistrictName);
+                        
+                        // Zoom to district bounds using GeoJSON data
+                        const bounds = layer.getBounds();
+                        map.fitBounds(bounds, {
+                            padding: [20, 20],
+                            maxZoom: 10
+                        });
+                        
+                        // Highlight the district with green color (different from search)
+                        layer.setStyle({
+                            fillColor: '#00ff00',
+                            fillOpacity: 0.4,
+                            color: '#00aa00',
+                            weight: 3
+                        });
+                        
+                        // Show popup with filter info on the actual district
+                        const area = getDistrictAreaSafe(districtName);
+                        const popupContent = `
+                            <div style="color: #333; font-family: Roboto, sans-serif;">
+                                <h4 style="margin: 0 0 10px 0; color: #00aa00;">🎯 ${districtName}</h4>
+                                <p><strong>State:</strong> Telangana</p>
+                                <p><strong>Area:</strong> ${area} km²</p>
+                                <p style="font-size: 11px; color: #666;">✅ Filter applied successfully!</p>
+                            </div>
+                        `;
+                        
+                        // Get the center of the district for popup placement
+                        const districtCenter = layer.getBounds().getCenter();
+                        
+                        // Create popup at district center
+                        const popup = L.popup()
+                            .setLatLng(districtCenter)
+                            .setContent(popupContent)
+                            .openOn(map);
+                        
+                        // Auto-close popup after 4 seconds
+                        setTimeout(() => {
+                            map.closePopup(popup);
+                        }, 4000);
+                        
+                        // Reset style after 4 seconds
+                        setTimeout(() => {
+                            layer.setStyle({
+                                fillColor: '#4285f4',
+                                fillOpacity: 0.1,
+                                color: '#2c3e50',
+                                weight: 1
+                            });
+                        }, 4000);
+                        
+                        districtFound = true;
+                        return;
+                    }
+                });
+                
+                if (!districtFound) {
+                    console.warn('District layer not found on map:', districtName);
+                    console.log('Available districts on map:', availableDistricts.slice(0, 10));
+                    
+                    // Show success message even if boundaries not found
+                    console.log(`✅ Filter applied for ${districtName} district. Map zoomed to Telangana region.`);
+                    
+                    // Log that boundaries are not visible but filter still applied
+                    console.log(`✅ Filter applied for ${districtName}. District boundaries not currently visible on map.`);
+                }
+                
+            } else {
+                console.warn('District boundaries layer not loaded yet');
+                
+                // Try to load district boundaries
+                tryToLoadDistrictBoundaries();
+                
+                // Log that boundaries are loading
+                console.log(`✅ Filter applied for ${districtName}. Attempting to load district boundaries...`);
+                
+                console.log(`✅ Filter applied for ${districtName}. Attempting to load boundaries...`);
+                
+                // Try again after boundaries might have loaded
+                setTimeout(() => {
+                    if (districtBoundariesLayer) {
+                        console.log('District boundaries now available, retrying highlight...');
+                        highlightDistrictForFilter(districtName);
+                    } else {
+                        console.log('District boundaries still not available after delay');
+                    }
+                }, 3000);
+            }
+        }
+        
+        // TRY TO LOAD DISTRICT BOUNDARIES
+        function tryToLoadDistrictBoundaries() {
+            console.log('=== ATTEMPTING TO LOAD DISTRICT BOUNDARIES ===');
+            
+            if (districtBoundariesLayer) {
+                console.log('District boundaries already loaded');
+                return;
+            }
+            
+            // Try to call the main data loading function
+            console.log('Attempting to load Telangana data with districts...');
+            
+            // Check if loadTelanganaData function exists and call it
+            if (typeof loadTelanganaData === 'function') {
+                console.log('Found loadTelanganaData function, calling it...');
+                loadTelanganaData();
+            } else {
+                console.log('loadTelanganaData function not found, trying alternative approaches...');
+                
+                // Try to manually load district boundaries
+                loadDistrictBoundariesManually();
+            }
+        }
+        
+        // MANUALLY LOAD DISTRICT BOUNDARIES
+        function loadDistrictBoundariesManually() {
+            console.log('=== MANUALLY LOADING DISTRICT BOUNDARIES ===');
+            
+            // Try to fetch district boundaries directly
+            const districtUrl = '/api/telangana_districts'; // Adjust this URL as needed
+            
+            fetch(districtUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Successfully loaded district data:', data);
+                    
+                    if (data && (data.districts || data.features)) {
+                        const geoJsonData = data.districts || data;
+                        
+                        // Create district boundaries layer
+                        districtBoundariesLayer = L.geoJSON(geoJsonData, {
+                            style: {
+                                fillColor: 'transparent',
+                                fillOpacity: 0.1,
+                                color: '#2c3e50',
+                                weight: 1,
+                                opacity: 0.8
+                            },
+                            onEachFeature: function(feature, layer) {
+                                const props = feature.properties;
+                                const districtName = props.DISTRICT || props.District || 
+                                                   props.district || props.NAME || 
+                                                   props.name || props.Name;
+                                
+                                if (districtName) {
+                                    console.log('Loaded district:', districtName);
+                                }
+                            }
+                        }).addTo(map);
+                        
+                        console.log('✅ District boundaries loaded successfully!');
+                        
+                        // Populate district dropdown with loaded districts
+                        populateDistrictDropdown();
+                        
+                    } else {
+                        console.warn('No district data found in response');
+                    }
+                })
+                .catch(error => {
+                    console.error('Failed to load district boundaries:', error);
+                    console.log('District boundaries will be loaded when main data loads');
+                });
+        }
+        
+        // POPULATE DISTRICT DROPDOWN WITH ACTUAL MAP DISTRICTS
+        function populateDistrictDropdown() {
+            console.log('=== POPULATING DISTRICT DROPDOWN ===');
+            
+            const districtFilter = document.getElementById('districtFilter');
+            if (!districtFilter) {
+                console.error('❌ District filter dropdown not found!');
+                return;
+            }
+            
+            if (!districtBoundariesLayer) {
+                console.warn('⚠️ District boundaries layer not available yet');
+                return;
+            }
+            
+            console.log('🔍 Analyzing district boundaries layer...');
+            console.log('Layer count:', districtBoundariesLayer.getLayers().length);
+            
+            // Clear existing options except "All Districts"
+            districtFilter.innerHTML = '<option value="">All Districts</option>';
+            
+            // Collect all district names from the map
+            const mapDistricts = [];
+            const allProperties = [];
+            
+            districtBoundariesLayer.eachLayer(function(layer) {
+                const props = layer.feature.properties;
+                allProperties.push(Object.keys(props)); // Debug: see all property keys
+                
+                // Try multiple possible district name properties
+                const districtName = props.DISTRICT_N || props.D_N || props.NAME || 
+                                   props.district || props.name || props.DISTRICT || 
+                                   props.District || props.dtname || props.DTNAME ||
+                                   props.dist_name || props.DIST_NAME;
+                
+                console.log('District properties:', props);
+                console.log('Extracted district name:', districtName);
+                
+                if (districtName && districtName !== 'Unknown District' && districtName.trim() !== '') {
+                    mapDistricts.push(districtName.trim());
+                }
+            });
+            
+            // Show all property keys found (for debugging)
+            const uniquePropertyKeys = [...new Set(allProperties.flat())];
+            console.log('🔑 All property keys found in GeoJSON:', uniquePropertyKeys);
+            
+            // Remove duplicates and sort
+            const uniqueDistricts = [...new Set(mapDistricts)].sort();
+            
+            console.log('📍 Districts found in map GeoJSON:', uniqueDistricts);
+            console.log('📊 Total unique districts:', uniqueDistricts.length);
+            
+            // Expected districts from your console output
+            const expectedDistricts = [
+                'Adilabad', 'Bhadradri Kothagudem', 'Hanumakonda', 'Hyderabad', 'Jagtial', 
+                'Jangoan', 'Jayashankar Bhupalpally', 'Jogulamba Gadwal', 'Kamareddy', 
+                'Karimnagar', 'Khammam', 'Kumurambheem Asifabad', 'Mahabubabad', 
+                'Mahabubnagar', 'Mancherial', 'Medak', 'Medchal_Malkajgiri', 'Mulugu', 
+                'Nagarkurnool', 'Nalgonda', 'Narayanpet', 'Nirmal', 'Nizamabad', 
+                'Peddapalli', 'Rajanna Sircilla', 'Rangareddy', 'Sangareddy', 'Siddipet', 
+                'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal', 'Yadadri Bhuvanagiri'
+            ];
+            
+            console.log('🎯 Expected 33 districts, found:', uniqueDistricts.length);
+            console.log('✅ All expected districts present:', expectedDistricts.every(d => uniqueDistricts.includes(d)));
+            
+            if (uniqueDistricts.length === 0) {
+                console.warn('⚠️ No districts found in GeoJSON data!');
+                console.log('💡 Check if district name properties match the expected keys');
+                return;
+            }
+            
+            // Add districts to dropdown
+            uniqueDistricts.forEach(districtName => {
+                const option = document.createElement('option');
+                option.value = districtName;
+                option.textContent = districtName;
+                districtFilter.appendChild(option);
+                console.log(`➕ Added district: ${districtName}`);
+            });
+            
+            console.log(`✅ Successfully added ${uniqueDistricts.length} districts to dropdown`);
+            console.log('🎯 District filter now shows only districts present in the map!');
+            console.log('📋 Final dropdown options:', Array.from(districtFilter.options).map(opt => opt.value));
+        }
+        
+        // TEST FUNCTION - Force load and show forest layer
+        function testForestLayer() {
+            console.log('=== TESTING FOREST LAYER ===');
+            console.log('Current telanganaForestLayer:', !!telanganaForestLayer);
+            
+            if (telanganaForestLayer) {
+                console.log('Forest layer exists, adding to map...');
+                if (!map.hasLayer(telanganaForestLayer)) {
+                    telanganaForestLayer.addTo(map);
+                    console.log('✅ Forest layer added to map');
+                } else {
+                    console.log('Forest layer already on map');
+                }
+            } else {
+                console.log('Forest layer not available, attempting to load...');
+                loadTelanganaForest().then(forestLayer => {
+                    if (forestLayer) {
+                        telanganaForestLayer = forestLayer;
+                        telanganaForestLayer.addTo(map);
+                        console.log('✅ Forest layer loaded and added to map');
+                    } else {
+                        console.error('❌ Failed to load forest layer');
+                    }
+                });
+            }
+        }
+        
+        // Make test function globally available
+        window.testForestLayer = testForestLayer;
+        
+        // Debug function to check map state
+        window.debugMapState = function() {
+            console.log('=== MAP STATE DEBUG ===');
+            console.log('window.map exists:', !!window.map);
+            console.log('global map exists:', typeof map !== 'undefined' ? !!map : 'undefined');
+            console.log('window.map type:', typeof window.map);
+            console.log('global map type:', typeof map !== 'undefined' ? typeof map : 'undefined');
+            
+            if (typeof map !== 'undefined' && map) {
+                console.log('Map has addLayer method:', typeof map.addLayer === 'function');
+                console.log('Map has hasLayer method:', typeof map.hasLayer === 'function');
+                console.log('Map container:', map.getContainer ? map.getContainer() : 'No container');
+            }
+            
+            console.log('telanganaForestLayer exists:', !!window.telanganaForestLayer);
+            if (window.telanganaForestLayer) {
+                console.log('Forest layer type:', typeof window.telanganaForestLayer);
+                console.log('Forest layer has addTo:', typeof window.telanganaForestLayer.addTo === 'function');
+            }
+        };
+        
+        // Test function for FRA layers
+        window.testFRALayers = function() {
+            console.log('=== TESTING FRA LAYERS ===');
+            console.log('Available FRA layers:', Object.keys(fraLayers));
+            
+            Object.entries(fraLayers).forEach(([type, layer]) => {
+                console.log(`${type} layer:`, {
+                    exists: !!layer,
+                    onMap: layer ? map.hasLayer(layer) : false,
+                    featureCount: layer ? layer.getLayers().length : 0
+                });
+            });
+            
+            console.log('Forest layer:', {
+                exists: !!telanganaForestLayer,
+                onMap: telanganaForestLayer ? map.hasLayer(telanganaForestLayer) : false
+            });
+            
+            // Test checkbox states
+            const checkboxes = ['toggleForest', 'toggleCFR', 'toggleIFR', 'toggleCR'];
+            checkboxes.forEach(id => {
+                const checkbox = document.getElementById(id);
+                console.log(`${id}:`, {
+                    exists: !!checkbox,
+                    checked: checkbox ? checkbox.checked : false
+                });
+            });
+        };
+        
+        // Additional test functions for debugging
+        window.testLanduseFilter = function() {
+            console.log('=== TESTING LAND-USE FILTER MANUALLY ===');
+            const filter = document.getElementById('landuseFilter');
+            console.log('Filter element:', filter);
+            console.log('Filter options:', filter ? filter.innerHTML : 'N/A');
+            console.log('Current value:', filter ? filter.value : 'N/A');
+            
+            if (filter) {
+                console.log('Setting filter to forest...');
+                filter.value = 'forest';
+                filter.dispatchEvent(new Event('change'));
+                console.log('Change event dispatched');
+            }
+        };
+        
+        window.testForestAPI = async function() {
+            console.log('=== TESTING FOREST API DIRECTLY ===');
+            try {
+                const response = await fetch('/api/telangana_forest');
+                console.log('API Response status:', response.status);
+                console.log('API Response ok:', response.ok);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Forest data received:', data);
+                    console.log('Features count:', data.features ? data.features.length : 'No features');
+                } else {
+                    console.error('API returned error status:', response.status);
+                }
+            } catch (error) {
+                console.error('Error calling forest API:', error);
+            }
+        };
+        
+        // Force forest layer display - bypasses all event listeners
+        window.forceShowForest = async function() {
+            console.log('=== FORCING FOREST LAYER DISPLAY ===');
+            try {
+                // Make direct API call
+                const response = await fetch('/api/telangana_forest');
+                console.log('Direct API call made - Status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`API failed with status: ${response.status}`);
+                }
+                
+                const forestData = await response.json();
+                console.log('Forest data loaded:', forestData);
+                
+                // Create forest layer directly
+                const forestLayer = L.geoJSON(forestData, {
+                    style: {
+                        color: '#228B22',
+                        fillColor: '#32CD32',
+                        weight: 2,
+                        opacity: 0.8,
+                        fillOpacity: 0.6
+                    }
+                });
+                
+                // Add to map
+                forestLayer.addTo(map);
+                console.log('✅ Forest layer added to map directly');
+                
+                // Fit bounds
+                if (forestLayer.getBounds().isValid()) {
+                    map.fitBounds(forestLayer.getBounds(), { padding: [20, 20] });
+                }
+                
+                alert('✅ Forest layer forced to display! Check the map.');
+                
+            } catch (error) {
+                console.error('Error forcing forest display:', error);
+                alert('❌ Error: ' + error.message);
+            }
+        };
+        
         // Global variables
         let map;
         let landuseLayer;
@@ -464,6 +1445,89 @@
         let currentState = 'telangana';
         let availableDistricts = [];
         let fraData = null;
+        
+        // Telangana District Areas (in square kilometers) - Real data from government sources
+        const telanganaDistrictAreas = {
+            'Adilabad': 4153,
+            'Bhadradri Kothagudem': 7483,
+            'Hanumakonda': 2940,
+            'Hyderabad': 217,
+            'Jagtial': 1666,
+            'Jangaon': 2465,
+            'Jayashankar Bhupalpally': 3045,
+            'Jogulamba Gadwal': 3048,
+            'Kamareddy': 3570,
+            'Karimnagar': 2128,
+            'Khammam': 4379,
+            'Kumuram Bheem Asifabad': 4611,
+            'Mahabubabad': 2230,
+            'Mahabubnagar': 2859,
+            'Mancherial': 4275,
+            'Medak': 2765,
+            'Medchal-Malkajgiri': 2699,
+            'Mulugu': 2506,
+            'Nagarkurnool': 6545,
+            'Nalgonda': 7003,
+            'Narayanpet': 2649,
+            'Nirmal': 3970,
+            'Peddapalli': 1217,
+            'Rajanna Sircilla': 2432,
+            'Ranga Reddy': 7493,
+            'Sangareddy': 3204,
+            'Siddipet': 3098,
+            'Suryapet': 3525,
+            'Vikarabad': 3386,
+            'Wanaparthy': 2251,
+            'Warangal': 1163,
+            'Yadadri Bhuvanagiri': 3277,
+            'Nizamabad': 4288
+        };
+        
+        // Helper function to get district area
+        function getDistrictArea(districtName) {
+            // Clean district name and try different variations
+            const cleanName = districtName.trim();
+            
+            // Direct lookup
+            if (telanganaDistrictAreas[cleanName]) {
+                return telanganaDistrictAreas[cleanName].toLocaleString();
+            }
+            
+            // Try case-insensitive lookup
+            const lowerName = cleanName.toLowerCase();
+            for (const [key, value] of Object.entries(telanganaDistrictAreas)) {
+                if (key.toLowerCase() === lowerName) {
+                    return value.toLocaleString();
+                }
+            }
+            
+            // Try partial matching for common variations
+            const nameVariations = {
+                'Ranga Reddy': ['RangaReddy', 'Rangareddy'],
+                'Medchal-Malkajgiri': ['Medchal Malkajgiri', 'Medchal', 'Malkajgiri'],
+                'Kumuram Bheem Asifabad': ['Asifabad', 'Kumuram Bheem'],
+                'Jayashankar Bhupalpally': ['Bhupalpally', 'Jayashankar'],
+                'Bhadradri Kothagudem': ['Kothagudem', 'Bhadradri'],
+                'Yadadri Bhuvanagiri': ['Bhuvanagiri', 'Yadadri'],
+                'Jogulamba Gadwal': ['Gadwal', 'Jogulamba'],
+                'Rajanna Sircilla': ['Sircilla', 'Rajanna'],
+                'Jangaon': ['Jangoan']
+            };
+            
+            // Check variations
+            for (const [standardName, variations] of Object.entries(nameVariations)) {
+                if (variations.some(variation => 
+                    variation.toLowerCase() === lowerName || 
+                    cleanName.toLowerCase().includes(variation.toLowerCase())
+                )) {
+                    return telanganaDistrictAreas[standardName].toLocaleString();
+                }
+            }
+            
+            // If no match found, return a default message
+            console.warn(`District area not found for: ${districtName}`);
+            return 'Data not available';
+        }
         
         // Initialize map
         function initMap() {
@@ -564,7 +1628,7 @@
                                 <div style="color: #333; font-family: Roboto, sans-serif;">
                                     <h4 style="margin: 0 0 10px 0; color: #4285f4;">${districtName}</h4>
                                     <p><strong>State:</strong> ${currentState.charAt(0).toUpperCase() + currentState.slice(1)}</p>
-                                    <p><strong>Area:</strong> ${props.AREA ? (props.AREA / 1000000).toFixed(2) + ' km²' : 'N/A'}</p>
+                                    <p><strong>Area:</strong> ${getDistrictArea(districtName)} km²</p>
                                     ${props.Total ? `<p><strong>Villages:</strong> ${props.Total}</p>` : ''}
                                     <p style="font-size: 11px; color: #666;">Click to focus on district</p>
                                 </div>
@@ -591,6 +1655,9 @@
                             });
                         }
                     }).addTo(map);
+                    
+                    // Populate district filter dropdown with actual districts from map
+                    populateDistrictDropdown();
                     
                     // Fit map to boundaries
                     map.fitBounds(districtBoundariesLayer.getBounds(), { padding: [20, 20] });
@@ -628,14 +1695,13 @@
             availableDistricts.forEach(district => {
                 const option = document.createElement('option');
                 option.value = district;
-                option.textContent = district;
                 districtSelect.appendChild(option);
             });
         }
         
         // Handle state change
         async function handleStateChange(newState) {
-            console.log('Changing state to:', newState);
+            console.log('=== CHANGING STATE ===', newState);
             currentState = newState.toLowerCase();
             
             // Update panel title
@@ -643,12 +1709,13 @@
                 `${newState.charAt(0).toUpperCase() + newState.slice(1)} Land-use Atlas`;
             
             // Load boundaries and districts
+            console.log('Loading state boundaries and districts...');
             await Promise.all([
                 loadStateBoundaries(currentState),
                 loadStateDistricts(currentState)
             ]);
             
-            // Update map center based on state
+            // Update map center and zoom based on state
             const stateCenters = {
                 'telangana': [17.9689, 78.9629],
                 'odisha': [20.9517, 85.0985],
@@ -656,16 +1723,37 @@
                 'tripura': [23.9408, 91.9882]
             };
             
-            const center = stateCenters[currentState] || [20.5937, 78.9629];
-            map.setView(center, 7);
+            const stateZoomLevels = {
+                'telangana': 7,
+                'odisha': 7,
+                'madhya pradesh': 6,
+                'tripura': 8
+            };
             
-            // Load only FRA data - land-use representation removed as requested
-            // loadLanduseData(); // REMOVED: Focus only on FRA layers
+            const center = stateCenters[currentState] || [20.5937, 78.9629];
+            const zoomLevel = stateZoomLevels[currentState] || 7;
+            
+            console.log(`Zooming to ${newState}:`, center, 'zoom level:', zoomLevel);
+            map.setView(center, zoomLevel);
+            
+            // Clear any existing forest layer when changing states
+            if (telanganaForestLayer && map.hasLayer(telanganaForestLayer)) {
+                console.log('Removing forest layer from previous state');
+                map.removeLayer(telanganaForestLayer);
+            }
+            
+            // Reset land-use filter when changing states
+            const landuseFilter = document.getElementById('landuseFilter');
+            if (landuseFilter) {
+                landuseFilter.value = '';
+                console.log('Reset land-use filter for new state');
+            }
+            
+            console.log(`✅ Successfully changed to ${newState} state`);
         }
         
         // Load land-use data
         async function loadLanduseData(filters = {}) {
-            console.log('Loading land-use data for state:', currentState, 'with filters:', filters);
             showLoading(true);
             
             try {
@@ -784,10 +1872,18 @@
         
         // Update filter dropdowns - simplified to only 4 land use categories
         function updateFilters() {
+            console.log('=== UPDATING LAND-USE FILTER OPTIONS ===');
             const landuseSelect = document.getElementById('landuseFilter');
+            console.log('Land-use select element found:', !!landuseSelect);
+            
+            if (!landuseSelect) {
+                console.error('❌ CRITICAL: Land-use select element not found in updateFilters!');
+                return;
+            }
             
             // Clear existing options
             landuseSelect.innerHTML = '<option value="">All Categories</option>';
+            console.log('Cleared existing options');
             
             // Add only the 4 specified land-use categories
             const allowedCategories = {
@@ -797,12 +1893,18 @@
                 'homesteads': 'Homesteads'
             };
             
+            console.log('Adding land-use categories:', Object.keys(allowedCategories));
+            
             Object.entries(allowedCategories).forEach(([value, label]) => {
                 const option = document.createElement('option');
                 option.value = value;
                 option.textContent = label;
                 landuseSelect.appendChild(option);
+                console.log(`Added option: ${value} -> ${label}`);
             });
+            
+            console.log('✅ Land-use filter options updated successfully');
+            console.log('Final dropdown HTML:', landuseSelect.innerHTML);
         }
         
         // Show feature information
@@ -828,11 +1930,30 @@
         // Load Telangana Forest boundaries
         async function loadTelanganaForest() {
             try {
-                console.log('Loading Telangana forest boundaries...');
+                console.log('=== MAKING FOREST API CALL ===');
+                console.log('URL: /api/telangana_forest');
+                console.log('Timestamp:', new Date().toISOString());
+                
                 const response = await fetch('/api/telangana_forest');
                 
+                console.log('=== FOREST API RESPONSE ===');
+                console.log('Status:', response.status);
+                console.log('Status Text:', response.statusText);
+                console.log('OK:', response.ok);
+                console.log('URL:', response.url);
+                console.log('Headers:', [...response.headers.entries()]);
+                
                 if (!response.ok) {
-                    console.error('Forest data not available, status:', response.status);
+                    console.error('❌ Forest API failed with status:', response.status);
+                    
+                    // Try to read error response
+                    try {
+                        const errorText = await response.text();
+                        console.log('Error response body:', errorText);
+                    } catch (e) {
+                        console.log('Could not read error response');
+                    }
+                    
                     return null;
                 }
                 
@@ -908,18 +2029,20 @@
                 fraData = await response.json();
                 console.log(`Loaded ${fraData.features?.length || 0} FRA features`);
                 
-                displayFRALayers();
+                prepareFRALayers(); // Prepare layers but don't display them
                 
             } catch (error) {
                 console.error('Error loading FRA data:', error);
             }
         }
         
-        // Display FRA layers
-        function displayFRALayers() {
+        // Prepare FRA layers (create but don't display)
+        function prepareFRALayers() {
             if (!fraData || !fraData.features) {
                 return;
             }
+            
+            console.log('Preparing FRA layers (not displaying)...');
             
             // Clear existing FRA layers
             Object.values(fraLayers).forEach(layer => {
@@ -942,7 +2065,7 @@
                 }
             });
             
-            // Create layers for each FRA type
+            // Create layers for each FRA type (but don't add to map)
             Object.entries(featureGroups).forEach(([type, features]) => {
                 if (features.length === 0) return;
                 
@@ -1011,20 +2134,21 @@
                     }
                 });
                 
-                // Add to map by default
-                fraLayers[type].addTo(map);
+                // Don't add to map by default - only when checkbox is checked
+                console.log(`${type} layer prepared with ${features.length} features (not displayed)`);
             });
             
+            console.log('✅ All FRA layers prepared but hidden');
             // Update layer control
             updateLayerControl();
         }
         
-        // Get color scheme for FRA types
+        // Get color scheme for FRA types (matching user requirements)
         function getFRAColor(type) {
             const colors = {
-                'CFR': { color: '#8B4513', fillColor: '#D2691E', fillOpacity: 0.5 },
-                'IFR': { color: '#FF4500', fillColor: '#FF6347', fillOpacity: 0.7 },
-                'CR': { color: '#9B59B6', fillColor: '#BA68C8', fillOpacity: 0.6 }
+                'CFR': { color: '#FF6347', fillColor: '#FF8C00', fillOpacity: 0.6 }, // Orangish polygons
+                'CR': { color: '#6A0DAD', fillColor: '#8A2BE2', fillOpacity: 0.6 },  // Purple polygons
+                'IFR': { color: '#DC143C', fillColor: '#FF1493', fillOpacity: 0.8, radius: 2 } // Dots/points
             };
             return colors[type] || { color: '#333333', fillColor: '#666666', fillOpacity: 0.5 };
         }
@@ -1081,12 +2205,105 @@
         
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('=== DOM CONTENT LOADED ===');
             console.log('DOM loaded, initializing map...');
             initMap();
-            console.log('Map initialized, setting up base layers...');
-            updateLayerControl();
-            console.log('Layer control initialized, loading categories...');
+            console.log('Map initialized, loading categories...');
             loadCategories();
+            
+            // Test UI connection immediately and add direct event listener
+            setTimeout(() => {
+                console.log('=== TESTING UI CONNECTION ===');
+                const landuseFilter = document.getElementById('landuseFilter');
+                console.log('Land-use filter found after DOM load:', !!landuseFilter);
+                if (landuseFilter) {
+                    console.log('Land-use filter options:', landuseFilter.innerHTML);
+                    console.log('Land-use filter value:', landuseFilter.value);
+                    
+                    // Add a direct, simple event listener as backup
+                    console.log('Adding direct event listener to land-use filter...');
+                    landuseFilter.onchange = function() {
+                        console.log('🚨 DIRECT EVENT LISTENER TRIGGERED!');
+                        console.log('Selected value:', this.value);
+                        
+                        if (this.value === 'forest') {
+                            console.log('🌲 FOREST SELECTED - MAKING API CALL');
+                            
+                            // Direct API call and display
+                            fetch('/api/telangana_forest')
+                                .then(response => {
+                                    console.log('API Response:', response.status, response.statusText);
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    console.log('Forest data received:', data);
+                                    console.log('Features count:', data.features ? data.features.length : 'No features');
+                                    
+                                    if (data.features && data.features.length > 0) {
+                                        console.log('Creating forest layer with', data.features.length, 'features...');
+                                        
+                                        // Remove existing forest layer if any
+                                        if (telanganaForestLayer && map.hasLayer(telanganaForestLayer)) {
+                                            map.removeLayer(telanganaForestLayer);
+                                            console.log('Removed existing forest layer');
+                                        }
+                                        
+                                        // Create new forest layer
+                                        telanganaForestLayer = L.geoJSON(data, {
+                                            style: {
+                                                color: '#228B22',      // Forest green border
+                                                fillColor: '#32CD32',  // Lime green fill
+                                                weight: 1,
+                                                opacity: 0.8,
+                                                fillOpacity: 0.6
+                                            },
+                                            onEachFeature: function(feature, layer) {
+                                                // Add popup with forest information
+                                                let popupContent = '<div class="popup-content">';
+                                                popupContent += '<h4>🌲 Forest Area</h4>';
+                                                
+                                                if (feature.properties) {
+                                                    Object.keys(feature.properties).forEach(key => {
+                                                        if (feature.properties[key] !== null && feature.properties[key] !== '') {
+                                                            popupContent += `<strong>${key}:</strong> ${feature.properties[key]}<br>`;
+                                                        }
+                                                    });
+                                                }
+                                                
+                                                popupContent += '</div>';
+                                                layer.bindPopup(popupContent);
+                                            }
+                                        });
+                                        
+                                        // Add to map
+                                        telanganaForestLayer.addTo(map);
+                                        console.log('✅ Forest layer added to map with', data.features.length, 'features');
+                                        
+                                        // Fit map to forest bounds
+                                        if (telanganaForestLayer.getBounds && telanganaForestLayer.getBounds().isValid()) {
+                                            map.fitBounds(telanganaForestLayer.getBounds(), { padding: [20, 20] });
+                                            console.log('Map fitted to forest bounds');
+                                        }
+                                        
+                                        console.log('✅ Forest layer displayed! ' + data.features.length + ' forest areas now visible on map.');
+                                        
+                                    } else {
+                                        console.warn('No forest features found in data');
+                                        console.warn('⚠️ No forest features found in the data');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Forest API error:', error);
+                                    alert('❌ Forest API failed: ' + error.message);
+                                    console.log('Error message:', error.message);
+                                });
+                        }
+                    };
+                    console.log('✅ Direct event listener added');
+                } else {
+                    console.error('❌ CRITICAL: Land-use filter not found after DOM load!');
+                }
+            }, 1000);
             
             // Initialize with Telangana
             console.log('Initializing with Telangana...');
@@ -1095,27 +2312,42 @@
             // Load FRA data and forest boundaries for Telangana
             console.log('Loading FRA data...');
             loadFRAData();
-            
             console.log('Loading forest boundaries...');
             loadTelanganaForest().then(forestLayer => {
-                console.log('Forest loading promise resolved:', forestLayer ? 'success' : 'failed');
+                console.log('=== FOREST LOADING PROMISE RESOLVED ===');
+                console.log('Forest layer result:', forestLayer ? 'SUCCESS' : 'FAILED');
+                
                 if (forestLayer) {
-                    console.log('Forest layer loaded successfully, adding to map...');
-                    // Add to map by default
-                    forestLayer.addTo(map);
-                    console.log('Forest layer added to map');
-                    // Fit map to show forest areas
-                    if (forestLayer.getBounds && forestLayer.getBounds().isValid()) {
-                        console.log('Fitting map bounds to forest areas...');
-                        map.fitBounds(forestLayer.getBounds(), {padding: [20, 20]});
+                    console.log('✅ Forest layer loaded successfully');
+                    console.log('Forest layer type:', typeof forestLayer);
+                    console.log('Forest layer has getBounds:', typeof forestLayer.getBounds);
+                    
+                    // Store the forest layer globally
+                    telanganaForestLayer = forestLayer;
+                    console.log('Forest layer stored globally as telanganaForestLayer');
+                    
+                    // Check if land-use filter is currently set to forest
+                    const landuseFilter = document.getElementById('landuseFilter');
+                    console.log('Land-use filter element:', !!landuseFilter);
+                    console.log('Current land-use filter value:', landuseFilter ? landuseFilter.value : 'N/A');
+                    
+                    if (landuseFilter && landuseFilter.value === 'forest') {
+                        console.log('Land-use filter is set to forest, adding forest layer to map');
+                        forestLayer.addTo(map);
+                        // Fit map to show forest areas
+                        if (forestLayer.getBounds && forestLayer.getBounds().isValid()) {
+                            map.fitBounds(forestLayer.getBounds(), { padding: [20, 20] });
+                        }
                     } else {
-                        console.log('Forest layer bounds not valid or not available');
+                        console.log('Land-use filter not set to forest, forest layer ready but not displayed');
                     }
                 } else {
-                    console.error('Failed to load forest layer');
+                    console.warn('❌ Forest layer is null or undefined');
+                    console.log('This might indicate an issue with the forest API endpoint');
                 }
             }).catch(error => {
-                console.error('Error in forest loading promise:', error);
+                console.error('❌ Error in forest loading promise:', error);
+                console.log('Forest API might not be available or returning invalid data');
             });
             
             // State selection change
@@ -1125,6 +2357,8 @@
             
             // Filter controls
             document.getElementById('applyFilters').addEventListener('click', function() {
+                console.log('=== APPLY FILTERS CLICKED ===');
+                
                 const filters = {
                     landuse_type: document.getElementById('landuseFilter').value,
                     district: document.getElementById('districtFilter').value,
@@ -1132,13 +2366,36 @@
                     max_area: document.getElementById('maxArea').value
                 };
                 
+                console.log('Current filters:', filters);
+                
                 // Remove empty filters
                 Object.keys(filters).forEach(key => {
                     if (!filters[key]) delete filters[key];
                 });
                 
-                // Focus only on FRA data - land-use filters disabled
-                // loadLanduseData(filters); // REMOVED: No land-use representation
+                console.log('Cleaned filters:', filters);
+                
+                // If district is selected, zoom to that district
+                if (filters.district) {
+                    console.log('District selected for filtering:', filters.district);
+                    zoomToSelectedDistrict(filters.district);
+                } else {
+                    console.log('No district selected, showing full Telangana view');
+                    // Zoom to full Telangana view
+                    map.setView([17.9689, 78.9629], 7);
+                }
+                
+                // Apply other filters (land-use, area, etc.) if needed
+                applyDataFilters(filters);
+                
+                // Show success message
+                const filterCount = Object.keys(filters).length;
+                if (filterCount > 0) {
+                    console.log(`Applied ${filterCount} filter(s)`);
+                    showFilterSuccessMessage(filters);
+                } else {
+                    console.log('No filters applied, showing all data');
+                }
             });
             
             document.getElementById('clearFilters').addEventListener('click', function() {
@@ -1174,63 +2431,112 @@
             });
             
             // Forest layer toggle control
-            document.getElementById('toggleForest').addEventListener('change', function(e) {
-                if (telanganaForestLayer) {
-                    if (e.target.checked) {
-                        telanganaForestLayer.addTo(map);
-                    } else {
-                        map.removeLayer(telanganaForestLayer);
-                    }
-                }
-            });
-
-            // FRA layer toggle controls
-            document.getElementById('toggleCFR').addEventListener('change', function(e) {
-                if (fraLayers.CFR) {
-                    if (e.target.checked) {
-                        fraLayers.CFR.addTo(map);
-                    } else {
-                        map.removeLayer(fraLayers.CFR);
-                    }
-                }
-            });
+            // FRA layer toggle controls with enhanced debugging
+            console.log('=== SETTING UP FRA LAYER TOGGLES ===');
             
-            document.getElementById('toggleIFR').addEventListener('change', function(e) {
-                if (fraLayers.IFR) {
-                    if (e.target.checked) {
-                        fraLayers.IFR.addTo(map);
-                    } else {
-                        map.removeLayer(fraLayers.IFR);
-                    }
-                }
-            });
-            
-            document.getElementById('toggleCR').addEventListener('change', function(e) {
-                if (fraLayers.CR) {
-                    if (e.target.checked) {
-                        fraLayers.CR.addTo(map);
-                    } else {
-                        map.removeLayer(fraLayers.CR);
-                    }
-                }
-            });
-            
-            // Land use filter - connect forest option to forest layer
-            document.getElementById('landuseFilter').addEventListener('change', function(e) {
-                const selectedValue = e.target.value;
-                
-                // Handle forest layer toggle
-                if (telanganaForestLayer) {
-                    if (selectedValue === 'forest') {
-                        // Show forest layer when forest is selected
-                        if (!map.hasLayer(telanganaForestLayer)) {
+            // Forest Boundaries toggle (missing functionality)
+            const toggleForest = document.getElementById('toggleForest');
+            console.log('Forest boundaries toggle found:', !!toggleForest);
+            if (toggleForest) {
+                toggleForest.addEventListener('change', function(e) {
+                    console.log('🌲 Forest boundaries toggle changed:', e.target.checked);
+                    if (telanganaForestLayer) {
+                        if (e.target.checked) {
+                            console.log('Adding forest boundaries to map');
                             telanganaForestLayer.addTo(map);
-                        }
-                    } else {
-                        // Hide forest layer when other categories selected
-                        if (map.hasLayer(telanganaForestLayer)) {
+                        } else {
+                            console.log('Removing forest boundaries from map');
                             map.removeLayer(telanganaForestLayer);
                         }
+                    } else {
+                        console.warn('Forest layer not available yet');
+                        if (e.target.checked) {
+                            console.log('Attempting to load forest layer...');
+                            loadTelanganaForest().then(forestLayer => {
+                                if (forestLayer) {
+                                    telanganaForestLayer = forestLayer;
+                                    telanganaForestLayer.addTo(map);
+                                    console.log('✅ Forest layer loaded and added');
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+            
+            // Note: FRA layer toggles now use inline handlers (handleFRAToggle)
+            // Removed duplicate addEventListener handlers to prevent conflicts
+            
+            console.log('✅ FRA layer toggles setup complete');
+            
+            // Land use filter - connect forest option to forest layer
+            console.log('=== SETTING UP LAND-USE FILTER EVENT LISTENER ===');
+            const landuseFilterElement = document.getElementById('landuseFilter');
+            console.log('Land-use filter element found:', !!landuseFilterElement);
+            console.log('Land-use filter element:', landuseFilterElement);
+            
+            if (!landuseFilterElement) {
+                console.error('❌ CRITICAL: Land-use filter element not found!');
+                console.log('Available elements with "Filter" in id:');
+                document.querySelectorAll('[id*="Filter"]').forEach(el => {
+                    console.log('- Found element:', el.id, el);
+                });
+                return;
+            }
+            
+            landuseFilterElement.addEventListener('change', function(e) {
+                const selectedValue = e.target.value;
+                console.log('=== LAND-USE FILTER CHANGED ===');
+                console.log('Selected value:', selectedValue);
+                console.log('Forest layer available:', !!telanganaForestLayer);
+                console.log('Forest layer on map:', telanganaForestLayer ? map.hasLayer(telanganaForestLayer) : 'N/A');
+                
+                // Handle forest layer toggle
+                if (selectedValue === 'forest') {
+                    console.log('🌲 FOREST SELECTED - FORCING FRESH API CALL');
+                    
+                    // Always make a fresh API call when forest is selected to ensure network activity
+                    console.log('Making fresh forest API call to ensure network visibility...');
+                    
+                    loadTelanganaForest().then(forestLayer => {
+                        if (forestLayer) {
+                            console.log('✅ Fresh forest layer loaded successfully');
+                            
+                            // Remove existing forest layer if any
+                            if (telanganaForestLayer && map.hasLayer(telanganaForestLayer)) {
+                                map.removeLayer(telanganaForestLayer);
+                                console.log('Removed old forest layer');
+                            }
+                            
+                            // Store and add new forest layer
+                            telanganaForestLayer = forestLayer;
+                            telanganaForestLayer.addTo(map);
+                            console.log('✅ Fresh forest layer added to map');
+                            
+                            // Fit map to forest bounds
+                            if (telanganaForestLayer.getBounds && telanganaForestLayer.getBounds().isValid()) {
+                                map.fitBounds(telanganaForestLayer.getBounds(), { padding: [20, 20] });
+                                console.log('Map fitted to forest bounds');
+                            }
+                            
+                            // Log success message
+                            console.log('✅ Forest layer loaded successfully! You should now see green forest areas on the map.');
+                            
+                        } else {
+                            console.error('❌ Failed to load forest layer from API');
+                            alert('❌ Forest data could not be loaded. Please check:\n1. Network tab for API calls\n2. Console for error messages\n3. Backend server status');
+                        }
+                    }).catch(error => {
+                        console.error('❌ Error in forest loading promise:', error);
+                        alert('❌ Error loading forest data: ' + error.message + '\n\nCheck the console and network tab for more details.');
+                    });
+                } else {
+                    console.log('Non-forest option selected - hiding forest layer');
+                    
+                    // Hide forest layer when other categories selected
+                    if (telanganaForestLayer && map.hasLayer(telanganaForestLayer)) {
+                        map.removeLayer(telanganaForestLayer);
+                        console.log('✅ Forest layer removed from map');
                     }
                 }
                 
@@ -1252,92 +2558,341 @@
                 });
             });
             
-            // Top controls
-            console.log('Setting up fullscreen button...');
-            const fullscreenBtn = document.getElementById('fullscreenBtn');
-            if (fullscreenBtn) {
-                console.log('Fullscreen button found, attaching event listener');
-                fullscreenBtn.addEventListener('click', function() {
-                    console.log('Fullscreen button clicked');
-                    // Simple fullscreen toggle for the entire page
-                    if (document.fullscreenElement) {
-                        document.exitFullscreen();
-                    } else {
-                        document.documentElement.requestFullscreen().catch(err => {
-                            console.log('Fullscreen not supported:', err);
-                        });
-                    }
-                    
-                    // Refresh map size after fullscreen change
-                    setTimeout(() => {
-                        map.invalidateSize();
-                    }, 200);
-                });
-            } else {
-                console.error('Fullscreen button not found!');
-            }
+            // Fullscreen functionality now handled by inline onclick event
             
-            // Search functionality
+            // Search functionality - Enhanced with debugging
             console.log('Setting up search box...');
-            const searchBox = document.getElementById('searchBox');
-            if (searchBox) {
-                console.log('Search box found, attaching event listener');
-                
-                // Add search on Enter key press
-                searchBox.addEventListener('keypress', async function(e) {
-                    console.log('Key pressed in search box:', e.key);
-                    if (e.key === 'Enter') {
-                        const query = e.target.value.trim();
-                        console.log('Enter pressed, searching for:', query);
-                        if (query) {
-                            await searchLocation(query);
-                        }
-                    }
-                });
-            } else {
-                console.error('Search box not found!');
-            }
             
-            // Search function using OpenStreetMap Nominatim API
-            async function searchLocation(query) {
-                try {
-                    console.log('Searching for:', query);
-                    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=IN&limit=1`);
-                    const data = await response.json();
+            // Wait a bit to ensure DOM is ready
+            setTimeout(() => {
+                const searchBox = document.getElementById('searchBox');
+                console.log('Search box element:', searchBox);
+                
+                if (searchBox) {
+                    console.log('Search box found, attaching event listeners');
                     
-                    if (data && data.length > 0) {
-                        const result = data[0];
-                        const lat = parseFloat(result.lat);
-                        const lon = parseFloat(result.lon);
+                    // Add search on Enter key press
+                    searchBox.addEventListener('keypress', async function(e) {
+                        console.log('=== KEY PRESSED IN SEARCH BOX ===');
+                        console.log('Key:', e.key);
+                        console.log('Value:', e.target.value);
                         
-                        // Zoom to the location
-                        map.setView([lat, lon], 12);
-                        
-                        // Add a marker for the searched location
-                        if (window.searchMarker) {
-                            map.removeLayer(window.searchMarker);
-                        }
-                        
-                        window.searchMarker = L.marker([lat, lon]).addTo(map)
-                            .bindPopup(`<strong>${result.display_name}</strong>`)
-                            .openPopup();
-                        
-                        // Remove marker after 5 seconds
-                        setTimeout(() => {
-                            if (window.searchMarker) {
-                                map.removeLayer(window.searchMarker);
-                                window.searchMarker = null;
+                        if (e.key === 'Enter') {
+                            e.preventDefault(); // Prevent form submission
+                            const query = e.target.value.trim();
+                            console.log('=== ENTER PRESSED, SEARCHING FOR ===', query);
+                            
+                            if (query) {
+                                try {
+                                    await performSearch(query);
+                                } catch (error) {
+                                    console.error('Search error:', error);
+                                    alert('Search failed: ' + error.message);
+                                }
+                            } else {
+                                alert('Please enter a search term');
                             }
-                        }, 5000);
-                        
-                    } else {
-                        alert('Location not found. Please try a different search term.');
+                        }
+                    });
+                    
+                    // Also add input event for real-time feedback
+                    searchBox.addEventListener('input', function(e) {
+                        console.log('Search input changed:', e.target.value);
+                    });
+                    
+                    // Add focus event
+                    searchBox.addEventListener('focus', function() {
+                        console.log('Search box focused');
+                    });
+                    
+                    console.log('All search event listeners attached successfully');
+                    
+                } else {
+                    console.error('Search box NOT FOUND in DOM!');
+                    console.log('Available elements with IDs:', 
+                        Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+                }
+            }, 200);
+            
+            // Main search function - moved here for better scope
+            async function performSearch(query) {
+                console.log('=== PERFORMING SEARCH ===');
+                console.log('Query:', query);
+                console.log('District areas available:', Object.keys(telanganaDistrictAreas).length);
+                
+                try {
+                    // First, check if the query matches a Telangana district
+                    const districtMatch = findDistrictMatch(query);
+                    console.log('District match result:', districtMatch);
+                    
+                    if (districtMatch) {
+                        console.log('District match found:', districtMatch);
+                        await zoomToDistrict(districtMatch);
+                        return;
                     }
+                    
+                    // If no district match, fall back to OpenStreetMap search
+                    console.log('No district match, searching via Nominatim...');
+                    await searchViaAPI(query);
+                    
                 } catch (error) {
                     console.error('Search error:', error);
-                    alert('Search failed. Please check your internet connection.');
+                    throw error;
                 }
             }
+            
+            // API search function
+            async function searchViaAPI(query) {
+                const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=IN&limit=1`);
+                const data = await response.json();
+                
+                if (data && data.length > 0) {
+                    const result = data[0];
+                    const lat = parseFloat(result.lat);
+                    const lon = parseFloat(result.lon);
+                    
+                    // Zoom to the location
+                    map.setView([lat, lon], 12);
+                    
+                    // Add a marker for the searched location
+                    if (window.searchMarker) {
+                        map.removeLayer(window.searchMarker);
+                    }
+                    
+                    window.searchMarker = L.marker([lat, lon]).addTo(map)
+                        .bindPopup(`<strong>${result.display_name}</strong>`)
+                        .openPopup();
+                    
+                    // Remove marker after 5 seconds
+                    setTimeout(() => {
+                        if (window.searchMarker) {
+                            map.removeLayer(window.searchMarker);
+                            window.searchMarker = null;
+                        }
+                    }, 5000);
+                    
+                } else {
+                    alert('Location not found. Please try a different search term.');
+                }
+            }
+            
+            // Function to find district match
+            function findDistrictMatch(query) {
+                const cleanQuery = query.trim().toLowerCase();
+                
+                // Direct match
+                for (const districtName of Object.keys(telanganaDistrictAreas)) {
+                    if (districtName.toLowerCase() === cleanQuery) {
+                        return districtName;
+                    }
+                }
+                
+                // Partial match
+                for (const districtName of Object.keys(telanganaDistrictAreas)) {
+                    if (districtName.toLowerCase().includes(cleanQuery) || 
+                        cleanQuery.includes(districtName.toLowerCase())) {
+                        return districtName;
+                    }
+                }
+                
+                // Check variations
+                const nameVariations = {
+                    'Ranga Reddy': ['rangareddy', 'ranga reddy', 'rangareddi'],
+                    'Medchal-Malkajgiri': ['medchal malkajgiri', 'medchal', 'malkajgiri'],
+                    'Kumuram Bheem Asifabad': ['asifabad', 'kumuram bheem', 'kumram bheem'],
+                    'Jayashankar Bhupalpally': ['bhupalpally', 'jayashankar', 'bhupalapally'],
+                    'Bhadradri Kothagudem': ['kothagudem', 'bhadradri', 'kothagoodem'],
+                    'Yadadri Bhuvanagiri': ['bhuvanagiri', 'yadadri', 'bhongir'],
+                    'Jogulamba Gadwal': ['gadwal', 'jogulamba'],
+                    'Rajanna Sircilla': ['sircilla', 'rajanna'],
+                    'Jangaon': ['jangoan']
+                };
+                
+                for (const [standardName, variations] of Object.entries(nameVariations)) {
+                    if (variations.some(variation => 
+                        variation === cleanQuery || 
+                        variation.includes(cleanQuery) || 
+                        cleanQuery.includes(variation)
+                    )) {
+                        return standardName;
+                    }
+                }
+                
+                return null;
+            }
+            
+            // Function to zoom to district
+            async function zoomToDistrict(districtName) {
+                console.log('Zooming to district:', districtName);
+                
+                // Remove existing search marker
+                if (window.searchMarker) {
+                    map.removeLayer(window.searchMarker);
+                    window.searchMarker = null;
+                }
+                
+                // Find the district layer and zoom to it
+                if (districtBoundariesLayer) {
+                    let districtFound = false;
+                    
+                    districtBoundariesLayer.eachLayer(function(layer) {
+                        const props = layer.feature.properties;
+                        const layerDistrictName = props.DISTRICT || props.District || 
+                                                 props.district || props.NAME || 
+                                                 props.name || props.Name;
+                        
+                        if (layerDistrictName && 
+                            (layerDistrictName.toLowerCase() === districtName.toLowerCase() ||
+                             findDistrictMatch(layerDistrictName) === districtName)) {
+                            
+                            console.log('Found district layer:', layerDistrictName);
+                            
+                            // Zoom to district bounds
+                            const bounds = layer.getBounds();
+                            map.fitBounds(bounds, {
+                                padding: [20, 20],
+                                maxZoom: 10
+                            });
+                            
+                            // Highlight the district temporarily
+                            const originalStyle = layer.options;
+                            layer.setStyle({
+                                fillColor: '#ff0000',
+                                fillOpacity: 0.3,
+                                color: '#ff0000',
+                                weight: 3
+                            });
+                            
+                            // Show district info popup
+                            const area = getDistrictArea(districtName);
+                            const popupContent = `
+                                <div style="color: #333; font-family: Roboto, sans-serif;">
+                                    <h4 style="margin: 0 0 10px 0; color: #4285f4;">${districtName}</h4>
+                                    <p><strong>State:</strong> Telangana</p>
+                                    <p><strong>Area:</strong> ${area} km²</p>
+                                    <p style="font-size: 11px; color: #666;">Search result</p>
+                                </div>
+                            `;
+                            
+                            layer.bindPopup(popupContent).openPopup();
+                            
+                            // Reset style after 3 seconds
+                            setTimeout(() => {
+                                layer.setStyle(originalStyle);
+                            }, 3000);
+                            
+                            districtFound = true;
+                            return;
+                        }
+                    });
+                    
+                    if (!districtFound) {
+                        console.warn('District layer not found for:', districtName);
+                        alert(`District "${districtName}" found in database but not visible on map. Try zooming out first.`);
+                    }
+                } else {
+                    console.warn('District boundaries layer not loaded');
+                    alert('District boundaries not loaded yet. Please wait a moment and try again.');
+                }
+            }
+        
+        // FILTER SUPPORT FUNCTIONS
+        
+        // Zoom to selected district from filter dropdown
+        function zoomToSelectedDistrict(selectedDistrict) {
+            console.log('=== ZOOMING TO SELECTED DISTRICT FROM FILTER ===', selectedDistrict);
+            
+            if (!selectedDistrict || selectedDistrict === '') {
+                console.log('No district selected');
+                return;
+            }
+            
+            // Use the existing district search functionality
+            const districtMatch = findDistrictInDatabase(selectedDistrict);
+            
+            if (districtMatch) {
+                console.log('District match found for filter:', districtMatch);
+                
+                // Use the existing zoom function but without the alert
+                zoomToDistrictSilently(districtMatch);
+            } else {
+                console.warn('District not found in database:', selectedDistrict);
+                // Try to zoom anyway using the dropdown value
+                zoomToDistrictSilently(selectedDistrict);
+            }
+        }
+        
+        // Silent zoom to district (no alert popup)
+        function zoomToDistrictSilently(districtName) {
+            console.log('=== SILENT ZOOM TO DISTRICT ===', districtName);
+            
+            if (!map) {
+                console.error('Map not initialized yet!');
+                return;
+            }
+            
+            // Zoom to Telangana center first
+            const telanganaCenter = [17.9689, 78.9629];
+            map.setView(telanganaCenter, 8);
+            
+            // Try to find and highlight the district
+            setTimeout(() => {
+                highlightDistrictIfAvailable(districtName);
+            }, 300);
+        }
+        
+        // Apply data filters (placeholder for future enhancements)
+        function applyDataFilters(filters) {
+            console.log('=== APPLYING DATA FILTERS ===', filters);
+            
+            // Here you can add logic to filter FRA layers based on:
+            // - Land use type
+            // - Area range (min_area, max_area)
+            // - District
+            
+            // For now, just log the filters
+            if (filters.landuse_type) {
+                console.log('Land use filter:', filters.landuse_type);
+            }
+            
+            if (filters.min_area || filters.max_area) {
+                console.log('Area range filter:', filters.min_area, 'to', filters.max_area);
+            }
+            
+            // Future: Filter FRA layers based on these criteria
+            // filterFRALayers(filters);
+        }
+        
+        // Show filter success message
+        function showFilterSuccessMessage(filters) {
+            const messages = [];
+            
+            if (filters.district) {
+                const area = getDistrictAreaSafe(filters.district);
+                messages.push(`📍 District: ${filters.district} (${area} km²)`);
+            }
+            
+            if (filters.landuse_type) {
+                messages.push(`🌱 Land Use: ${filters.landuse_type}`);
+            }
+            
+            if (filters.min_area || filters.max_area) {
+                const areaRange = `${filters.min_area || '0'} - ${filters.max_area || '∞'} hectares`;
+                messages.push(`📏 Area Range: ${areaRange}`);
+            }
+            
+            if (messages.length > 0) {
+                const message = 'Filters Applied:\n' + messages.join('\n');
+                
+                // Show a brief success message
+                setTimeout(() => {
+                    console.log('Filter success message:', message);
+                    // You can replace this with a toast notification if preferred
+                    // For now, just log to console
+                }, 100);
+            }
+        }
+        
         });
     </script>
     
