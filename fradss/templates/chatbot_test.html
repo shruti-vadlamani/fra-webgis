@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRA Chatbot Test</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts - Roboto to match homepage -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Roboto', sans-serif;
+            background: #1a1a1a;
             margin: 0;
             padding: 40px;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #ffffff;
         }
         .test-container {
-            background: white;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid #444;
             text-align: center;
             max-width: 600px;
         }
         h1 {
-            color: #2E86AB;
+            color: #4285f4;
             margin-bottom: 20px;
+            font-weight: 500;
         }
         .instructions {
-            color: #666;
+            color: #ccc;
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -39,21 +45,30 @@
             margin: 20px 0;
         }
         .feature-list li {
-            padding: 10px;
-            margin: 5px 0;
-            background: #f8f9fa;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(42, 42, 42, 0.8);
             border-radius: 8px;
-            border-left: 4px solid #2E86AB;
+            border-left: 4px solid #4285f4;
+            border: 1px solid #333;
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .feature-list li:hover {
+            border-color: #4285f4;
+            background: rgba(66, 133, 244, 0.1);
         }
         .chatbot-indicator {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #2E86AB;
+            background: #4285f4;
             color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
             font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #3367d6;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
@@ -61,32 +76,134 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 0.25rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background: transparent;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            min-width: 40px;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn.active {
+            background: #4285f4;
+            color: white;
+            box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+        }
+        
+        .test-container {
+            position: relative;
+        }
     </style>
 </head>
 <body>
     <div class="test-container">
-        <h1>🌳 FRA WebGIS Chatbot Test</h1>
-        <p class="instructions">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="setLanguage('en')" id="lang-en">EN</button>
+            <button class="lang-btn" onclick="setLanguage('hi')" id="lang-hi">हिं</button>
+        </div>
+        <h1>🌳 <span data-translate="title">FRA WebGIS Chatbot Test</span></h1>
+        <p class="instructions" data-translate="instructions">
             This page demonstrates the FRA chatbot integration. The chatbot should appear as a floating button in the bottom-right corner.
         </p>
         
-        <h3>Test these questions:</h3>
+        <h3 style="color: #4285f4; font-weight: 500;" data-translate="testQuestions">Test these questions:</h3>
         <ul class="feature-list">
-            <li>💬 "What is the Forest Rights Act?"</li>
-            <li>🗺️ "Which states are covered?"</li>
-            <li>📋 "What are the types of FRA claims?"</li>
-            <li>🤖 "How does AI help in this project?"</li>
-            <li>📞 "How can I contact support?"</li>
+            <li>💬 <span data-translate="q1">"What is the Forest Rights Act?"</span></li>
+            <li>🗺️ <span data-translate="q2">"Which states are covered?"</span></li>
+            <li>📋 <span data-translate="q3">"What are the types of FRA claims?"</span></li>
+            <li>🤖 <span data-translate="q4">"How does AI help in this project?"</span></li>
+            <li>📞 <span data-translate="q5">"How can I contact support?"</span></li>
         </ul>
         
-        <p class="instructions">
+        <p class="instructions" data-translate="clickInstruction">
             Click the chat button below to start interacting with the FRA Assistant!
         </p>
     </div>
     
     <div class="chatbot-indicator">
-        👋 Try the chatbot! →
+        👋 <span data-translate="tryBot">Try the chatbot!</span> →
     </div>
+    
+    <!-- Language Translation System -->
+    <script>
+        // Translation object for Chatbot Test page
+        const translations = {
+            en: {
+                title: "FRA WebGIS Chatbot Test",
+                instructions: "This page demonstrates the FRA chatbot integration. The chatbot should appear as a floating button in the bottom-right corner.",
+                testQuestions: "Test these questions:",
+                q1: '"What is the Forest Rights Act?"',
+                q2: '"Which states are covered?"',
+                q3: '"What are the types of FRA claims?"',
+                q4: '"How does AI help in this project?"',
+                q5: '"How can I contact support?"',
+                clickInstruction: "Click the chat button below to start interacting with the FRA Assistant!",
+                tryBot: "Try the chatbot!"
+            },
+            hi: {
+                title: "वन अधिकार WebGIS चैटबॉट परीक्षण",
+                instructions: "यह पृष्ठ वन अधिकार चैटबॉट एकीकरण का प्रदर्शन करता है। चैटबॉट निचले-दाएं कोने में एक फ्लोटिंग बटन के रूप में दिखाई देना चाहिए।",
+                testQuestions: "इन प्रश्नों का परीक्षण करें:",
+                q1: '"वन अधिकार अधिनियम क्या है?"',
+                q2: '"कौन से राज्य शामिल हैं?"',
+                q3: '"वन अधिकार दावों के प्रकार क्या हैं?"',
+                q4: '"AI इस परियोजना में कैसे मदद करता है?"',
+                q5: '"मैं सहायता से कैसे संपर्क कर सकता हूं?"',
+                clickInstruction: "वन अधिकार सहायक के साथ बातचीत शुरू करने के लिए नीचे चैट बटन पर क्लिक करें!",
+                tryBot: "चैटबॉट आज़माएं!"
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-hi').classList.toggle('active', lang === 'hi');
+            
+            // Update all translatable elements
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLanguage);
+        });
+    </script>
     
     <!-- FRA Chatbot Integration -->
     {% include 'chatbot_include.html' %}

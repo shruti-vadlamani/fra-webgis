@@ -297,9 +297,14 @@ const Upload = () => {
         <div id="uploadPage" className="upload-page">
             <div className="upload-container">
                 <div className="upload-header">
-                    <button className="back-btn" onClick={goBack}>
-                        <span>←</span> Back to Home
-                    </button>
+                    <div className="header-buttons">
+                        <button className="back-btn" onClick={goBack}>
+                            <span>←</span> Back to Home
+                        </button>
+                        <button className="fra-claims-btn" onClick={() => navigate('/fra-claims')}>
+                            <span>📊</span> View FRA Claims
+                        </button>
+                    </div>
                     <h1 className="upload-title">Upload FRA Document</h1>
                     <p className="upload-subtitle">Upload PDF documents and shapefiles for AI-powered processing</p>
                 </div>

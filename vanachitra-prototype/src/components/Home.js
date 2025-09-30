@@ -105,6 +105,11 @@ const Home = () => {
         window.location.href = '/gee';
     };
 
+    const navigateToFRAClaims = () => {
+        // Navigate to the FRA Claims statistics page
+        window.location.href = '/fra-claims';
+    };
+
     return (
         <>
             <div className="page-loader" id="loader">
@@ -210,6 +215,18 @@ const Home = () => {
                                     asset mapping, and scheme eligibility visualization.
                                 </p>
                                 <button className="action-btn">View Map</button>
+                            </div>
+                        </div>
+                        
+                        <div className="action-card" onClick={navigateToFRAClaims}>
+                            <div className="card-content">
+                                <div className="action-icon chart"></div>
+                                <h3 className="action-title">FRA Claims</h3>
+                                <p className="action-description">
+                                    View comprehensive statistics of FRA claims for Telangana state including 
+                                    approved, pending, and rejected claims with detailed analytics.
+                                </p>
+                                <button className="action-btn">View Claims</button>
                             </div>
                         </div>
                     </div>

@@ -587,7 +587,6 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     background: 
         radial-gradient(circle at 20% 30%, transparent 8px, var(--forest-primary) 8px, var(--forest-primary) 12px, transparent 12px),
         radial-gradient(circle at 70% 40%, transparent 6px, var(--forest-primary) 6px, var(--forest-primary) 9px, transparent 9px),
@@ -596,8 +595,35 @@ body {
     mask: radial-gradient(circle, black 24px, transparent 26px);
 }
 
+/* Chart Icon for FRA Claims */
+.action-icon.chart::before {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 35px;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.action-icon.chart::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 25px;
+    background: 
+        linear-gradient(to top, var(--forest-primary) 0%, var(--forest-primary) 40%, transparent 40%),
+        linear-gradient(to top, var(--forest-accent) 0%, var(--forest-accent) 70%, transparent 70%),
+        linear-gradient(to top, var(--forest-secondary) 0%, var(--forest-secondary) 55%, transparent 55%),
+        linear-gradient(to top, var(--forest-light) 0%, var(--forest-light) 85%, transparent 85%);
+    background-size: 6px 100%, 6px 100%, 6px 100%, 6px 100%;
+    background-position: 2px bottom, 10px bottom, 18px bottom, 26px bottom;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
 .action-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--forest-primary);

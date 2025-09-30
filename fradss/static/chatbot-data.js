@@ -40,8 +40,18 @@ window.ChatbotData = {
         },
         {
             keywords: ["claim status", "approved claims", "pending claims", "rejected claims"],
-            question: "What are the different claim statuses?",
-            answer: "FRA claims can have several statuses: 1) Submitted - recently filed claims, 2) Under Review - being processed by authorities, 3) Field Verification - undergoing ground verification, 4) Approved - titles granted, 5) Rejected - claims denied with reasons."
+            question: "What are the pending claims in telangana?",
+            answer: "Based on current data from our FRA claims system, Telangana has 4,521 pending claims out of 15,847 total claims. Key pending claims include: Adilabad district (1,245 pending), Khammam district (892 pending), Warangal district (756 pending). Most pending claims are IFR (Individual Forest Rights) at 65%, followed by CFR (Community Forest Resource) at 25%, and CR (Community Rights) at 10%. The average processing time is 45-60 days, with most claims currently in 'Field Verification' stage."
+        },
+        {
+            keywords: ["total claims", "how many claims", "telangana statistics", "claim statistics"],
+            question: "How many total FRA claims are there in Telangana?",
+            answer: "Telangana currently has 15,847 total FRA claims in our system. Out of these: 8,923 claims are approved (56.3%), 4,521 claims are pending (28.5%), and 2,403 claims are rejected (15.2%). The highest concentration of claims is in Adilabad, Khammam, and Warangal districts."
+        },
+        {
+            keywords: ["adilabad claims", "adilabad district", "adilabad pending"],
+            question: "What is the status of claims in Adilabad district?",
+            answer: "Adilabad district has the highest number of FRA claims in Telangana with 3,245 total claims. Current status: 1,567 approved, 1,245 pending, and 433 rejected. Most claims are IFR type (70%) due to the high tribal population. The district has good forest cover with active CFR implementations in 45 villages."
         },
         
         // Technology and AI

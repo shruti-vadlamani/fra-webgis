@@ -945,6 +945,11 @@ def react_upload():
     """Serve React app for /upload route."""
     return send_file(os.path.join(REACT_BUILD_DIR, 'index.html'))
 
+@app.route('/fra-claims')
+def react_fra_claims():
+    """Serve React app for /fra-claims route."""
+    return send_file(os.path.join(REACT_BUILD_DIR, 'index.html'))
+
 if __name__ == '__main__':
     print("=== FRA WebGIS Integration Application ===")
     print("Starting FRA WebGIS server...")

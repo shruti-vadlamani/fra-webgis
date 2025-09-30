@@ -6,37 +6,55 @@
     <title>DSS - Forest Rights Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts - Roboto to match homepage -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         :root {
-            --ifr-primary: #2E86AB;
-            --ifr-secondary: #A23B72;
-            --ifr-accent: #F18F01;
-            --cfr-primary: #2D5016;
-            --cfr-secondary: #61A5C2;
-            --cfr-accent: #C9E4CA;
-            --cr-primary: #4A5D23;
-            --cr-secondary: #86A3B8;
-            --cr-accent: #B8D4E3;
+            /* Forest green color scheme to match homepage */
+            --forest-primary: #1a4d3a;
+            --forest-secondary: #2d6b4f;
+            --forest-light: #4a8064;
+            --forest-accent: #7db46c;
+            --leaf-green: #90ee90;
+            --cream: #f5f5dc;
+            --white: #ffffff;
+            --dark-text: #2c3e26;
+            --light-text: #6b7c5e;
+            --shadow-light: rgba(26, 77, 58, 0.1);
+            --shadow-medium: rgba(26, 77, 58, 0.2);
+            --gradient-forest: linear-gradient(135deg, var(--forest-primary) 0%, var(--forest-secondary) 100%);
+            
+            /* FRA type specific colors using forest theme */
+            --ifr-primary: #1a4d3a;
+            --ifr-secondary: #4a8064;
+            --ifr-accent: #FF8C00;
+            --cfr-primary: #2d6b4f;
+            --cfr-secondary: #7db46c;
+            --cfr-accent: #FF8C00;
+            --cr-primary: #1a4d3a;
+            --cr-secondary: #4a8064;
+            --cr-accent: #8A2BE2;
         }
 
         body { 
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #e8f5e8 100%);
+            font-family: 'Roboto', sans-serif;
             min-height: 100vh;
+            color: var(--dark-text);
         }
-
+        
         .claim-header {
-            background: var(--primary-color);
-            color: white;
+            background: var(--gradient-forest);
+            color: var(--white);
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px var(--shadow-medium);
         }
 
         .claim-type-badge {
             background: var(--accent-color);
-            color: var(--primary-color);
+            color: var(--white);
             font-weight: 600;
             border-radius: 20px;
             padding: 8px 16px;
@@ -44,22 +62,23 @@
         }
 
         .claim-stat {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .schemes-panel {
-            background: white;
+            background: var(--white);
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px var(--shadow-light);
             height: fit-content;
         }
 
         .analytics-panel {
-            background: white;
+            background: var(--white);
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px var(--shadow-light);
             height: fit-content;
         }
 
@@ -67,19 +86,20 @@
             border: 2px solid transparent;
             border-radius: 12px;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%);
+            background: linear-gradient(135deg, rgba(245, 245, 220, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
             backdrop-filter: blur(5px);
+            color: var(--dark-text);
         }
 
         .scheme-card:hover {
-            border-color: var(--primary-color);
+            border-color: var(--forest-accent);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px var(--shadow-medium);
         }
 
         .scheme-type {
             background: var(--secondary-color);
-            color: white;
+            color: var(--white);
             border-radius: 15px;
             padding: 4px 12px;
             font-size: 0.75rem;
@@ -100,20 +120,22 @@
         }
 
         .priority-item {
-            background: rgba(255,255,255,0.7);
+            background: rgba(245, 245, 220, 0.7);
             border-radius: 10px;
-            border-left: 4px solid var(--primary-color);
+            border-left: 4px solid var(--forest-accent);
+            color: var(--dark-text);
         }
 
         .priority-bar {
             height: 8px;
             border-radius: 4px;
             overflow: hidden;
+            background: rgba(26, 77, 58, 0.1);
         }
 
         .priority-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            background: var(--gradient-forest);
             border-radius: 4px;
             transition: width 0.8s ease;
         }
@@ -124,6 +146,45 @@
             margin: 20px 0;
         }
 
+        .language-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 0.25rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background: transparent;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            min-width: 40px;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--forest-primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .claim-header {
+            position: relative;
+        }
+
         .radar-container {
             position: relative;
             height: 400px;
@@ -131,20 +192,29 @@
         }
 
         .section-title {
-            color: var(--primary-color);
+            color: var(--forest-primary);
             font-weight: 700;
             margin-bottom: 20px;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--forest-accent);
             padding-bottom: 10px;
         }
 
         .ministry-tag {
-            background: var(--accent-color);
-            color: var(--primary-color);
+            background: var(--forest-light);
+            color: var(--white);
             border-radius: 8px;
             padding: 2px 8px;
             font-size: 0.7rem;
             font-weight: 600;
+        }
+        
+        /* Forest theme text colors */
+        .text-muted {
+            color: var(--light-text) !important;
+        }
+        
+        .small {
+            color: var(--white);
         }
 
         /* Theme Classes */
@@ -188,42 +258,46 @@
     <div class="container-fluid py-4" id="dashboard">
         <!-- Claim Details Header -->
         <div class="claim-header p-4">
+            <div class="language-toggle">
+                <button class="lang-btn active" onclick="setLanguage('en')" id="lang-en">EN</button>
+                <button class="lang-btn" onclick="setLanguage('hi')" id="lang-hi">हिं</button>
+            </div>
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h2 class="mb-2"><i class="fas fa-map-marked-alt me-2"></i>Forest Rights Dashboard</h2>
-                    <p class="mb-0 opacity-75">Polygon ID: <strong id="polygonId">FRA_001</strong></p>
+                    <h2 class="mb-2"><i class="fas fa-map-marked-alt me-2"></i><span data-translate="dashboardTitle">Forest Rights Dashboard</span></h2>
+                    <p class="mb-0 opacity-75"><span data-translate="polygonId">Polygon ID:</span> <strong id="polygonId">FRA_001</strong></p>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <span class="claim-type-badge" id="claimTypeBadge">Community Forest Resource Rights</span>
+                    <span class="claim-type-badge" id="claimTypeBadge" data-translate="claimType">Community Forest Resource Rights</span>
                 </div>
             </div>
             <div class="row mt-4 g-3">
                 <div class="col-6 col-md-3">
                     <div class="claim-stat p-3 text-center">
                         <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
-                        <div class="small">State</div>
+                        <div class="small" data-translate="state">State</div>
                         <div class="fw-bold" id="claimState">Telangana</div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="claim-stat p-3 text-center">
                         <i class="fas fa-city fa-2x mb-2"></i>
-                        <div class="small">District</div>
+                        <div class="small" data-translate="district">District</div>
                         <div class="fw-bold" id="claimDistrict">Adilabad</div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="claim-stat p-3 text-center">
                         <i class="fas fa-check-circle fa-2x mb-2"></i>
-                        <div class="small">Status</div>
-                        <div class="fw-bold" id="claimStatus">Approved</div>
+                        <div class="small" data-translate="status">Status</div>
+                        <div class="fw-bold" id="claimStatus" data-translate="approved">Approved</div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="claim-stat p-3 text-center">
                         <i class="fas fa-ruler-combined fa-2x mb-2"></i>
-                        <div class="small">Area</div>
-                        <div class="fw-bold"><span id="claimArea">45.67</span> ha</div>
+                        <div class="small" data-translate="area">Area</div>
+                        <div class="fw-bold"><span id="claimArea">45.67</span> <span data-translate="hectares">ha</span></div>
                     </div>
                 </div>
             </div>
@@ -467,8 +541,71 @@
             });
         }
 
-        // Initialize dashboard on load
-        document.addEventListener('DOMContentLoaded', initializeDashboard);
+        // Initialize dashboard on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDashboard();
+        });
+    </script>
+    
+    <!-- Language Translation System -->
+    <script>
+        // Translation object for DSS page
+        const translations = {
+            en: {
+                dashboardTitle: "Forest Rights Dashboard",
+                polygonId: "Polygon ID:",
+                claimType: "Community Forest Resource Rights",
+                state: "State",
+                district: "District",
+                status: "Status",
+                area: "Area",
+                approved: "Approved",
+                hectares: "ha",
+                recommendedSchemes: "Recommended Schemes",
+                analyticsInsights: "Analytics & Insights"
+            },
+            hi: {
+                dashboardTitle: "वन अधिकार डैशबोर्ड",
+                polygonId: "बहुभुज आईडी:",
+                claimType: "सामुदायिक वन संसाधन अधिकार",
+                state: "राज्य",
+                district: "जिला",
+                status: "स्थिति",
+                area: "क्षेत्रफल",
+                approved: "स्वीकृत",
+                hectares: "हेक्टेयर",
+                recommendedSchemes: "अनुशंसित योजनाएं",
+                analyticsInsights: "विश्लेषण और अंतर्दृष्टि"
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-hi').classList.toggle('active', lang === 'hi');
+            
+            // Update all translatable elements
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLanguage);
+        });
     </script>
     
     <!-- FRA Chatbot Integration -->

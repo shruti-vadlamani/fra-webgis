@@ -19,10 +19,26 @@
             box-sizing: border-box;
         }
 
+        :root {
+            /* Forest green color scheme to match homepage */
+            --forest-primary: #1a4d3a;
+            --forest-secondary: #2d6b4f;
+            --forest-light: #4a8064;
+            --forest-accent: #7db46c;
+            --leaf-green: #90ee90;
+            --cream: #f5f5dc;
+            --white: #ffffff;
+            --dark-text: #2c3e26;
+            --light-text: #6b7c5e;
+            --shadow-light: rgba(26, 77, 58, 0.1);
+            --shadow-medium: rgba(26, 77, 58, 0.2);
+            --gradient-forest: linear-gradient(135deg, var(--forest-primary) 0%, var(--forest-secondary) 100%);
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background: #1a1a1a;
-            color: #ffffff;
+            background: linear-gradient(135deg, var(--cream) 0%, #e8f5e8 100%);
+            color: var(--dark-text);
             overflow: hidden;
         }
 
@@ -36,36 +52,73 @@
         /* Side Panel */
         .side-panel {
             width: 350px;
-            background: rgba(42, 42, 42, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-right: 1px solid #444;
+            border-right: 1px solid var(--forest-light);
             overflow-y: auto;
             z-index: 1000;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+            box-shadow: 2px 0 10px var(--shadow-medium);
         }
 
         .panel-header {
             padding: 20px;
-            border-bottom: 1px solid #444;
-            background: #2a2a2a;
+            border-bottom: 1px solid var(--forest-light);
+            background: var(--gradient-forest);
+            color: var(--white);
+            position: relative;
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 0.25rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background: transparent;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            min-width: 40px;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--forest-primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .panel-title {
             font-size: 18px;
             font-weight: 500;
-            color: #4285f4;
+            color: var(--white);
             margin-bottom: 5px;
         }
 
         .panel-subtitle {
             font-size: 12px;
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* Controls Section */
         .controls-section {
             padding: 15px 20px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid rgba(26, 77, 58, 0.2);
         }
 
         .control-group {
@@ -74,47 +127,50 @@
 
         .control-label {
             font-size: 13px;
-            color: #ccc;
+            color: var(--dark-text);
             margin-bottom: 8px;
             display: block;
+            font-weight: 500;
         }
 
         .control-input {
             width: 100%;
             padding: 8px 12px;
-            background: #333;
-            border: 1px solid #555;
+            background: var(--white);
+            border: 1px solid var(--forest-light);
             border-radius: 4px;
-            color: #fff;
+            color: var(--dark-text);
             font-size: 13px;
         }
 
         .control-input:focus {
             outline: none;
-            border-color: #4285f4;
+            border-color: var(--forest-accent);
+            box-shadow: 0 0 0 2px rgba(125, 180, 108, 0.2);
         }
 
         .btn {
             padding: 8px 16px;
-            background: #4285f4;
-            color: white;
+            background: var(--forest-primary);
+            color: var(--white);
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 13px;
             transition: background 0.2s;
+            font-weight: 500;
         }
 
         .btn:hover {
-            background: #3367d6;
+            background: var(--forest-secondary);
         }
 
         .btn-secondary {
-            background: #666;
+            background: var(--forest-light);
         }
 
         .btn-secondary:hover {
-            background: #777;
+            background: var(--forest-accent);
         }
 
         /* Map Container */
@@ -134,41 +190,6 @@
             cursor: grabbing;
         }
 
-        /* Legend */
-        .legend {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(42, 42, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #444;
-            min-width: 200px;
-            z-index: 1000;
-        }
-
-        .legend-title {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #4285f4;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 6px;
-            font-size: 12px;
-        }
-
-        .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 2px;
-            margin-right: 8px;
-            border: 1px solid #666;
-        }
 
         /* Top Controls */
         .top-controls {
@@ -183,30 +204,31 @@
         .control-btn {
             width: 40px;
             height: 40px;
-            background: rgba(42, 42, 42, 0.95);
-            border: 1px solid #444;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--forest-light);
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: #ccc;
+            color: var(--forest-primary);
             transition: all 0.2s;
             pointer-events: auto;
             user-select: none;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
+            box-shadow: 0 2px 8px var(--shadow-light);
         }
 
         .control-btn:hover {
-            background: #4285f4;
-            color: white;
+            background: var(--forest-primary);
+            color: var(--white);
         }
 
         .control-btn:active {
             transform: scale(0.95);
-            background: #3367d6;
+            background: var(--forest-secondary);
         }
 
         /* Search Box */
@@ -221,20 +243,22 @@
             width: 300px;
             padding: 10px 40px 10px 15px;
             background: rgba(255, 255, 255, 0.95);
-            border: 1px solid #ddd;
+            border: 1px solid var(--forest-light);
             border-radius: 6px;
-            color: #333;
+            color: var(--dark-text);
             font-size: 14px;
+            box-shadow: 0 2px 8px var(--shadow-light);
         }
 
         .search-box::placeholder {
-            color: #666;
+            color: var(--light-text);
         }
 
         .search-box:focus {
             outline: none;
-            border-color: #4285f4;
+            border-color: var(--forest-accent);
             background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 0 2px rgba(125, 180, 108, 0.2);
         }
 
         /* Info Panel */
@@ -242,27 +266,28 @@
             position: absolute;
             top: 80px;
             left: 20px;
-            background: rgba(42, 42, 42, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 15px;
             border-radius: 8px;
-            border: 1px solid #444;
+            border: 1px solid var(--forest-light);
             max-width: 300px;
             z-index: 1000;
             display: none;
+            box-shadow: 0 4px 15px var(--shadow-light);
         }
 
         .info-title {
             font-size: 14px;
             font-weight: 500;
-            color: #4285f4;
+            color: var(--forest-primary);
             margin-bottom: 10px;
         }
 
         .info-item {
             font-size: 12px;
             margin-bottom: 5px;
-            color: #ccc;
+            color: var(--dark-text);
         }
 
         /* Loading Indicator */
@@ -272,17 +297,20 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2000;
-            background: rgba(42, 42, 42, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             padding: 20px;
             border-radius: 8px;
             display: none;
+            border: 1px solid var(--forest-light);
+            box-shadow: 0 4px 15px var(--shadow-medium);
+            color: var(--dark-text);
         }
 
         .spinner {
             width: 40px;
             height: 40px;
-            border: 4px solid #333;
-            border-top: 4px solid #4285f4;
+            border: 4px solid var(--forest-light);
+            border-top: 4px solid var(--forest-primary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 10px;
@@ -331,13 +359,17 @@
         <!-- Side Panel -->
         <div class="side-panel">
             <div class="panel-header">
-                <div class="panel-title">Telangana FRA Atlas</div>
-                <div class="panel-subtitle">Forest Rights Act Claims (Forest Areas Only)</div>
+                <div class="language-toggle">
+                    <button class="lang-btn active" onclick="setLanguage('en')" id="lang-en">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('hi')" id="lang-hi">हिं</button>
+                </div>
+                <div class="panel-title" data-translate="title">Telangana FRA Atlas</div>
+                <div class="panel-subtitle" data-translate="subtitle">Forest Rights Act Claims (Forest Areas Only)</div>
             </div>
             
             <div class="controls-section">
                 <div class="control-group">
-                    <label class="control-label">State Selection</label>
+                    <label class="control-label" data-translate="stateSelection">State Selection</label>
                     <select id="stateFilter" class="control-input">
                         <option value="telangana">Telangana</option>
                         <option value="odisha">Odisha</option>
@@ -347,16 +379,16 @@
                 </div>
                 
                 <div class="control-group">
-                    <label class="control-label">Land-use Filter</label>
+                    <label class="control-label" data-translate="landuseFilter">Land-use Filter</label>
                     <select id="landuseFilter" class="control-input">
-                        <option value="">All Categories</option>
+                        <option value="" data-translate="allCategories">All Categories</option>
                     </select>
                 </div>
                 
                 <div class="control-group">
-                    <label class="control-label">District Filter</label>
+                    <label class="control-label" data-translate="districtFilter">District Filter</label>
                     <select id="districtFilter" class="control-input">
-                        <option value="">All Districts</option>
+                        <option value="" data-translate="allDistricts">All Districts</option>
                     </select>
                 </div>
                 
@@ -369,8 +401,8 @@
                 </div> -->
                 
                 <div class="control-group">
-                    <button id="applyFilters" class="btn" onclick="handleApplyFilters()">Apply Filters</button>
-                    <button id="clearFilters" class="btn btn-secondary" style="margin-left: 10px;">Clear</button>
+                    <button id="applyFilters" class="btn" onclick="handleApplyFilters()" data-translate="applyFilters">Apply Filters</button>
+                    <button id="clearFilters" class="btn btn-secondary" style="margin-left: 10px;" data-translate="clear">Clear</button>
                 </div>
             </div>
             
@@ -381,35 +413,35 @@
                 </div> -->
                 
                 <div class="control-group">
-                    <button id="exportData" class="btn">Export Data</button>
+                    <button id="exportData" class="btn" onclick="handleExportData()" data-translate="exportData">Export Data</button>
                 </div>
-                <h4 style="color: #4285f4; margin-bottom: 15px;"> FRA Layers </h4>
+                <h4 style="color: #4285f4; margin-bottom: 15px;" data-translate="fraLayers"> FRA Layers </h4>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleForest" style="margin-right: 8px;" onchange="handleForestToggle(this)">
-                        Forest Boundaries
+                        <span data-translate="forestBoundaries">Forest Boundaries</span>
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleCFR" style="margin-right: 8px;" onchange="handleFRAToggle(this, 'CFR')">
-                        CFR - Community Forest Resource
+                        <span data-translate="cfrLabel">CFR - Community Forest Resource</span>
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleIFR" style="margin-right: 8px;" onchange="handleFRAToggle(this, 'IFR')">
-                        IFR - Individual Forest Right
+                        <span data-translate="ifrLabel">IFR - Individual Forest Right</span>
                     </label>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">
                         <input type="checkbox" id="toggleCR" style="margin-right: 8px;" onchange="handleFRAToggle(this, 'CR')">
-                        CR - Community Right
+                        <span data-translate="crLabel">CR - Community Right</span>
                     </label>
                 </div>
                 
@@ -436,11 +468,6 @@
                 </div>
             </div>
             
-            <!-- Legend -->
-            <div class="legend" id="legend">
-                <div class="legend-title">Land-use Categories</div>
-                <div id="legendContent"></div>
-            </div>
             
             <!-- Info Panel -->
             <div class="info-panel" id="infoPanel">
@@ -657,6 +684,113 @@
                 } else {
                     console.log(`${layerType} layer not on map`);
                 }
+            }
+        }
+        
+        // EXPORT DATA FUNCTION - Download GeoJSON of current map data
+        function handleExportData() {
+            console.log('🔽 Export Data button clicked');
+            
+            try {
+                // Collect all visible layers data
+                const exportData = {
+                    type: "FeatureCollection",
+                    features: [],
+                    metadata: {
+                        exportedAt: new Date().toISOString(),
+                        exportedFrom: "Vanachitra.ai FRA WebGIS",
+                        bounds: map.getBounds(),
+                        zoom: map.getZoom(),
+                        center: map.getCenter()
+                    }
+                };
+                
+                // Add district boundaries if available
+                if (window.districtLayer && map.hasLayer(window.districtLayer)) {
+                    window.districtLayer.eachLayer(function(layer) {
+                        if (layer.feature) {
+                            const feature = JSON.parse(JSON.stringify(layer.feature));
+                            feature.properties.layer_type = 'district_boundary';
+                            exportData.features.push(feature);
+                        }
+                    });
+                    console.log('✅ Added district boundaries to export');
+                }
+                
+                // Add forest boundaries if available
+                if (window.telanganaForestLayer && map.hasLayer(window.telanganaForestLayer)) {
+                    window.telanganaForestLayer.eachLayer(function(layer) {
+                        if (layer.feature) {
+                            const feature = JSON.parse(JSON.stringify(layer.feature));
+                            feature.properties.layer_type = 'forest_boundary';
+                            exportData.features.push(feature);
+                        }
+                    });
+                    console.log('✅ Added forest boundaries to export');
+                }
+                
+                // Add FRA layers if available
+                if (fraLayers) {
+                    Object.entries(fraLayers).forEach(([layerType, layer]) => {
+                        if (layer && map.hasLayer(layer)) {
+                            layer.eachLayer(function(subLayer) {
+                                if (subLayer.feature) {
+                                    const feature = JSON.parse(JSON.stringify(subLayer.feature));
+                                    feature.properties.layer_type = `fra_${layerType.toLowerCase()}`;
+                                    exportData.features.push(feature);
+                                }
+                            });
+                            console.log(`✅ Added ${layerType} FRA layer to export`);
+                        }
+                    });
+                }
+                
+                // Add land-use data if available
+                if (window.landuseLayer && map.hasLayer(window.landuseLayer)) {
+                    window.landuseLayer.eachLayer(function(layer) {
+                        if (layer.feature) {
+                            const feature = JSON.parse(JSON.stringify(layer.feature));
+                            feature.properties.layer_type = 'landuse';
+                            exportData.features.push(feature);
+                        }
+                    });
+                    console.log('✅ Added land-use data to export');
+                }
+                
+                // Check if we have any data to export
+                if (exportData.features.length === 0) {
+                    alert('No data available to export. Please ensure some layers are visible on the map.');
+                    return;
+                }
+                
+                // Create filename with timestamp
+                const timestamp = new Date().toISOString().slice(0, 19).replace(/[:.]/g, '-');
+                const filename = `vanachitra-fra-data-${timestamp}.geojson`;
+                
+                // Create and download the file
+                const dataStr = JSON.stringify(exportData, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                
+                // Create download link
+                const downloadLink = document.createElement('a');
+                downloadLink.href = URL.createObjectURL(dataBlob);
+                downloadLink.download = filename;
+                downloadLink.style.display = 'none';
+                
+                // Trigger download
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Clean up object URL
+                URL.revokeObjectURL(downloadLink.href);
+                
+                console.log(`✅ Successfully exported ${exportData.features.length} features to ${filename}`);
+                alert(`Successfully exported ${exportData.features.length} features to ${filename}`);
+                
+            } catch (error) {
+                console.error('❌ Error exporting data:', error);
+                alert('Error exporting data. Please try again or check the console for details.');
             }
         }
         
@@ -1578,7 +1712,6 @@
             try {
                 const response = await fetch('/api/telangana_landuse_categories');
                 categories = await response.json();
-                updateLegend();
                 updateFilters();
             } catch (error) {
                 console.error('Error loading categories:', error);
@@ -1846,29 +1979,6 @@
             }
         }
         
-        // Update legend - fixed to show only the 4 required categories
-        function updateLegend() {
-            const legendContent = document.getElementById('legendContent');
-            legendContent.innerHTML = '';
-            
-            // Fixed 4 categories as requested
-            const fixedCategories = {
-                'Forest': { color: '#228B22' },
-                'Agricultural': { color: '#FFD700' },
-                'Water Bodies': { color: '#4169E1' },
-                'Homesteads': { color: '#8B4513' }
-            };
-            
-            Object.entries(fixedCategories).forEach(([name, info]) => {
-                const item = document.createElement('div');
-                item.className = 'legend-item';
-                item.innerHTML = `
-                    <div class="legend-color" style="background-color: ${info.color}"></div>
-                    <span>${name}</span>
-                `;
-                legendContent.appendChild(item);
-            });
-        }
         
         // Update filter dropdowns - simplified to only 4 land use categories
         function updateFilters() {
@@ -2893,6 +3003,75 @@
             }
         }
         
+        });
+    </script>
+
+    <!-- Language Translation System -->
+    <script>
+        // Translation object
+        const translations = {
+            en: {
+                title: "Telangana FRA Atlas",
+                subtitle: "Forest Rights Act Claims (Forest Areas Only)",
+                stateSelection: "State Selection",
+                landuseFilter: "Land-use Filter",
+                districtFilter: "District Filter",
+                allCategories: "All Categories",
+                allDistricts: "All Districts",
+                applyFilters: "Apply Filters",
+                clear: "Clear",
+                exportData: "Export Data",
+                fraLayers: "FRA Layers",
+                forestBoundaries: "Forest Boundaries",
+                cfrLabel: "CFR - Community Forest Resource",
+                ifrLabel: "IFR - Individual Forest Right",
+                crLabel: "CR - Community Right"
+            },
+            hi: {
+                title: "तेलंगाना वन अधिकार एटलस",
+                subtitle: "वन अधिकार अधिनियम दावे (केवल वन क्षेत्र)",
+                stateSelection: "राज्य चयन",
+                landuseFilter: "भूमि उपयोग फिल्टर",
+                districtFilter: "जिला फिल्टर",
+                allCategories: "सभी श्रेणियां",
+                allDistricts: "सभी जिले",
+                applyFilters: "फिल्टर लागू करें",
+                clear: "साफ़ करें",
+                exportData: "डेटा निर्यात करें",
+                fraLayers: "वन अधिकार परतें",
+                forestBoundaries: "वन सीमाएं",
+                cfrLabel: "CFR - सामुदायिक वन संसाधन",
+                ifrLabel: "IFR - व्यक्तिगत वन अधिकार",
+                crLabel: "CR - सामुदायिक अधिकार"
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-hi').classList.toggle('active', lang === 'hi');
+            
+            // Update all translatable elements
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLanguage);
         });
     </script>
     
