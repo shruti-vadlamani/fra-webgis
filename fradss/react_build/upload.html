@@ -1,0 +1,209 @@
+<!DOCTYPE html><!DOCTYPE html>
+
+<html lang="en"><html lang="en">
+
+<head><head>
+
+    <meta charset="UTF-8">    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload FRA Document - Vanachitra.ai</title>    <title>Upload FRA Document - Vanachitra.ai</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="upload.css">    <link rel="stylesheet" href="upload.css">
+
+    <link rel="stylesheet" href="styles.css"> <!-- Main styles -->    <link rel="stylesheet" href="styles.css"> <!-- Main styles -->
+
+</head></head>
+
+<body><body>
+
+    <!-- Upload Page -->    <!-- Upload Page -->
+
+    <div id="uploadPage" class="upload-page">    <div id="uploadPage" class="upload-page">
+
+        <div class="upload-container">        <div class="upload-container">
+
+            <div class="upload-header">            <div class="upload-header">
+
+                <button class="back-btn" onclick="goBack()">                <button class="back-btn" onclick="goBack()">
+
+                    <span>←</span> Back to Home                    <span>←</span> Back to Home
+
+                </button>                </button>
+
+                <h1 class="upload-title">Upload FRA Document</h1>                <h1 class="upload-title">Upload FRA Document</h1>
+
+                <p class="upload-subtitle">Upload PDF documents and shapefiles for AI-powered processing</p>                <p class="upload-subtitle">Upload PDF documents and shapefiles for AI-powered processing</p>
+
+            </div>            </div>
+
+
+
+            <div class="upload-content">            <div class="upload-content">
+
+                <div class="upload-grid">                <div class="upload-grid">
+
+                    <!-- PDF Upload Section -->                    <!-- PDF Upload Section -->
+
+                    <div class="upload-section">                    <div class="upload-section">
+
+                        <div class="upload-card">                        <div class="upload-card">
+
+                            <div class="upload-icon">📄</div>                            <div class="upload-icon">📄</div>
+
+                            <h3>FRA Claim Document</h3>                            <h3>FRA Claim Document</h3>
+
+                            <p>Upload PDF document containing claim details</p>                            <p>Upload PDF document containing claim details</p>
+
+                            <div class="file-upload-area" id="pdfUpload">                            <div class="file-upload-area" id="pdfUpload">
+
+                                <input type="file" id="pdfFile" accept=".pdf" style="display: none;">                                <input type="file" id="pdfFile" accept=".pdf" style="display: none;">
+
+                                <div class="upload-placeholder">                                <div class="upload-placeholder">
+
+                                    <div class="upload-icon-large">📋</div>                                    <div class="upload-icon-large">📋</div>
+
+                                    <p>Drag & drop PDF file here or <span class="upload-link">browse</span></p>                                    <p>Drag & drop PDF file here or <span class="upload-link">browse</span></p>
+
+                                    <small>Supported: PDF files up to 10MB</small>                                    <small>Supported: PDF files up to 10MB</small>
+
+                                </div>                                </div>
+
+                            </div>                            </div>
+
+                            <div class="file-info" id="pdfInfo" style="display: none;"></div>                            <div class="file-info" id="pdfInfo" style="display: none;"></div>
+
+                        </div>                        </div>
+
+                    </div>                    </div>
+
+
+
+                    <!-- Shapefile Upload Section -->                    <!-- Shapefile Upload Section -->
+
+                    <div class="upload-section">                    <div class="upload-section">
+
+                        <div class="upload-card">                        <div class="upload-card">
+
+                            <div class="upload-icon">🗺️</div>                            <div class="upload-icon">🗺️</div>
+
+                            <h3>Patta Holder Shapefile</h3>                            <h3>Patta Holder Shapefile</h3>
+
+                            <p>Upload shapefile with boundary coordinates</p>                            <p>Upload shapefile with boundary coordinates</p>
+
+                            <div class="file-upload-area" id="shapeUpload">                            <div class="file-upload-area" id="shapeUpload">
+
+                                <input type="file" id="shapeFile" accept=".shp,.zip" style="display: none;">                                <input type="file" id="shapeFile" accept=".shp,.zip" style="display: none;">
+
+                                <div class="upload-placeholder">                                <div class="upload-placeholder">
+
+                                    <div class="upload-icon-large">🌍</div>                                    <div class="upload-icon-large">🌍</div>
+
+                                    <p>Drag & drop shapefile here or <span class="upload-link">browse</span></p>                                    <p>Drag & drop shapefile here or <span class="upload-link">browse</span></p>
+
+                                    <small>Supported: .shp, .zip files up to 20MB</small>                                    <small>Supported: .shp, .zip files up to 20MB</small>
+
+                                </div>                                </div>
+
+                            </div>                            </div>
+
+                            <div class="file-info" id="shapeInfo" style="display: none;"></div>                            <div class="file-info" id="shapeInfo" style="display: none;"></div>
+
+                        </div>                        </div>
+
+                    </div>                    </div>
+
+                </div>                </div>
+
+
+
+                <!-- Process Button -->                <!-- Process Button -->
+
+                <div class="process-section">                <div class="process-section">
+
+                    <button class="process-btn" id="processBtn" onclick="processFiles()" disabled>                    <button class="process-btn" id="processBtn" onclick="processFiles()" disabled>
+
+                        <span class="btn-icon">🔄</span>                        <span class="btn-icon">🔄</span>
+
+                        Process Documents with AI                        Process Documents with AI
+
+                    </button>                    </button>
+
+                    <p class="process-note">AI will extract data using OCR and NER technologies</p>                    <p class="process-note">AI will extract data using OCR and NER technologies</p>
+
+                </div>                </div>
+
+
+
+                <!-- Results Section -->                <!-- Results Section -->
+
+                <div class="results-section" id="resultsSection" style="display: none;">                <div class="results-section" id="resultsSection" style="display: none;">
+
+                    <h3 class="results-title">🎯 Extraction Results</h3>                    <h3 class="results-title">🎯 Extraction Results</h3>
+
+                    <div class="results-grid">                    <div class="results-grid">
+
+                        <div class="result-card">                        <div class="result-card">
+
+                            <h4>📊 Extracted Data (OCR + NER)</h4>                            <h4>📊 Extracted Data (OCR + NER)</h4>
+
+                            <pre class="json-display" id="extractedData"></pre>                            <pre class="json-display" id="extractedData"></pre>
+
+                        </div>                        </div>
+
+                        <div class="result-card">                        <div class="result-card">
+
+                            <h4>🗺️ Spatial Information</h4>                            <h4>🗺️ Spatial Information</h4>
+
+                            <div class="spatial-info">                            <div class="spatial-info">
+
+                                <div class="coord-display" id="coordinateDisplay"></div>                                <div class="coord-display" id="coordinateDisplay"></div>
+
+                                <div class="map-preview">                                <div class="map-preview">
+
+                                    <div class="mini-map" id="miniMap">                                    <div class="mini-map" id="miniMap">
+
+                                        <div class="map-placeholder">                                        <div class="map-placeholder">
+
+                                            <span>🌍</span>                                            <span>🌍</span>
+
+                                            <p>Boundary Preview</p>                                            <p>Boundary Preview</p>
+
+                                        </div>                                        </div>
+
+                                    </div>                                    </div>
+
+                                </div>                                </div>
+
+                            </div>                            </div>
+
+                        </div>                        </div>
+
+                    </div>                    </div>
+
+                    <div class="action-buttons">                    <div class="action-buttons">
+
+                        <button class="secondary-btn" onclick="resetUpload()">Upload Another</button>                        <button class="secondary-btn" onclick="resetUpload()">Upload Another</button>
+
+                        <button class="primary-btn" onclick="saveToAtlas()">Save to Atlas</button>                        <button class="primary-btn" onclick="saveToAtlas()">Save to Atlas</button>
+
+                    </div>                    </div>
+
+                </div>                </div>
+
+            </div>            </div>
+
+        </div>        </div>
+
+    </div>    </div>
+
+
+
+    <script src="upload.js"></script>    <script src="upload.js"></script>
+
+</body></body>
+
+</html></html>

@@ -24,7 +24,7 @@ MANIFEST
 
 # Production build
 /vanachitra-prototype/build/
-/fradss/react_build/
+# Note: react_build is needed for deployment, so it's not ignored
 
 # Environment variables
 .env

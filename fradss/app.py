@@ -375,7 +375,76 @@ fra_manager = FRAWebGISManager(FRA_GEOJSON_FILE, FRA_ANALYTICS_FILE)
 @app.route('/')
 def index():
     """Serve the React frontend (Vanachitra.AI landing page)."""
-    return send_file(os.path.join(REACT_BUILD_DIR, 'index.html'))
+    try:
+        react_index = os.path.join(REACT_BUILD_DIR, 'index.html')
+        if os.path.exists(react_index):
+            return send_file(react_index)
+        else:
+            # Fallback: serve a simple HTML page if React build is missing
+            return """
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>FRA WebGIS</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; }
+                    .container { max-width: 800px; margin: 0 auto; }
+                    .error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; }
+                    .links { margin-top: 20px; }
+                    .links a { display: block; margin: 10px 0; padding: 10px; background: #007bff; color: white; text-decoration: none; border-radius: 3px; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>FRA WebGIS Application</h1>
+                    <div class="error">
+                        <strong>Frontend not found:</strong> React build files are missing. 
+                        The backend API is working, but the frontend needs to be built and deployed.
+                    </div>
+                    <div class="links">
+                        <a href="/api/vanachitra_fra_data">View FRA Data (JSON)</a>
+                        <a href="/gee">GEE Interface</a>
+                        <a href="/api/assets">View Assets Data</a>
+                    </div>
+                    <p><strong>Available API Endpoints:</strong></p>
+                    <ul>
+                        <li>/api/vanachitra_fra_data - FRA GeoJSON data</li>
+                        <li>/api/assets - Assets data</li>
+                        <li>/gee - Google Earth Engine interface</li>
+                        <li>/dss/&lt;polygon_id&gt; - Decision Support System</li>
+                    </ul>
+                </div>
+            </body>
+            </html>
+            """
+    except Exception as e:
+        return f"<h1>Server Error</h1><p>Error loading application: {str(e)}</p>", 500
+
+
+# Serve React static files
+@app.route('/static/<path:filename>')
+def react_static(filename):
+    """Serve React static files (CSS, JS, etc.)"""
+    try:
+        return send_from_directory(os.path.join(REACT_BUILD_DIR, 'static'), filename)
+    except Exception:
+        return "File not found", 404
+
+@app.route('/manifest.json')
+def react_manifest():
+    """Serve React manifest.json"""
+    try:
+        return send_from_directory(REACT_BUILD_DIR, 'manifest.json')
+    except Exception:
+        return "File not found", 404
+
+@app.route('/favicon.ico')
+def react_favicon():
+    """Serve React favicon"""
+    try:
+        return send_from_directory(REACT_BUILD_DIR, 'favicon.ico')
+    except Exception:
+        return "File not found", 404
 
 
 @app.route('/gee')
